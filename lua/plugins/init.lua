@@ -54,7 +54,6 @@ return require('packer').startup(function(use)
     -- Other
     use {'terrortylor/nvim-comment', config = "require('nvim_comment').setup()"}
     use 'monaqa/dial.nvim'
-    -- use 'mhartington/formatter.nvim'
     use 'lukas-reineke/format.nvim'
 
 end)
