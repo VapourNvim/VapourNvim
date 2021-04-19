@@ -2,7 +2,7 @@ local gl = require('galaxyline')
 local gls = gl.section
 local condition = require('galaxyline.condition')
 local utils = require('galaxyline-config.utils')
-gl.short_line_list = {'NvimTree', 'packer', 'dashboard'}
+gl.short_line_list = {'NvimTree', 'packer', 'dashboard', 'toggleterm'}
 
 -- Tables
 
