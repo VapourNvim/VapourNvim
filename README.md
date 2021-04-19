@@ -8,11 +8,11 @@ Goal of the project
 
 ## Installation
 
+First you need to have neovim 0.5 otherwise this will not work
 You can clone the repo and then install all the plugins
 
 ```bash
-git clone https://github.com/hackorum/nvim ~/.config/nvim
-# Install the plugins
+git clone https://github.com/hackorum/VapourNvim ~/.config/nvim
 nvim
 :PackerSync
 ```
