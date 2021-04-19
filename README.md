@@ -38,36 +38,36 @@ nvim
 ```
 ## Plugins included
 
-* norcalli/nvim-colorizer.lua
-* tjdevries/colorbuddy.nvim
-* akinsho/nvim-bufferline.lua
-* glepnir/dashboard-nvim
-* nvim-treesitter/nvim-treesitter
-* p00f/nvim-ts-rainbow
-* windwp/nvim-ts-autotag
-* marko-cerovac/material.nvim
-* joshdick/onedark.vim
-* gruvbox-community/gruvbox
-* arcticicestudio/nord-vim
-* neovim/nvim-lspconfig
-* glepnir/lspsaga.nvim
-* hrsh7th/nvim-compe
-* hrsh7th/vim-vsnip
-* windwp/nvim-autopairs
-* kdheepak/lazygit.nvim
-* TimUntersberger/neogit
-* lewis6991/gitsigns.nvim
-* nvim-lua/plenary.nvim
-* davidgranstrom/nvim-markdown-preview
-* akinsho/nvim-toggleterm.lua
-* nvim-telescope/telescope.nvim
-* nvim-lua/popup.nvim
-* kyazdani42/nvim-tree.lua
-* kyazdani42/nvim-web-devicons
-* phaazon/hop.nvim
-* terrortylor/nvim-comment
-* monaqa/dial.nvim
-* lukas-reineke/format.nvim
+* [nvim-colorizer.lua](github.com/norcalli/nvim-colorizer.lua)
+* [colorbuddy.nvim](github.com/tjdevries/colorbuddy.nvim)
+* [nvim-bufferline.lua](github.com/akinsho/nvim-bufferline.lua)
+* [dashboard-nvim](github.com/glepnir/dashboard-nvim)
+* [nvim-treesitter](github.com/nvim-treesitter/nvim-treesitter)
+* [nvim-ts-rainbow](github.com/p00f/nvim-ts-rainbow)
+* [nvim-ts-autotag](github.com/windwp/nvim-ts-autotag)
+* [material.nvim](github.com/marko-cerovac/material.nvim)
+* [onedark.vim](github.com/joshdick/onedark.vim)
+* [gruvbox](github.com/gruvbox-community/gruvbox)
+* [nord-vim](github.com/arcticicestudio/nord-vim)
+* [nvim-lspconfig](github.com/neovim/nvim-lspconfig)
+* [lspsaga.nvim](github.com/glepnir/lspsaga.nvim)
+* [nvim-compe](github.com/hrsh7th/nvim-compe)
+* [vim-vsnip](github.com/hrsh7th/vim-vsnip)
+* [nvim-autopairs](github.com/windwp/nvim-autopairs)
+* [lazygit.nvim](github.com/kdheepak/lazygit.nvim)
+* [neogit](github.com/TimUntersberger/neogit)
+* [gitsigns.nvim](github.com/lewis6991/gitsigns.nvim)
+* [plenary.nvim](github.com/nvim-lua/plenary.nvim)
+* [nvim-markdown-preview](github.com/davidgranstrom/nvim-markdown-preview)
+* [nvim-toggleterm.lua](github.com/akinsho/nvim-toggleterm.lua)
+* [telescope.nvim](github.com/nvim-telescope/telescope.nvim)
+* [popup.nvim](github.com/nvim-lua/popup.nvim)
+* [nvim-tree.lua](github.com/kyazdani42/nvim-tree.lua)
+* [nvim-web-devicons](github.com/kyazdani42/nvim-web-devicons)
+* [hop.nvim](github.com/phaazon/hop.nvim)
+* [nvim-comment](github.com/terrortylor/nvim-comment)
+* [dial.nvim](github.com/monaqa/dial.nvim)
+* [format.nvim](github.com/lukas-reineke/format.nvim)
 
 ## Contributing
 
