@@ -4,7 +4,8 @@
 --   \ V / (_| | |_) | (_) | |_| | |  | |\  |\ V /| | | | | | |
 --    \_/ \__,_| .__/ \___/ \__,_|_|  |_| \_| \_/ |_|_| |_| |_|
 --             |_|
--- https://github.com/hackorum/VapourNvim
+-- Author: https://github.com/hackorum
+-- Github: https://github.com/hackorum/VapourNvim
 --
 -- General
 require('plugins')
