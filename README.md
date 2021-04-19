@@ -7,7 +7,7 @@ The goal of this project is to simply *get work done* quickly.
 
 This project is built to be:
 * **Functional**. The core of an ideal IDE is functionality. It will *not* be compromised for minimalism
-* **Minimal**. Too many plugins can affect startup time. Time is not to be wasted for opening files!
+* **Minimal**. Too many plugins can affect startup time. Time is not to be wasted for opening files and loading plugins!
 
 ## Features
 
