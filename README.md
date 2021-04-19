@@ -1,4 +1,4 @@
-# VapourNvim
+![VapourNvim Logo](assets/logo.jpg)
 
 Goal of the project
 
