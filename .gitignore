@@ -1,3 +1,2 @@
-autoload/
-autoload/**
-autoload/*
+ls/lua-language-server
+plugin/
