@@ -38,7 +38,7 @@ nvim
 ```
 
 ## After Installation
-Please read the [wiki](https://github.com/hackorum/VapourNvim/wiki) for (Keybindings)[https://github.com/hackorum/VapourNvim/wiki/Keybindings], (Language Servers)[https://github.com/hackorum/VapourNvim/wiki/Language-Servers], (Plugins)[https://github.com/hackorum/VapourNvim/wiki/Plugins] and (Screenshots)[https://github.com/hackorum/VapourNvim/wiki/Screenshots]
+Please read the [wiki](https://github.com/hackorum/VapourNvim/wiki) for [Keybindings](https://github.com/hackorum/VapourNvim/wiki/Keybindings), [Language Servers](https://github.com/hackorum/VapourNvim/wiki/Language-Servers), [Plugins](https://github.com/hackorum/VapourNvim/wiki/Plugins) and [Screenshots](https://github.com/hackorum/VapourNvim/wiki/Screenshots).
 
 ## Contributing
 
