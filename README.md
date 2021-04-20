@@ -18,8 +18,8 @@
 The goal of this project is to simply *get work done* quickly.
 
 This project is built to be:
-* **Functional**. The core of an ideal IDE is functionality. It will *not* be compromised for minimalism
-* **Minimal**. Too many plugins can affect startup time. Time is not to be wasted for opening files and loading plugins!
+* **Functional**. The core of an ideal IDE is functionality. If there is anything you want to add, please consider contributing
+* **Minimal**. Too many plugins can affect startup time. VapourNvim loads as smooth as butter with an optimum amount of plugins
 
 ## Features
 
