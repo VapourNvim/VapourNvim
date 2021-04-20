@@ -7,6 +7,7 @@
 	<a href="https://github.com/hackorum/VapourNvim/wiki">Wiki</a>
   <span> • </span>
 	<a href="https://github.com/hackorum/VapourNvim/wiki/Screenshots">Screenshots</a>
+  <p></p>
 </div>
 
 
