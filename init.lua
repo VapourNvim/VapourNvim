@@ -21,6 +21,7 @@ require('dashboard-config')
 
 -- LSP and Autocomplete
 require('compe-config')
+require('autopairs-config')
 require('language-servers')
 require('lazygit-config')
 require('gitsigns-config')
