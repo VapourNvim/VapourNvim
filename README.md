@@ -36,38 +36,9 @@ git clone https://github.com/hackorum/VapourNvim ~/.config/nvim
 nvim
 :PackerSync
 ```
-## Plugins included
 
-* [nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)
-* [colorbuddy.nvim](https://github.com/tjdevries/colorbuddy.nvim)
-* [nvim-bufferline.lua](https://github.com/akinsho/nvim-bufferline.lua)
-* [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)
-* [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-* [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)
-* [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)
-* [material.nvim](https://github.com/marko-cerovac/material.nvim)
-* [onedark.vim](https://github.com/joshdick/onedark.vim)
-* [gruvbox](https://github.com/gruvbox-community/gruvbox)
-* [nord-vim](https://github.com/arcticicestudio/nord-vim)
-* [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
-* [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim)
-* [nvim-compe](https://github.com/hrsh7th/nvim-compe)
-* [vim-vsnip](https://github.com/hrsh7th/vim-vsnip)
-* [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
-* [lazygit.nvim](https://github.com/kdheepak/lazygit.nvim)
-* [neogit](https://github.com/TimUntersberger/neogit)
-* [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
-* [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
-* [nvim-markdown-preview](https://github.com/davidgranstrom/nvim-markdown-preview)
-* [nvim-toggleterm.lua](https://github.com/akinsho/nvim-toggleterm.lua)
-* [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
-* [popup.nvim](https://github.com/nvim-lua/popup.nvim)
-* [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
-* [nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons)
-* [hop.nvim](https://github.com/phaazon/hop.nvim)
-* [nvim-comment](https://github.com/terrortylor/nvim-comment)
-* [dial.nvim](https://github.com/monaqa/dial.nvim)
-* [format.nvim](github.com/lukas-reineke/format.nvim)
+## After Installation
+Please read the [wiki](https://github.com/hackorum/VapourNvim/wiki) for (Keybindings)[https://github.com/hackorum/VapourNvim/wiki/Keybindings], (Language Servers)[https://github.com/hackorum/VapourNvim/wiki/Language-Servers], (Plugins)[https://github.com/hackorum/VapourNvim/wiki/Plugins] and (Screenshots)[https://github.com/hackorum/VapourNvim/wiki/Screenshots]
 
 ## Contributing
 
