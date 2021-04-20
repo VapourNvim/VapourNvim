@@ -1,12 +1,12 @@
 ![VapourNvim Logo](assets/logo.jpg)
 <div align="center">
-	<a href="https://github.com/hackorum/VapourNvim/#features">Features</a>
+	<a href="https://github.com/hackorum/VapourNvim/#features">✨ Features</a>
   <span> • </span>
-	<a href="https://github.com/hackorum/VapourNvim/#installation">Installation</a>
+	<a href="https://github.com/hackorum/VapourNvim/#installation">📦 Installation</a>
   <span> • </span>
-	<a href="https://github.com/hackorum/VapourNvim/wiki">Wiki</a>
+	<a href="https://github.com/hackorum/VapourNvim/wiki">📚 Wiki</a>
   <span> • </span>
-	<a href="https://github.com/hackorum/VapourNvim/wiki/Screenshots">Screenshots</a>
+	<a href="https://github.com/hackorum/VapourNvim/wiki/Screenshots">📷 Screenshots</a>
   <p></p>
 </div>
 
