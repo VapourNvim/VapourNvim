@@ -37,7 +37,7 @@ This project is built to be:
 
 ## Requirements
 
-* [Neovim 0.5](https://github.com/neovim/neovim/releases/tag/nightly) - Required - For lua configuration
+* [The Latest and Greatest Neovim](https://github.com/neovim/neovim/releases/tag/nightly) - Required - For lua configuration
 * [NodeJS](https://nodejs.org) - Required - For LSP
 * [Lazygit](https://github.com/jesseduffield/lazygit) - Optional - For git integration
 * [Pandoc](https://github.com/jgm/pandoc) - Optional - For markdown preview
