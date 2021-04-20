@@ -32,7 +32,7 @@ This project is built to be:
 * Autoformatting
 * Faster navigation with telescope and hop.nvim
 * Better syntax highlighting with treesitter
-* Terminal integration so that you don't need to hop between different tabs or windows
+* Terminal integration
 
 
 ## Requirements
