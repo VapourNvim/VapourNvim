@@ -1,7 +1,15 @@
 ![VapourNvim Logo](assets/logo.jpg)
 <div align="center">
-[Features](#features) • [Install](#installation) • [Wiki](https://github.com/hackorum/VapourNvim/wiki)
+	<a href="https://github.com/hackorum/VapourNvim/#features">Features</a>
+  <span> • </span>
+	<a href="https://github.com/hackorum/VapourNvim/#installation">Installation</a>
+  <span> • </span>
+	<a href="https://github.com/hackorum/VapourNvim/wiki">Wiki</a>
+  <span> • </span>
+	<a href="https://github.com/hackorum/VapourNvim/wiki/Screenshots">Screenshots</a>
 </div>
+
+
 ![VapourNvim Logo](assets/screenshot.jpg)
 
 ## Introduction
