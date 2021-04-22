@@ -4,7 +4,6 @@ vim.o.whichwrap = 'b,s,<,>,[,],h,l'
 vim.o.pumheight = 10
 vim.o.fileencoding = "utf-8"
 vim.o.cmdheight = 2
-vim.o.mouse = "nv" -- Set this to "a" if you want complete mouse support
 vim.o.splitbelow = true
 vim.o.termguicolors = true
 vim.o.splitright = true

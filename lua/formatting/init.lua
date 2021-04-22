@@ -15,7 +15,7 @@ require"format".setup {
         {
             cmd = {
                 function(file)
-                    return string.format("npx prettier --write %s", file)
+                    return string.format("prettier --stdin-filepath %s", file)
                 end
             }
         }
@@ -24,7 +24,7 @@ require"format".setup {
         {
             cmd = {
                 function(file)
-                    return string.format("npx prettier --write %s", file)
+                    return string.format("prettier --stdin-filepath %s", file)
                 end
             }
         }
@@ -34,6 +34,78 @@ require"format".setup {
             cmd = {
                 function(file)
                     return string.format("black --quiet %s", file)
+                end
+            }
+        }
+    },
+    go = {
+        {
+            cmd = {
+                function(file)
+                    return string.format("gofmt -w %s", file)
+                end
+            }
+        }
+    },
+    ruby = {
+        {
+            cmd = {
+                function(file)
+                    return string.format("rufo %s", file)
+                end
+            }
+        }
+    },
+    vue = {
+        {
+            cmd = {
+                function(file)
+                    return string.format("vue-beautify %s", file)
+                end
+            }
+        }
+    },
+    php = {
+        {
+            cmd = {
+                function(file)
+                    return string.format("php-formatter formatter:use:sort --quiet %s", file)
+                end
+            }
+        }
+    },
+    html = {
+        {
+            cmd = {
+                function(file)
+                    return string.format("prettier --stdin-filepath %s", file)
+                end
+            }
+        }
+    },
+    css = {
+        {
+            cmd = {
+                function(file)
+                    return string.format("prettier --stdin-filepath %s", file)
+                end
+            }
+        }
+    },
+    json = {
+        {
+            cmd = {
+                function(file)
+                    return string.format("prettier --stdin-filepath %s", file)
+                end
+            }
+        }
+    },
+    yaml = {
+        {
+            cmd = {
+                function(file)
+                    return string.format("prettier --stdin-filepath %s", file)
                 end
             }
         }

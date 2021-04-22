@@ -11,6 +11,9 @@ require'lspconfig'.pyright.setup {}
 require'lspconfig'.jedi_language_server.setup {}
 require'lspconfig'.vimls.setup {}
 require'lspconfig'.yamlls.setup {}
+require'lspconfig'.solargraph.setup {}
+require'lspconfig'.vuels.setup {}
+require'lspconfig'.phpactor.setup {}
 require'lspconfig'.jsonls.setup {
     commands = {
         Format = {
@@ -20,6 +23,8 @@ require'lspconfig'.jsonls.setup {
         }
     }
 }
+
+require'lspconfig'.gopls.setup {cmd = {"gopls", "serve"}, settings = {gopls = {analyses = {unusedparams = true}, staticcheck = true}}}
 
 -- Lua is a little bit different
 
