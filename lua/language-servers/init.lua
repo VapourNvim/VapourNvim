@@ -39,6 +39,9 @@ if vim.fn.has("mac") == 1 then
 elseif vim.fn.has("unix") == 1 then
     sumneko_root_path = "/home/" .. USER .. "/.config/nvim/ls/lua-language-server"
     sumneko_binary = "/home/" .. USER .. "/.config/nvim/ls/lua-language-server/bin/Linux/lua-language-server"
+elseif vim.fn.has("win32") == 1 then
+    sumneko_root_path = "C:\\Users" .. USER .. "\\.config/nvim\\ls\\lua-language-server"
+    sumneko_binary = "C:\\Users" .. USER .. "\\.config\\nvim\\ls\\lua-language-server\\bin\\Windows\\lua-language-server"
 else
     print("Unsupported system for sumneko")
 end
