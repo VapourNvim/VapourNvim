@@ -44,8 +44,10 @@ This project is built to be:
 
 ## Installation
 
+Make sure you have curl and bash installed before you run this script.
+
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/hackorum/VapourNvim/master/install.sh)
+curl -s https://raw.githubusercontent.com/hackorum/VapourNvim/main/install.sh | bash -s
 ```
 
 ## Manual Installation
