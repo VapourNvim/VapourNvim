@@ -52,8 +52,7 @@ curl -s https://raw.githubusercontent.com/hackorum/VapourNvim/main/install.sh | 
 
 ## Manual Installation
 ```
-cd ~/.config
-git clone https://github.com/hackorum/VapourNvim
+git clone https://github.com/hackorum/VapourNvim ~/.config/nvim
 nvim +PackerSync
 ```
 
