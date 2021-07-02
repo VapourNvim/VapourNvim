@@ -1,8 +1,14 @@
 local actions = require('telescope.actions')
 require('telescope').setup {
     defaults = {
+        layout_config = {
+          width = 0.75,
+          prompt_position = "top",
+          preview_cutoff = 120,
+          horizontal = {mirror = false},
+          vertical = {mirror = false},
+        },
         find_command = {'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'},
-        prompt_position = "top",
         prompt_prefix = " ",
         selection_caret = " ",
         entry_prefix = "  ",
@@ -16,10 +22,6 @@ require('telescope').setup {
         generic_sorter =require'telescope.sorters'.get_generic_fuzzy_sorter,
         shorten_path = true,
         winblend = 0,
-        width = 0.75,
-        preview_cutoff = 120,
-        results_height = 1,
-        results_width = 0.8,
         border = {},
         borderchars = {'─', '│', '─', '│', '╭', '╮', '╯', '╰'},
         color_devicons = true,
