@@ -33,11 +33,20 @@ local in_git_repo = function()
     return branch_name ~= nil
 end
 
+local has_extension = function()
+    local file_extension = vim.bo.filetype
+    if file_extension ~= '' then
+        return true
+    else
+        return false
+    end
+end
+
 local checkwidth = function()
     return utils.has_width_gt(40) and in_git_repo()
 end
 
-local highlight_background_color = function()
+local highlight_background_color_for_git = function()
     if in_git_repo() then return colors.lightbg end
     return colors.black
 end
@@ -47,7 +56,15 @@ end
 gls.left[1] = {
     ViMode = {
         provider = function()
-            local mode_color = {n = colors.white, i = colors.green, v = colors.blue, V = colors.blue, [''] = colors.yellow, c = colors.purple, R = colors.blue}
+            local mode_color = {
+                n = colors.white,
+                i = colors.green,
+                v = colors.blue,
+                V = colors.blue,
+                [''] = colors.yellow,
+                c = colors.purple,
+                R = colors.blue
+            }
             vim.api.nvim_command('hi GalaxyViMode guifg=' .. mode_color[vim.fn.mode()])
             return '   '
         end,
@@ -127,8 +144,8 @@ gls.right[6] = {
         end,
         highlight = {colors.black, colors.green},
         separator = separators.bRight,
-        -- separator_highlight = {colors.green, colors.lightbg}
-        separator_highlight = {colors.green, highlight_background_color()}
+        separator_highlight = {colors.green, highlight_background_color_for_git()},
+        condition = has_extension
     }
 }
 
@@ -136,7 +153,15 @@ gls.right[7] = {
     FileEncode = {
         provider = "FileEncode",
         separator = separators.bRight,
-        separator_highlight = {colors.blue, colors.green},
+        separator_highlight = {
+            colors.blue, function()
+                if has_extension() then
+                    return colors.green
+                else
+                    return colors.lightbg
+                end
+            end
+        },
         highlight = {colors.black, colors.blue}
     }
 }
@@ -152,25 +177,16 @@ gls.right[8] = {
 
 -- For short line
 gls.short_line_left[1] = {
-  BufferType = {
-    provider = 'FileTypeName',
-    separator = ' ',
-    separator_highlight = {'NONE',colors.black},
-    highlight = {colors.blue,colors.black,'bold'}
-  }
+    BufferType = {
+        provider = 'FileTypeName',
+        separator = ' ',
+        separator_highlight = {'NONE', colors.black},
+        highlight = {colors.blue, colors.black, 'bold'}
+    }
 }
 
 gls.short_line_left[2] = {
-  SFileName = {
-    provider =  'SFileName',
-    condition = condition.buffer_not_empty,
-    highlight = {colors.white,colors.black,'bold'}
-  }
+    SFileName = {provider = 'SFileName', condition = condition.buffer_not_empty, highlight = {colors.white, colors.black, 'bold'}}
 }
 
-gls.short_line_right[1] = {
-  BufferIcon = {
-    provider= 'BufferIcon',
-    highlight = {colors.white,colors.black}
-  }
-}
+gls.short_line_right[1] = {BufferIcon = {provider = 'BufferIcon', highlight = {colors.white, colors.black}}}
