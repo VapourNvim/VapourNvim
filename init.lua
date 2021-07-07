@@ -23,7 +23,6 @@ require('dashboard-config')
 require('compe-config')
 require('autopairs-config')
 require('language-servers')
-require('lazygit-config')
 require('gitsigns-config')
 
 -- Terminal Support
@@ -35,4 +34,5 @@ require('nvimtree-config')
 
 -- Other
 require('dial-config')
+require('which-key-config')
 require('formatting')

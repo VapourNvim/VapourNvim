@@ -36,7 +36,6 @@ return require('packer').startup(function(use)
     use 'windwp/nvim-autopairs'
 
     -- Version Control
-    use 'kdheepak/lazygit.nvim'
     use {'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim', config = "require('neogit').setup {}"}
     use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
 
@@ -55,5 +54,5 @@ return require('packer').startup(function(use)
     use {'terrortylor/nvim-comment', config = "require('nvim_comment').setup()"}
     use 'monaqa/dial.nvim'
     use 'lukas-reineke/format.nvim'
-
+    use 'folke/which-key.nvim'
 end)
