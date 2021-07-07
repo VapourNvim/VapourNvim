@@ -40,6 +40,9 @@ vim.o.expandtab = true
 vim.bo.expandtab = true
 
 Vapour = {
-  user_plugins = {},
+  plugins = {
+    -- User-loaded plugins
+    user = {},
+  },
   utils = {},
 }

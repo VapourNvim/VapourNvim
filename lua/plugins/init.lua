@@ -56,7 +56,7 @@ return require('packer').startup(function(use)
     use 'lukas-reineke/format.nvim'
     use 'folke/which-key.nvim'
     
-    for _, plugin in pairs(Vapour.user_plugins) do
+    for _, plugin in pairs(Vapour.plugins.user) do
       use(plugin)
     end
 end)
