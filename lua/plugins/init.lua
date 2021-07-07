@@ -56,4 +56,7 @@ return require('packer').startup(function(use)
     use 'monaqa/dial.nvim'
     use 'lukas-reineke/format.nvim'
 
+    for _, plugin in pairs(Vapour.user_plugins) do
+      use(plugin)
+    end
 end)
