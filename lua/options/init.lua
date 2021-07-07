@@ -41,6 +41,11 @@ vim.bo.expandtab = true
 
 Vapour = {
   plugins = {
+    -- Packer-specific needs
+    packer = {
+      init = {
+      },
+    },
     -- User-loaded plugins
     user = {},
   },

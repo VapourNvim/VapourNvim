@@ -8,7 +8,12 @@ if fn.empty(fn.glob(install_path)) > 0 then
     execute 'packadd packer.nvim'
 end
 vim.cmd [[packadd packer.nvim]]
-return require('packer').startup(function(use)
+
+local packer = require('packer')
+
+packer.init(Vapour.plugins.packer.init)
+
+return packer.startup(function(use)
     use 'wbthomason/packer.nvim'
     -- Syntax Highlighting and Visual Plugins
     use 'norcalli/nvim-colorizer.lua'
