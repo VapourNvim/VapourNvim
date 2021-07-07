@@ -1,3 +1,4 @@
+vim.cmd('filetype plugin indent on')
 vim.o.shortmess = vim.o.shortmess .. 'c'
 vim.o.hidden = true
 vim.o.whichwrap = 'b,s,<,>,[,],h,l'
@@ -7,8 +8,7 @@ vim.o.cmdheight = 2
 vim.o.splitbelow = true
 vim.o.termguicolors = true
 vim.o.splitright = true
--- vim.o.t_Co = "256"
-vim.cmd('set t_Co=256')
+vim.opt.termguicolors = true
 vim.o.conceallevel = 0
 vim.o.showtabline = 2
 vim.o.showmode = false
