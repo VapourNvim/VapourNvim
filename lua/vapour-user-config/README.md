@@ -4,15 +4,13 @@ Just create an `init.lua` file here and update that.
 
 ## Plugins
 
-To install plugins, set the `Vapour.user.plugins` property.
+To install plugins, set the `Vapour.plugins.user` property.
 
 For example, to install FTerm::
 
 ```
-Vapour.user = {
-  plugins = {
+Vapour.plugins.user = {
     {"numtostr/FTerm.nvim", config = function() require("FTerm").setup() end}
-  }
 }
 ```
 
