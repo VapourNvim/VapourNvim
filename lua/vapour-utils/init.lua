@@ -9,10 +9,17 @@ Vapour.utils = {
   plugins = {
     -- Allows us to require packages in vapour-user-config
     -- without throwing exceptions if the package don't exist
-    require_if_installed = function(pkg)
-      local ok, package = pcall(require, pkg)
+    -- Optionally you can run this like some/package to add it
+    -- to the Vapour.packages.user table for installation.
+    require_if_installed = function(pkg, conf)
+      local user, repo = string.match(pkg, "(.*)/(.*)")
+      local pkg_config = conf or {}
 
-      if ok then return package else return nil end
+      if not repo then repo = pkg end
+
+      local ok, package = pcall(require, repo)
+
+      if ok then return package else table.insert(Vapour.plugins.user, {pkg, conf}) return nil end
     end,
   },
 }
