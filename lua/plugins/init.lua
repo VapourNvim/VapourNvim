@@ -23,7 +23,7 @@ return packer.startup(function(use)
     use 'glepnir/dashboard-nvim'
 
     -- Tree-Sitter
-    use {'nvim-treesitter/nvim-treesitter', event = 'BufRead,' run = ':TSUpdate'}
+    use {'nvim-treesitter/nvim-treesitter', event = 'BufRead', run = ':TSUpdate'}
     use 'p00f/nvim-ts-rainbow'
     use 'windwp/nvim-ts-autotag'
 
