@@ -1,15 +1,14 @@
 local execute = vim.api.nvim_command
 local fn = vim.fn
 
-local install_path = fn.stdpath('data') .. '/site/pack/packer/opt/packer.nvim'
+local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
     fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
     execute 'packadd packer.nvim'
 end
-vim.cmd [[packadd packer.nvim]]
 
-local packer = require('packer')
+local packer = Vapour.utils.plugins.require_if_installed('packer')
 
 packer.init(Vapour.plugins.packer.init)
 
@@ -24,8 +23,8 @@ return packer.startup(function(use)
 
     -- Tree-Sitter
     use {'nvim-treesitter/nvim-treesitter', event = 'BufRead', run = ':TSUpdate'}
-    use 'p00f/nvim-ts-rainbow'
-    use 'windwp/nvim-ts-autotag'
+    use {'p00f/nvim-ts-rainbow'}
+    use {'windwp/nvim-ts-autotag'}
 
     -- Colorschemes
     use {'marko-cerovac/material.nvim', requires = 'tjdevries/colorbuddy.nvim'}
@@ -38,7 +37,7 @@ return packer.startup(function(use)
     use 'glepnir/lspsaga.nvim'
     use {'hrsh7th/nvim-compe', event = "InsertEnter"}
     use 'hrsh7th/vim-vsnip'
-    use {'windwp/nvim-autopairs', after = "nvim-compe"}
+    use {'windwp/nvim-autopairs', after = {'nvim-compe'}}
 
     -- Version Control
     use {'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim', config = "require('neogit').setup {}"}
@@ -60,7 +59,7 @@ return packer.startup(function(use)
     use 'monaqa/dial.nvim'
     use 'lukas-reineke/format.nvim'
     use {'folke/which-key.nvim', event = "BufWinEnter"}
-    
+
     for _, plugin in pairs(Vapour.plugins.user) do
       use(plugin)
     end

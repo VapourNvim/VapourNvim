@@ -38,16 +38,3 @@ vim.o.autoindent = true
 vim.bo.autoindent = true
 vim.o.expandtab = true
 vim.bo.expandtab = true
-
-Vapour = {
-  plugins = {
-    -- Packer-specific needs
-    packer = {
-      init = {
-      },
-    },
-    -- User-loaded plugins
-    user = {},
-  },
-  utils = {},
-}

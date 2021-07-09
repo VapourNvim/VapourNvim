@@ -8,27 +8,28 @@
 -- Github: https://github.com/hackorum/VapourNvim
 --
 -- Sane defaults and global helpers
-require('vapour-globals')
-require('options')
-require('vapour-utils')
+-- Load all Vapour packages first
+require('vapour')
+require('vapour.options')
 
-local user_config = CONFIG_PATH .. '/lua/vapour-user-config/init.lua'
+local user_config = CONFIG_PATH .. '/lua/vapour/user-config/init.lua'
 
-if not Vapour.utils.file.exists(user_config) then
-  print('User config does not exist, creating empty ' .. user_config)
-
-  local fp, err = io.open(user_config, 'w+')
-  assert(fp, err)
-  fp:write('')
-  fp:close()
-end
+if not Vapour.utils.file.exists(user_config) then Vapour.utils.file.create(user_config) end
 
 -- User config that overrides the above
 vim.cmd('luafile ' .. user_config)
 
 -- General
-require('plugins')
-require('keybindings')
+require('vapour.plugins')
+require('vapour.keybindings')
+
+vim.cmd[[
+  packadd nvim-treesitter
+  packadd nvim-lspconfig
+  packadd nvim-compe
+  packadd nvim-autopairs
+  packadd which-key.nvim
+]]
 
 -- Syntax and Visual
 require('colorscheme.onedark')
