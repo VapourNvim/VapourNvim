@@ -1,6 +1,9 @@
-require('nvim-autopairs').setup({break_line_filetype = nil})
+local npairs = Vapour.utils.plugins.exists('nvim-autopairs')
+
+if remap == nil then return end
+
+npairs.setup({break_line_filetype = nil})
 local remap = vim.api.nvim_set_keymap
-local npairs = require('nvim-autopairs')
 
 -- skip it, if you use another global object
 _G.MUtils = {}
