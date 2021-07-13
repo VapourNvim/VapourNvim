@@ -1,4 +1,4 @@
-local npairs = Vapour.utils.plugins.exists('nvim-autopairs')
+local npairs = Vapour.utils.plugins.require('nvim-autopairs')
 
 if remap == nil then return end
 

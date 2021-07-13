@@ -25,10 +25,9 @@ require('vapour.keybindings')
 
 vim.cmd[[
   packadd nvim-treesitter
-  packadd nvim-lspconfig
   packadd nvim-compe
+  packadd nvim-lspconfig
   packadd nvim-autopairs
-  packadd which-key.nvim
 ]]
 
 -- Syntax and Visual

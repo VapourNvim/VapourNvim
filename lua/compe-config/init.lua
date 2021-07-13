@@ -1,4 +1,4 @@
-vim.o.completeopt = "menuone,noselect,noinsert"
+vim.o.completeopt = "menuone,noselect"
 
 local t = function(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
@@ -54,13 +54,13 @@ return {
   documentation = true;
 
   source = {
-    path = true;
-    buffer = true;
-    calc = true;
-    vsnip = true;
-    nvim_lsp = true;
+    buffer = true,
+    calc = true,
+    nvim_lsp = true,
+    path = true,
+    spell = true,
+    vsnip = true,
     nvim_lua = true;
-    spell = true;
     tags = true;
     snippets_nvim = true;
     treesitter = true;
