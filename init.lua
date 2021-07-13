@@ -23,12 +23,11 @@ vim.cmd('luafile ' .. user_config)
 require('vapour.plugins')
 require('vapour.keybindings')
 
-vim.cmd[[
+vim.cmd [[
   packadd nvim-treesitter
   packadd nvim-lspconfig
   packadd nvim-compe
   packadd nvim-autopairs
-  packadd which-key.nvim
 ]]
 
 -- Syntax and Visual

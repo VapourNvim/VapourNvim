@@ -1,6 +1,6 @@
 local wk = Vapour.utils.plugins.exists('which-key.nvim')
 
-if wk == nil then print('which-key not existing') vim.cmd [[ packadd which-key.nvim ]] wk = require('which-key') end
+if wk == nil then vim.cmd [[ packadd which-key.nvim ]] wk = require('which-key') end
 
 local mappings = {
     f = {

@@ -1,6 +1,6 @@
 local npairs = Vapour.utils.plugins.exists('nvim-autopairs')
 
-if remap == nil then return end
+-- if remap == nil then return end
 
 npairs.setup({break_line_filetype = nil})
 local remap = vim.api.nvim_set_keymap
