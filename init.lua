@@ -23,34 +23,16 @@ vim.cmd('luafile ' .. user_config)
 require('vapour.plugins')
 require('vapour.keybindings')
 
-vim.cmd [[
-  packadd nvim-treesitter
-  packadd nvim-lspconfig
-  packadd nvim-compe
-  packadd nvim-autopairs
-]]
-
 -- Syntax and Visual
 require('colorscheme.onedark')
-require('treesitter-config')
-require('colorizer-config')
-require('galaxyline-config')
-require('dashboard-config')
 
 -- LSP and Autocomplete
 require('compe-config')
-require('autopairs-config')
 require('language-servers')
 require('gitsigns-config')
 
 -- Terminal Support
 require('toggleterm-config')
 
--- Navigation
-require('telescope-config')
-require('nvimtree-config')
-
 -- Other
-require('dial-config')
 require('which-key-config')
-require('formatting')

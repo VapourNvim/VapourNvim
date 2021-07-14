@@ -1,11 +1,15 @@
 -- Utility functions to help with various uses
-local packadd_plugin = function (p)
-  vim.cmd('packadd! ' .. p)
-end
-
 local require_plugin = function (p)
+  if Vapour.plugins[p] ~= nil and not Vapour.plugins[p].enabled then return nil end
+
   local ok, plugin = pcall(require, p)
   if ok then return plugin else return nil end
+end
+
+local packadd_plugin = function (p, return_plugin)
+  vim.cmd('packadd! ' .. p)
+
+  if return_plugin == true then return require_plugin(p) end
 end
 
 local plugin_exists = function (p)

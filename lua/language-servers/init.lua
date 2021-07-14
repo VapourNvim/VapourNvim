@@ -1,3 +1,5 @@
+Vapour.utils.plugins.packadd('nvim-lspconfig')
+
 local lspconfig = Vapour.utils.plugins.require('lspconfig')
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

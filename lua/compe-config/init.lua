@@ -1,3 +1,5 @@
+Vapour.utils.plugins.packadd('nvim-compe')
+
 vim.o.completeopt = "menuone,noselect,noinsert"
 
 local t = function(str)

@@ -50,6 +50,7 @@ Vapour = {
     },
     -- Packer-specific needs
     packer = {
+      enabled = true,
       -- See vapour/user-config/README.md for an example use of this
       init = {
       },
@@ -61,6 +62,11 @@ Vapour = {
 
   -- To update see vapour.utils
   utils = {},
+
+  settings = {
+    -- If true, :w -> :w!
+    always_force_write = false,
+  }
 }
 
 require('vapour.utils')
