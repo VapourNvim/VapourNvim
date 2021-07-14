@@ -1,7 +1,5 @@
 local lspconfig = Vapour.utils.plugins.require('lspconfig')
 
-if lspconfig == nil then print('lspconfig not loaded') return else print('lspconfig loaded') end
-
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 

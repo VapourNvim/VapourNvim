@@ -8,13 +8,11 @@ if fn.empty(fn.glob(install_path)) > 0 then
     execute 'packadd packer.nvim'
 end
 
-local p = Vapour.utils.plugins.require('packer')
+local packer = Vapour.utils.plugins.require('packer')
 
-if not p then print ('Packer not loaded!') return end
+packer.init(Vapour.plugins.packer.init)
 
-p.init(Vapour.plugins.packer.init)
-
-return p.startup(function(use)
+return packer.startup(function(use)
     use 'wbthomason/packer.nvim'
     -- Syntax Highlighting and Visual Plugins
     use 'norcalli/nvim-colorizer.lua'
@@ -35,8 +33,7 @@ return p.startup(function(use)
     use 'arcticicestudio/nord-vim'
 
     -- LSP and Autocomplete
-    use {'neovim/nvim-lspconfig'}
---, event = "BufRead"}
+    use {'neovim/nvim-lspconfig', event = "BufRead"}
     use 'glepnir/lspsaga.nvim'
     use {'hrsh7th/nvim-compe', event = "InsertEnter *", config = function() require'compe-setup' end}
     use 'hrsh7th/vim-vsnip'
