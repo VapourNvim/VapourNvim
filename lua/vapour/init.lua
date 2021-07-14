@@ -3,6 +3,51 @@ require('vapour.globals')
 -- Vapour object to use for namespacing
 Vapour = {
   plugins = {
+    colorizer = {
+      enabled = false,
+    },
+    colorbuddy = {
+      enabled = false,
+    },
+    bufferline = {
+      enabled = false,
+    },
+    galaxyline = {
+      enabled = false,
+    },
+    dashboard = {
+      enabled = false,
+    },
+    treesitter = {
+      enabled = false,
+    },
+    treesitter_rainbow = {
+      enabled = false,
+    },
+    treesitter_autotag = {
+      enabled = false,
+    },
+    vsnip = {
+      enabled = false,
+    },
+    markdown_preview = {
+      eanbled = false,
+    },
+    telescope = {
+      enabled = false,
+    },
+    nvim_tree = {
+      enabled = false,
+    },
+    dial = {
+      enabled = false,
+    },
+    format = {
+      enabled = false,
+    },
+    nvim_comment = {
+      enabled = false,
+    },
     -- Packer-specific needs
     packer = {
       -- See vapour/user-config/README.md for an example use of this
