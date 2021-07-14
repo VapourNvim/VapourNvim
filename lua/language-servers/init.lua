@@ -56,7 +56,8 @@ end
 if Vapour.language_servers.sumneko.enabled and sumneko_binary ~= "" and not Vapour.utils.file.exists(sumneko_binary) then
   print('Unable to load Sumneko language servr.  Make sure it is installed in ' .. sumneko_root_path)
 else
-  require'lspconfig'.sumneko_lua.setup {
+  local luadev = Vapour.utils.plugins.require('lua-dev')
+  local lua_lsp_config = {
     cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
     settings = {
         Lua = {
@@ -66,9 +67,17 @@ else
                 library = {[vim.fn.expand('$VIMRUNTIME/lua')] = true, [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true},
                 preloadFileSize = 450
             }
+          }
         }
+      }
+
+  if luadev ~= nil then
+    lua_lsp_config = luadev.setup {
+      lspconfig = lua_lsp_config
     }
-  }
+  end
+
+  require'lspconfig'.sumneko_lua.setup(lua_lsp_config)
 end
 
 -- Diagnostics
