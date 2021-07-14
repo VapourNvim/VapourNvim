@@ -2,6 +2,11 @@ require('vapour.globals')
 
 -- Vapour object to use for namespacing
 Vapour = {
+  language_servers = {
+    sumneko = {
+      enabled = false,
+    }
+  },
   plugins = {
     colorizer = {
       enabled = false,
