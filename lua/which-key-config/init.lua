@@ -43,6 +43,11 @@ else
   -- map n mode w to w!
 end
 
+for starter_key, definition in pairs(Vapour.plugins.which_key.user_defined) do
+  assert(mappings[starter_key] == nil, 'which-key aleady has a definition for ' .. starter_key)
+  mappings[starter_key] = definition
+end
+
 local opts = {prefix = "<leader>"}
 
 wk.register(mappings, opts)

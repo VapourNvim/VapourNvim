@@ -3,6 +3,7 @@ local require_plugin = function (p)
   if Vapour.plugins[p] ~= nil and not Vapour.plugins[p].enabled then return nil end
 
   local ok, plugin = pcall(require, p)
+
   if ok then return plugin else return nil end
 end
 
@@ -16,6 +17,10 @@ local plugin_exists = function (p)
   local plugin = require_plugin(p)
 
   return plugin == nil
+end
+
+local add_which_key = function(starter_key, definitions)
+  Vapour.plugins.which_key.user_defined[starter_key] = definitions or {}
 end
 
 Vapour.utils = {
@@ -40,6 +45,7 @@ Vapour.utils = {
     require = require_plugin,
     packadd = packadd_plugin,
     exists = plugin_exists,
+    which_key = add_which_key,
 
     -- Allows us to require packages in vapour-user-config
     -- without throwing exceptions if the package don't exist
