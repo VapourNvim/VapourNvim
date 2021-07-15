@@ -25,7 +25,7 @@ Vapour = {
     },
     toggleterm = {
       enabled = false,
-      whichkey = {
+      which_key = {
         root = "T",
         name = "Terminal",
         definitions = {

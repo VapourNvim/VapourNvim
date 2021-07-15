@@ -38,12 +38,23 @@ else
 end
 
 for plugin, plugin_options in pairs(Vapour.plugins) do
-  if plugin_options.whichkey ~= nil and plugin_options.enabled then
-    local whichkey_opts = plugin_options.whichkey
+  if plugin_options.which_key ~= nil and plugin_options.enabled then
+    local whichkey_opts = plugin_options.which_key
 
-    local whichkey_mappings = {
-      name = whichkey_opts.name or plugin
-    }
+    local whichkey_mappings = {}
+
+    if mappings[whichkey_opts.root] ~= nil then
+      whichkey_mappings = mappings[whichkey_opts.root]
+
+      for key, actions in pairs(mappings[whichkey_opts.root]) do
+        whichkey_mappings[key] = actions
+      end
+    else
+      whichkey_mappings = {
+        -- Give a special name if provided otherwise just use the plugin name
+        name = whichkey_opts.name or plugin
+      }
+    end
 
     for key, actions in pairs(whichkey_opts.definitions) do
       whichkey_mappings[key] = actions
