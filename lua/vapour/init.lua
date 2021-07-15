@@ -53,6 +53,10 @@ Vapour = {
     nvim_comment = {
       enabled = false,
     },
+    which_key = {
+      user_defined = {}
+    },
+
     -- Packer-specific needs
     packer = {
       enabled = true,

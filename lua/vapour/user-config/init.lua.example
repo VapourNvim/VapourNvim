@@ -13,8 +13,8 @@ Vapour.plugins.user = {
 }
 
 -- These assume either vapour/user-config/*/init.lua or vapour/user-config/*.lua
-Vapour.utils.plugins.require_if_installed('vapour-user-config.dap')
-Vapour.utils.plugins.require_if_installed('vapour-user-config.autopairs')
+Vapour.utils.plugins.require_if_installed('vapour.user-config.dap')
+Vapour.utils.plugins.require_if_installed('vapour.user-config.autopairs')
 
 -- To magic-load or add a missing package
 Vapour.utils.plugins.require_if_installed("which-key", "folke/which-key.nvim")
@@ -24,3 +24,10 @@ Vapour.utils.plugins.require_if_installed("which-key", folke/which-key.nvim", { 
 
 -- To import a module w/o dealing with Packer
 Vapour.utils.plugins.require_if_installed("fs")
+
+-- Adding additional which key definitions (does not append to existing ones.
+-- Will throw an error if the root key ("D" here) is already defined in which-keys-config/init.lua
+Vapour.plugins.which_key.user_defined.D = {
+    name = "DAP Debugger",
+    b = {":lua require'dap'.toggle_breakpoint()<CR>", "Toggle Breakpoint"},
+}
