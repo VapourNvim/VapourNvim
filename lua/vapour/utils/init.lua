@@ -1,8 +1,21 @@
 -- Utility functions to help with various uses
-local plugin_exists = function (p)
-  local ok, plugin = pcall(require, p)
+local require_plugin = function (p)
+  if Vapour.plugins[p] ~= nil and not Vapour.plugins[p].enabled then return nil end
 
-  if not ok then return nil else return plugin end
+  local ok, plugin = pcall(require, p)
+  if ok then return plugin else return nil end
+end
+
+local packadd_plugin = function (p, return_plugin)
+  vim.cmd('packadd! ' .. p)
+
+  if return_plugin == true then return require_plugin(p) end
+end
+
+local plugin_exists = function (p)
+  local plugin = require_plugin(p)
+
+  return plugin == nil
 end
 
 Vapour.utils = {
@@ -24,6 +37,8 @@ Vapour.utils = {
     end
   },
   plugins = {
+    require = require_plugin,
+    packadd = packadd_plugin,
     exists = plugin_exists,
 
     -- Allows us to require packages in vapour-user-config

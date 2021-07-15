@@ -1,6 +1,6 @@
-local lspconfig = Vapour.utils.plugins.exists('lspconfig')
+Vapour.utils.plugins.packadd('nvim-lspconfig')
 
-if lspconfig == nil then return end
+local lspconfig = Vapour.utils.plugins.require('lspconfig')
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -44,13 +44,20 @@ elseif vim.fn.has("unix") == 1 then
     sumneko_root_path = "/home/" .. USER .. "/.config/nvim/ls/lua-language-server"
     sumneko_binary = "/home/" .. USER .. "/.config/nvim/ls/lua-language-server/bin/Linux/lua-language-server"
 elseif vim.fn.has("win32") == 1 then
-    sumneko_root_path = "C:\\Users" .. USER .. "\\.config/nvim\\ls\\lua-language-server"
+    sumneko_root_path = "C:\\Users" .. USER .. "\\.config\\nvim\\ls\\lua-language-server"
     sumneko_binary = "C:\\Users" .. USER .. "\\.config\\nvim\\ls\\lua-language-server\\bin\\Windows\\lua-language-server"
+elseif Vapour.language_servers.sumneko['root_path'] ~= nil then
+    sumneko_root_path = Vapour.language_servers.sumneko.root_path
+    sumneko_binary = Vapour.language_servers.sumneko.binary_path
 else
     print("Unsupported system for sumneko")
 end
 
-require'lspconfig'.sumneko_lua.setup {
+if Vapour.language_servers.sumneko.enabled and sumneko_binary ~= "" and not Vapour.utils.file.exists(sumneko_binary) then
+  print('Unable to load Sumneko language servr.  Make sure it is installed in ' .. sumneko_root_path)
+else
+  local luadev = Vapour.utils.plugins.require('lua-dev')
+  local lua_lsp_config = {
     cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
     settings = {
         Lua = {
@@ -60,9 +67,18 @@ require'lspconfig'.sumneko_lua.setup {
                 library = {[vim.fn.expand('$VIMRUNTIME/lua')] = true, [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true},
                 preloadFileSize = 450
             }
+          }
         }
+      }
+
+  if luadev ~= nil then
+    lua_lsp_config = luadev.setup {
+      lspconfig = lua_lsp_config
     }
-}
+  end
+
+  require'lspconfig'.sumneko_lua.setup(lua_lsp_config)
+end
 
 -- Diagnostics
 

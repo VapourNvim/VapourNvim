@@ -1,14 +1,8 @@
-local wk = Vapour.utils.plugins.exists('which-key.nvim')
+Vapour.utils.plugins.packadd('which-key.nvim')
 
-if wk == nil then vim.cmd [[ packadd which-key.nvim ]] wk = require('which-key') end
+local wk = Vapour.utils.plugins.require('which-key')
 
 local mappings = {
-    f = {
-        name = "Telescope",
-        f = {"<cmd>Telescope find_files<cr>", "Find Files"},
-        r = {"<cmd>Telescope live_grep<cr>", "Live Grep"},
-        b = {"<cmd>Telescope buffers<cr>", "Buffers"}
-    },
     t = {
         name = "Terminal",
         f = {"<cmd>lua require('lspsaga.floaterm').open_float_terminal()<cr>", "Floating Terminal"},
@@ -16,15 +10,38 @@ local mappings = {
         l = {"<cmd>lua require('lspsaga.floaterm').open_float_terminal('lazygit')<cr>", "LazyGit"}
     },
     l = {i = {":LspInfo", "Connected Language Servers"}},
-    e = {":NvimTreeToggle<cr>", "File Explorer"},
-    d = {":Dashboard<cr>", "Dashboard"},
     x = {":bdelete<cr>", "Close Buffer"},
     q = {":q<cr>", "Quit"},
     Q = {":q!<cr>", "Force Quit"},
     w = {":w<cr>", "Write"},
-    W = {":w!<cr>", "Force Write"},
-    ["/"] = {":CommentToggle<cr>", "Toggle Comment"}
 }
+
+if Vapour.plugins.nvim_tree.enabled then
+  mappings.e = {":NvimTreeToggle<cr>", "File Explorerer"}
+end
+
+if Vapour.plugins.dashboard.enabled then
+  mappings.d = {":Dashboard<cr>", "Dashboard"}
+end
+
+if Vapour.plugins.telescope.enabled then
+  mappings.f = {
+        name = "Telescope",
+        f = {"<cmd>Telescope find_files<cr>", "Find Files"},
+        r = {"<cmd>Telescope live_grep<cr>", "Live Grep"},
+        b = {"<cmd>Telescope buffers<cr>", "Buffers"}
+    }
+end
+
+if Vapour.plugins.nvim_comment.enabled then
+  mappings["/"] = {":CommentToggle<cr>", "Toggle Comment"}
+end
+
+if not Vapour.settings.always_force_write then
+  mappings.W = {":w!<cr>", "Force Write"}
+else
+  -- map n mode w to w!
+end
 
 local opts = {prefix = "<leader>"}
 
