@@ -38,10 +38,10 @@ Vapour = {
     treesitter = {
       enabled = false,
     },
-    treesitter_rainbow = {
+    rainbow_parentheses = {
       enabled = false,
     },
-    treesitter_autotag = {
+    closetag = {
       enabled = false,
     },
     vsnip = {
