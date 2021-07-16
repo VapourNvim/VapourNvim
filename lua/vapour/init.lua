@@ -23,6 +23,18 @@ Vapour = {
     dashboard = {
       enabled = false,
     },
+    toggleterm = {
+      enabled = false,
+      which_key = {
+        root = "T",
+        name = "Terminal",
+        definitions = {
+          f = {"<cmd>lua require('lspsaga.floaterm').open_float_terminal()<cr>", "Floating Terminal"},
+          t = {":ToggleTerm<cr>", "Split Below"},
+          l = {"<cmd>lua require('lspsaga.floaterm').open_float_terminal('lazygit')<cr>", "LazyGit"}
+        }
+      }
+    },
     treesitter = {
       enabled = false,
     },
@@ -54,7 +66,10 @@ Vapour = {
       enabled = false,
     },
     which_key = {
-      user_defined = {}
+      user_defined = {},
+
+      -- Set to true to allow which_key.user_defined to override anything set by plugins
+      allow_override_mappings = nil,
     },
 
     -- Packer-specific needs
@@ -75,6 +90,7 @@ Vapour = {
   settings = {
     -- If true, :w -> :w!
     always_force_write = false,
+    colorscheme = 'onedark',
   }
 }
 
