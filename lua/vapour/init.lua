@@ -90,6 +90,7 @@ Vapour = {
   settings = {
     -- If true, :w -> :w!
     always_force_write = false,
+    colorscheme = 'onedark',
   }
 }
 
