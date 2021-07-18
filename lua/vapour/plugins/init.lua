@@ -28,7 +28,7 @@ return packer.startup(function(use)
     -- Tree-Sitter
     use {'nvim-treesitter/nvim-treesitter', event = 'BufRead', run = ':TSUpdate', disable = not is_enabled('treesitter'), config = "require'treesitter-config'"}
     use {'junegunn/rainbow_parentheses.vim', disable = not is_enabled('rainbow_parentheses'), config = "vim.cmd('autocmd FileType * RainbowParentheses')"}
-    use {'alvan/vim-closetag', disable = not is_enabled('closetag')}
+    use {'alvan/vim-closetag', disable = not is_enabled('closetag'), config = "require'closetag-config'"}
 
     -- Colorschemes
     use {'marko-cerovac/material.nvim', requires = 'tjdevries/colorbuddy.nvim'}
