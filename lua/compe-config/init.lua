@@ -41,6 +41,17 @@ vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 
+compe_sources = {
+  nvim_lsp = true,
+  spell = true,
+  tags = true,
+  treesitter = Vapour.plugins.treesitter.enabled,
+}
+
+for source, opts in pairs(Vapour.plugins.compe.sources) do
+  compe_sources[source] = opts
+end
+
 require'compe'.setup {
   enabled = true;
   autocomplete = true;
@@ -55,16 +66,5 @@ require'compe'.setup {
   max_menu_width = 100;
   documentation = true;
 
-  source = {
-    path = true;
-    buffer = true;
-    calc = true;
-    vsnip = true;
-    nvim_lsp = true;
-    nvim_lua = true;
-    spell = true;
-    tags = true;
-    snippets_nvim = true;
-    treesitter = true;
-  };
+  source = compe_source;
 }

@@ -65,6 +65,10 @@ Vapour = {
     nvim_comment = {
       enabled = false,
     },
+    compe = {
+      enabled = false,
+      sources = {},
+    },
     which_key = {
       user_defined = {},
 
