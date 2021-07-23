@@ -46,7 +46,8 @@ Vapour.utils = {
     packadd = packadd_plugin,
     exists = plugin_exists,
     which_key = add_which_key,
-
+    -- Helper function to add to the user plugins if need be
+    add_user = function(p) table.insert(Vapour.plugins.user, p) end,
     -- Allows us to require packages in vapour-user-config
     -- without throwing exceptions if the package don't exist
     -- Optionally you can run this like some/package to add it

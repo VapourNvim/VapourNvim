@@ -3,12 +3,6 @@ Vapour.utils.plugins.packadd('which-key.nvim')
 local wk = Vapour.utils.plugins.require('which-key')
 
 local mappings = {
-    t = {
-        name = "Terminal",
-        f = {"<cmd>lua require('lspsaga.floaterm').open_float_terminal()<cr>", "Floating Terminal"},
-        t = {":ToggleTerm<cr>", "Split Below"},
-        l = {"<cmd>lua require('lspsaga.floaterm').open_float_terminal('lazygit')<cr>", "LazyGit"}
-    },
     l = {i = {":LspInfo", "Connected Language Servers"}},
     x = {":bdelete<cr>", "Close Buffer"},
     q = {":q<cr>", "Quit"},
@@ -43,8 +37,38 @@ else
   -- map n mode w to w!
 end
 
+for plugin, plugin_options in pairs(Vapour.plugins) do
+  if plugin_options.which_key ~= nil and plugin_options.enabled then
+    local whichkey_opts = plugin_options.which_key
+
+    local whichkey_mappings = {}
+
+    if mappings[whichkey_opts.root] ~= nil then
+      whichkey_mappings = mappings[whichkey_opts.root]
+
+      for key, actions in pairs(mappings[whichkey_opts.root]) do
+        whichkey_mappings[key] = actions
+      end
+    else
+      whichkey_mappings = {
+        -- Give a special name if provided otherwise just use the plugin name
+        name = whichkey_opts.name or plugin
+      }
+    end
+
+    for key, actions in pairs(whichkey_opts.definitions) do
+      whichkey_mappings[key] = actions
+    end
+
+    mappings[whichkey_opts.root] = whichkey_mappings
+  end
+end
+
 for starter_key, definition in pairs(Vapour.plugins.which_key.user_defined) do
-  assert(mappings[starter_key] == nil, 'which-key aleady has a definition for ' .. starter_key)
+  if not Vapour.plugins.which_key.allow_override_mappings then
+    assert(mappings[starter_key] == nil, 'which-key aleady has a definition for ' .. starter_key)
+  end
+
   mappings[starter_key] = definition
 end
 

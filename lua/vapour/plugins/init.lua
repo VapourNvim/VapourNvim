@@ -39,7 +39,7 @@ return packer.startup(function(use)
     -- LSP and Autocomplete
     use {'neovim/nvim-lspconfig', event = "BufRead"}
     use 'glepnir/lspsaga.nvim'
-    use {'hrsh7th/nvim-compe', event = "InsertEnter *", config = function() require'compe-config' end}
+    use {'hrsh7th/nvim-compe', event = "InsertEnter *", config = function() require'compe-config' end, disable = not is_enabled('compe')}
     use {'hrsh7th/vim-vsnip', disable = not is_enabled('vsnip')}
     use {'windwp/nvim-autopairs', after = {'nvim-compe'}, config = "require'autopairs-config'"}
 
