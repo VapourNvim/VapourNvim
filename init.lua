@@ -30,7 +30,6 @@ require('vapour.keybindings')
 Vapour.utils.plugins.require('colorscheme.' .. Vapour.settings.colorscheme)
 
 -- LSP and Autocomplete
-require('compe-config')
 require('language-servers')
 require('gitsigns-config')
 
