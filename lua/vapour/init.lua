@@ -29,9 +29,9 @@ Vapour = {
         root = "T",
         name = "Terminal",
         definitions = {
-          f = {"<cmd>lua require('lspsaga.floaterm').open_float_terminal()<cr>", "Floating Terminal"},
           t = {":ToggleTerm<cr>", "Split Below"},
-          l = {"<cmd>lua require('lspsaga.floaterm').open_float_terminal('lazygit')<cr>", "LazyGit"}
+          -- f = {"<cmd>lua require('lspsaga.floaterm').open_float_terminal()<cr>", "Floating Terminal"},
+          -- l = {"<cmd>lua require('lspsaga.floaterm').open_float_terminal('lazygit')<cr>", "LazyGit"}
         }
       }
     },
