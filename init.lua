@@ -34,7 +34,7 @@ require('language-servers')
 require('gitsigns-config')
 
 -- Terminal Support
-require('toggleterm-config')
+-- require('toggleterm-config')
 
 -- Other
 require('which-key-config')

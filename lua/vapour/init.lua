@@ -11,13 +11,14 @@ Vapour = {
         dashboard = {enabled = false},
         toggleterm = {
             enabled = false,
-            Terminal = require('toggleterm.terminal').Terminal,
             toggle_float = function()
-                local float = Vapour.plugins.toggleterm.Terminal:new({direction = "float"})
+            	local Terminal = require('toggleterm.terminal').Terminal
+                local float = Terminal:new({direction = "float"})
                 return float:toggle()
             end,
             toggle_lazygit = function()
-                local lazygit = Vapour.plugins.toggleterm.Terminal:new({cmd = "lazygit", direction = "float"})
+            	local Terminal = require('toggleterm.terminal').Terminal
+                local lazygit = Terminal:new({cmd = "lazygit", direction = "float"})
                 return lazygit:toggle()
             end,
             which_key = {

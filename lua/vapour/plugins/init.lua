@@ -51,7 +51,7 @@ return packer.startup(function(use)
     use {'davidgranstrom/nvim-markdown-preview', disable = not is_enabled('markdown_preview')}
 
     -- Terminal Integration
-    use 'akinsho/nvim-toggleterm.lua'
+    use {'akinsho/nvim-toggleterm.lua', disable = not is_enabled('toggleterm'), config = 'require"toggleterm-config"'}
 
     -- Navigation
     use {'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}, disable = not is_enabled('telescope'), config = "require'telescope-config'"}
