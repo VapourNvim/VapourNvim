@@ -10,7 +10,6 @@
 -- Sane defaults and global helpers
 -- Load all Vapour packages first
 require('vapour')
-require('vapour.options')
 
 local user_config = CONFIG_PATH .. '/lua/vapour/user-config/init.lua'
 
@@ -20,6 +19,7 @@ if not Vapour.utils.file.exists(user_config) then Vapour.utils.file.create(user_
 vim.cmd('luafile ' .. user_config)
 
 -- General
+require('vapour.options')
 require('vapour.plugins')
 require('vapour.keybindings')
 
