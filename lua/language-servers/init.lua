@@ -6,18 +6,14 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- Language servers
+for ls_type, props in pairs(Vapour.language_servers) do
+  if props.enabled == true then
+    if props.vapour_init then props.vapour_init() end
+    
+    lspconfig[ls_type].setup(props.setup or {})
+  end
+end
 
-require'lspconfig'.bashls.setup {}
-require'lspconfig'.cssls.setup {}
-require'lspconfig'.html.setup {capabilities = capabilities}
-require'lspconfig'.tsserver.setup {}
-require'lspconfig'.pyright.setup {}
-require'lspconfig'.jedi_language_server.setup {}
-require'lspconfig'.vimls.setup {}
-require'lspconfig'.yamlls.setup {}
-require'lspconfig'.solargraph.setup {}
-require'lspconfig'.vuels.setup {}
-require'lspconfig'.phpactor.setup {}
 require'lspconfig'.jsonls.setup {
     commands = {
         Format = {

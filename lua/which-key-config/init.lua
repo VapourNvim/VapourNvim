@@ -3,8 +3,9 @@ Vapour.utils.plugins.packadd('which-key.nvim')
 local wk = Vapour.utils.plugins.require('which-key')
 
 local mappings = {
-    l = {i = {":LspInfo", "Connected Language Servers"}},
+    l = {name = "LSP", i = {":LspInfo<cr>", "Connected Language Servers"}},
     x = {":bdelete<cr>", "Close Buffer"},
+    X = {":bdelete!<cr>", "Force Close Buffer"},
     q = {":q<cr>", "Quit"},
     Q = {":q!<cr>", "Force Quit"},
     w = {":w<cr>", "Write"},
