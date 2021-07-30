@@ -76,9 +76,6 @@ Vapour = {
         compe = {enabled = false, sources = {}},
         which_key = {
             user_defined = {},
-
-            -- Set to true to allow which_key.user_defined to override anything set by plugins
-            allow_override_mappings = nil
         },
 
         -- Packer-specific needs
