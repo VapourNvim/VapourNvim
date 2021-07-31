@@ -8,6 +8,7 @@ local mappings = {
     q = {":q<cr>", "Quit"},
     Q = {":q!<cr>", "Force Quit"},
     w = {":w<cr>", "Write"},
+    E = {":e ~/.config/nvim/lua/vapour/user-config/init.lua<cr>", "Edit User Config"},
 }
 
 if Vapour.plugins.nvim_tree.enabled then
