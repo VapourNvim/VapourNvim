@@ -3,8 +3,9 @@ Vapour.utils.plugins.packadd('which-key.nvim')
 local wk = Vapour.utils.plugins.require('which-key')
 
 local mappings = {
-    l = {i = {":LspInfo", "Connected Language Servers"}},
+    l = {name = "LSP", i = {":LspInfo<cr>", "Connected Language Servers"}},
     x = {":bdelete<cr>", "Close Buffer"},
+    X = {":bdelete!<cr>", "Force Close Buffer"},
     q = {":q<cr>", "Quit"},
     Q = {":q!<cr>", "Force Quit"},
     w = {":w<cr>", "Write"},
@@ -65,13 +66,7 @@ for plugin, plugin_options in pairs(Vapour.plugins) do
   end
 end
 
-for starter_key, definition in pairs(Vapour.plugins.which_key.user_defined) do
-  if not Vapour.plugins.which_key.allow_override_mappings then
-    assert(mappings[starter_key] == nil, 'which-key aleady has a definition for ' .. starter_key)
-  end
-
-  mappings[starter_key] = definition
-end
+mappings = Vapour.utils.tables.copy(mappings, Vapour.plugins.which_key.user_defined)
 
 local opts = {prefix = "<leader>"}
 

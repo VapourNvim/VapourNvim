@@ -1,8 +1,39 @@
 require('vapour.globals')
 
+Vapour = {}
+
 -- Vapour object to use for namespacing
 Vapour = {
-    language_servers = {sumneko = {enabled = false}},
+    options = {tabwidth = 2},
+    language_servers = {
+      sumneko = {enabled = false}, 
+      bash = {enabled = false}, 
+      css = {enabled = false}, 
+      html = {enabled = false, vapour_init = function()
+          local lspconfig = Vapour.utils.plugins.require('lspconfig')
+
+          Vapour.language_servers.html.setup.capabilities = vim.lsp.protocol.make_client_capabilities()
+          Vapour.language_servers.html.setup.capabilities.textDocument.completion.completionItem.snippetSupport = true
+        end,
+        setup = {}},
+      tsserver = {enabled = false}, 
+      pyright = {enabled = false}, 
+      jedi_language_server = {enabled = false}, 
+      vimls = {enabled = false}, 
+      yamlls = {enabled = false}, 
+      solargraph = {enabled = false}, 
+      vuels = {enabled = false}, 
+      phpactor = {enabled = false, vapour_init = function() require'language-servers.phpactor' end}, 
+      jsonls = {enabled = false, setup = {commands = {
+        Format = {
+            function()
+                vim.lsp.buf.range_formatting({}, {0, 0}, {vim.fn.line("$"), 0})
+            end
+          }
+        }
+      }}, 
+      gopls = {enabled = false, setup = {cmd = {"gopls", "serve"}, settings = {gopls = {analyses = {unusedparams = true}, staticcheck = true}}}},
+    },
     plugins = {
         colorizer = {enabled = false},
         colorbuddy = {enabled = false},
@@ -45,9 +76,6 @@ Vapour = {
         compe = {enabled = false, sources = {}},
         which_key = {
             user_defined = {},
-
-            -- Set to true to allow which_key.user_defined to override anything set by plugins
-            allow_override_mappings = nil
         },
 
         -- Packer-specific needs
