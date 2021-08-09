@@ -8,7 +8,7 @@ Vapour = {
     language_servers = {
       sumneko = {enabled = false}, 
       bash = {enabled = false}, 
-      css = {enabled = false}, 
+      cssls = {enabled = false}, 
       html = {enabled = false, vapour_init = function()
           local lspconfig = Vapour.utils.plugins.require('lspconfig')
 
