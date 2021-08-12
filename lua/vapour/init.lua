@@ -19,6 +19,7 @@ Vapour = {
       tsserver = {enabled = false}, 
       pyright = {enabled = false}, 
       jedi_language_server = {enabled = false}, 
+      pylsp = {enabled = false}, 
       vimls = {enabled = false}, 
       yamlls = {enabled = false}, 
       solargraph = {enabled = false}, 
