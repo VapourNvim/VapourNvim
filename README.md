@@ -19,7 +19,9 @@ The goal of this project is to simply *get work done* quickly.
 
 This project is built to be:
 * **Functional**. The core of an ideal IDE is functionality. If there is anything you want to add, please consider contributing
-* **Minimal**. Too many plugins can affect startup time. VapourNvim loads as smooth as butter with an optimum amount of plugins
+* **Minimal**. VapourNvim gives you what you need. Not too much, not too less.
+* **Blazing Fast**. VapourNvim loads as smooth as butter with an optimum amount of plugins and lazy loading.
+* **Easy to Configure**. If there's anything extra that you want to add or something you'd like to tweak, VapourNvim has an awesome [configuration system](https://github.com/hackorum/VapourNvim/wiki/User-Configuration) built in. 
 
 ## Features
 
@@ -57,6 +59,7 @@ nvim +PackerSync
 ```
 
 ## After Installation
+You almost certainly want to add some plugins of your own. You can do it by making your own [config file](https://github.com/hackorum/VapourNvim/wiki/User-Configuration)
 Please read the [wiki](https://github.com/hackorum/VapourNvim/wiki) for [Keybindings](https://github.com/hackorum/VapourNvim/wiki/Keybindings), [Language Servers](https://github.com/hackorum/VapourNvim/wiki/Language-Servers), [Plugins](https://github.com/hackorum/VapourNvim/wiki/Plugins) and [Screenshots](https://github.com/hackorum/VapourNvim/wiki/Screenshots).
 
 ## Contributing
