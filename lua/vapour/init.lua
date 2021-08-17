@@ -6,7 +6,7 @@ Vapour = {}
 Vapour = {
     options = {tabwidth = 2},
     language_servers = {
-        sumneko = {enabled = false},
+        sumneko_lua = {enabled = false},
         bash = {enabled = false},
         cssls = {enabled = false},
         html = {

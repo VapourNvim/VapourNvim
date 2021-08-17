@@ -42,14 +42,14 @@ elseif vim.fn.has("unix") == 1 then
 elseif vim.fn.has("win32") == 1 then
     sumneko_root_path = "C:\\Users" .. USER .. "\\.config\\nvim\\ls\\lua-language-server"
     sumneko_binary = "C:\\Users" .. USER .. "\\.config\\nvim\\ls\\lua-language-server\\bin\\Windows\\lua-language-server"
-elseif Vapour.language_servers.sumneko['root_path'] ~= nil then
-    sumneko_root_path = Vapour.language_servers.sumneko.root_path
-    sumneko_binary = Vapour.language_servers.sumneko.binary_path
+elseif Vapour.language_servers.sumneko_lua['root_path'] ~= nil then
+    sumneko_root_path = Vapour.language_servers.sumneko_lua.root_path
+    sumneko_binary = Vapour.language_servers.sumneko_lua.binary_path
 else
     print("Unsupported system for sumneko")
 end
 
-if Vapour.language_servers.sumneko.enabled and sumneko_binary ~= "" and not Vapour.utils.file.exists(sumneko_binary) then
+if Vapour.language_servers.sumneko_lua.enabled and sumneko_binary ~= "" and not Vapour.utils.file.exists(sumneko_binary) then
   print('Unable to load Sumneko language servr.  Make sure it is installed in ' .. sumneko_root_path)
 else
   local luadev = Vapour.utils.plugins.require('lua-dev')
