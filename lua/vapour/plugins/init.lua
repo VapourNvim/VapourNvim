@@ -49,7 +49,7 @@ return packer.startup(function(use)
     use {'marko-cerovac/material.nvim', requires = 'tjdevries/colorbuddy.nvim'}
     use 'joshdick/onedark.vim'
     use 'gruvbox-community/gruvbox'
-    use 'arcticicestudio/nord-vim'
+    use 'shaunsingh/nord.nvim'
 
     -- LSP and Autocomplete
     use {'neovim/nvim-lspconfig', event = "BufRead"}
