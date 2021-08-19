@@ -43,6 +43,7 @@ This project is built to be:
 * [NodeJS](https://nodejs.org) - Required - For LSP
 * [Lazygit](https://github.com/jesseduffield/lazygit) - Optional - For git integration
 * [Pandoc](https://github.com/jgm/pandoc) - Optional - For markdown preview
+* [RipGrep](https://github.com/BurntSushi/ripgrep) - Optional - For telescope live grep
 
 ## Installation
 
