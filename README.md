@@ -25,8 +25,10 @@ This project is built to be:
 
 ## Features
 
-* A very elegant and clean look to the editor
-* An extensible package management system
+* Easy to install and use
+* Awesome user configuration system
+* Very elegant and clean look to the editor
+* Extensible package management system
 * Written in an efficient programming language
 * Great support for version control
 * Code completion
