@@ -1,4 +1,4 @@
-![VapourNvim Logo](assets/logo.jpg)
+![VapourNvim Logo](assets/logo.png)
 <div align="center">
 	<a href="https://github.com/hackorum/VapourNvim/#features">✨ Features</a>
   <span> • </span>
@@ -11,7 +11,7 @@
 </div>
 
 
-![VapourNvim Logo](assets/screenshot.jpg)
+![VapourNvim Logo](assets/screenshot.png)
 
 ## Introduction
 
