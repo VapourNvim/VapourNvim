@@ -1,5 +1,5 @@
-![VapourNvim Logo](assets/logo.png)
 <div align="center">
+  <h1 align="center">VapourNvim</h1> 
 	<a href="https://github.com/hackorum/VapourNvim/#features">✨ Features</a>
   <span> • </span>
 	<a href="https://github.com/hackorum/VapourNvim/#installation">📦 Installation</a>
@@ -11,7 +11,7 @@
 </div>
 
 
-![VapourNvim Logo](assets/screenshot.png)
+![VapourNvim Image](assets/screenshot.png)
 
 ## Introduction
 
