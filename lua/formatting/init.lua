@@ -64,7 +64,4 @@ require"format".setup {
     }
 }
 
-vim.cmd('autocmd BufWritePost *.lua FormatWrite')
-vim.cmd('autocmd BufWritePost *.py FormatWrite')
-vim.cmd('autocmd BufWritePost *.js FormatWrite')
-
+vim.cmd('autocmd BufWritePost * FormatWrite')
