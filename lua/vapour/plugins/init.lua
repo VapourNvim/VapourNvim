@@ -33,17 +33,13 @@ return packer.startup(function(use)
     -- Tree-Sitter
     use {
         'nvim-treesitter/nvim-treesitter',
-        event = 'BufRead',
+        event = 'BufWinEnter',
         run = ':TSUpdate',
         disable = not is_enabled('treesitter'),
         config = "require'treesitter-config'"
     }
-    use {
-        'junegunn/rainbow_parentheses.vim',
-        disable = not is_enabled('rainbow_parentheses'),
-        config = "vim.cmd('autocmd FileType * RainbowParentheses')"
-    }
-    use {'alvan/vim-closetag', disable = not is_enabled('closetag'), config = "require'closetag-config'"}
+    use {'p00f/nvim-ts-rainbow', disable = not is_enabled('rainbow_parentheses'), after = 'nvim-treesitter'}
+    use {'windwp/nvim-ts-autotag', disable = not is_enabled('closetag'), after = 'nvim-treesitter'}
 
     -- Colorschemes
     use {'marko-cerovac/material.nvim', requires = 'tjdevries/colorbuddy.nvim'}

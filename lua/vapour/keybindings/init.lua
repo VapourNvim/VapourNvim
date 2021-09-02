@@ -1,5 +1,5 @@
-vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true})
 vim.g.mapleader = ' '
+vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true})
 
 vim.api.nvim_set_keymap('i', 'jk', '<ESC>', {noremap = true})
 vim.api.nvim_set_keymap('i', 'kj', '<ESC>', {noremap = true})
