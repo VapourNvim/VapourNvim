@@ -5,5 +5,5 @@ require'nvim-treesitter.configs'.setup {
     ignore_install = {"haskell"},
     highlight = {enable = true},
     autotag = {enable = Vapour.plugins.closetag.enabled},
-    rainbow = {enable = Vapour.plugins.rainbow_parentheses.enabled}
+    rainbow = {enable = Vapour.plugins.rainbow_parentheses.enabled, extended_mode = false}
 }
