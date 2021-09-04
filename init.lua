@@ -33,8 +33,5 @@ Vapour.utils.plugins.require('colorscheme.' .. Vapour.settings.colorscheme)
 require('language-servers')
 require('gitsigns-config')
 
--- Terminal Support
--- require('toggleterm-config')
-
 -- Other
 require('which-key-config')

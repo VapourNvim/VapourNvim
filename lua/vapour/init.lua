@@ -86,6 +86,7 @@ Vapour = {
         dial = {enabled = false},
         format = {enabled = false},
         nvim_comment = {enabled = false},
+        neogit = {enabled = false},
         compe = {enabled = false, sources = {}},
         which_key = {user_defined = {}},
 
