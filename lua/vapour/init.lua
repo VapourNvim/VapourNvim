@@ -49,7 +49,6 @@ Vapour = {
     },
     plugins = {
         colorizer = {enabled = false},
-        colorbuddy = {enabled = false},
         bufferline = {enabled = false},
         galaxyline = {enabled = false},
         dashboard = {enabled = false},

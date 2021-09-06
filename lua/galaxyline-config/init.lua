@@ -7,33 +7,46 @@ gl.short_line_list = {'NvimTree', 'packer', 'dashboard', 'toggleterm'}
 -- Tables
 
 local get_colors = function()
-  if Vapour.settings.colorscheme == 'onedark' then
-      local colors = {
-          lightbg = '#38393f',
-          black = "#2a2e36",
-          red = "#e06c75",
-          green = "#93c379",
-          yellow = "#e5c07b",
-          blue = "#61afef",
-          purple = "#c678dd",
-          cyan = "#56b6c2",
-          white = "#cfcfcf"
-      }
-      return colors
-  elseif Vapour.settings.colorscheme == 'nord' then
-      local colors = {
-          lightbg = '#4C566A',
-          black = "#3B4252",
-          red = "#BF616A",
-          green = "#A3BE8C",
-          yellow = "#EBCB8B",
-          blue = "#81A1C1",
-          purple = "#B48EAD",
-          cyan = "#88C0D0",
-          white = "#E5E9F0"
-      }
-      return colors
-  end
+    if Vapour.settings.colorscheme == 'onedark' then
+        local colors = {
+            lightbg = '#38393f',
+            black = "#2a2e36",
+            red = "#e06c75",
+            green = "#93c379",
+            yellow = "#e5c07b",
+            blue = "#61afef",
+            purple = "#c678dd",
+            cyan = "#56b6c2",
+            white = "#cfcfcf"
+        }
+        return colors
+    elseif Vapour.settings.colorscheme == 'nord' then
+        local colors = {
+            lightbg = '#4C566A',
+            black = "#3B4252",
+            red = "#BF616A",
+            green = "#A3BE8C",
+            yellow = "#EBCB8B",
+            blue = "#81A1C1",
+            purple = "#B48EAD",
+            cyan = "#88C0D0",
+            white = "#E5E9F0"
+        }
+        return colors
+    elseif Vapour.settings.colorscheme == 'gruvbox' then
+        local colors = {
+            lightbg = "#504945",
+            black = '#272727',
+            red = "#cc231c",
+            green = "#989719",
+            yellow = "#d79920",
+            blue = "#448488",
+            purple = "#b16185",
+            cyan = "#689d69",
+            white = "#ebdbb2"
+        }
+        return colors
+    end
 end
 
 local colors = get_colors()
