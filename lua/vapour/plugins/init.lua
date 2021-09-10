@@ -16,6 +16,14 @@ local function is_enabled(plugin)
     return Vapour.plugins[plugin].enabled
 end
 
+local function get_compe()
+    if Vapour.plugins.compe.enabled == true then
+        return 'nvim-compe'
+    else
+        return
+    end
+end
+
 return packer.startup(function(use)
     use 'wbthomason/packer.nvim'
     -- Syntax Highlighting and Visual Plugins
@@ -57,7 +65,7 @@ return packer.startup(function(use)
         disable = not is_enabled('compe')
     }
     use {'hrsh7th/vim-vsnip', disable = not is_enabled('vsnip')}
-    use {'windwp/nvim-autopairs', after = {'nvim-compe'}, config = "require'autopairs-config'"}
+    use {'windwp/nvim-autopairs', after = get_compe(), config = "require'autopairs-config'"}
 
     -- Version Control
     use {'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim', config = "require('neogit').setup {}", disable = not is_enabled('neogit')}
