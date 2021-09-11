@@ -48,6 +48,7 @@ Vapour = {
         gopls = {enabled = false, setup = {cmd = {"gopls", "serve"}, settings = {gopls = {analyses = {unusedparams = true}, staticcheck = true}}}}
     },
     plugins = {
+        indent_blankline = {enabled = false, enable_rainbow_colors = false},
         colorizer = {enabled = false},
         bufferline = {enabled = false},
         galaxyline = {enabled = false},

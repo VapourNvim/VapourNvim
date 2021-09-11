@@ -36,6 +36,7 @@ return packer.startup(function(use)
     }
     use {'glepnir/galaxyline.nvim', branch = 'main', disable = not is_enabled('galaxyline'), config = "require'galaxyline-config'"}
     use {'glepnir/dashboard-nvim', disable = not is_enabled('dashboard'), config = "require'dashboard-config'"}
+    use {'lukas-reineke/indent-blankline.nvim', disable = not is_enabled('indent_blankline'), config = "require'blankline-config'", event = "BufRead"}
 
     -- Tree-Sitter
     use {
