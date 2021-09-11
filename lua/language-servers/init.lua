@@ -7,11 +7,11 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- Language servers
 for ls_type, props in pairs(Vapour.language_servers) do
-  if props.enabled == true then
-    if props.vapour_init then props.vapour_init() end
-    
-    lspconfig[ls_type].setup(props.setup or {})
-  end
+    if props.enabled == true then
+        if props.vapour_init then props.vapour_init() end
+
+        lspconfig[ls_type].setup(props.setup or {})
+    end
 end
 
 require'lspconfig'.jsonls.setup {
@@ -50,30 +50,26 @@ else
 end
 
 if Vapour.language_servers.sumneko_lua.enabled and sumneko_binary ~= "" and not Vapour.utils.file.exists(sumneko_binary) then
-  print('Unable to load Sumneko language servr.  Make sure it is installed in ' .. sumneko_root_path)
+    print('Unable to load Sumneko language server.  Make sure it is installed in ' .. sumneko_root_path)
 else
-  local luadev = Vapour.utils.plugins.require('lua-dev')
-  local lua_lsp_config = {
-    cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
-    settings = {
-        Lua = {
-            runtime = {version = 'LuaJIT', path = vim.split(package.path, ';')},
-            diagnostics = {globals = {'vim'}},
-            workspace = {
-                library = {[vim.fn.expand('$VIMRUNTIME/lua')] = true, [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true},
-                preloadFileSize = 450
+    local luadev = Vapour.utils.plugins.require('lua-dev')
+    local lua_lsp_config = {
+        cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
+        settings = {
+            Lua = {
+                runtime = {version = 'LuaJIT', path = vim.split(package.path, ';')},
+                diagnostics = {globals = {'vim'}},
+                workspace = {
+                    library = {[vim.fn.expand('$VIMRUNTIME/lua')] = true, [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true},
+                    preloadFileSize = 450
+                }
             }
-          }
         }
-      }
-
-  if luadev ~= nil then
-    lua_lsp_config = luadev.setup {
-      lspconfig = lua_lsp_config
     }
-  end
 
-  require'lspconfig'.sumneko_lua.setup(lua_lsp_config)
+    if luadev ~= nil then lua_lsp_config = luadev.setup {lspconfig = lua_lsp_config} end
+
+    require'lspconfig'.sumneko_lua.setup(lua_lsp_config)
 end
 
 -- Diagnostics
