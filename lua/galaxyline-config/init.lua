@@ -20,6 +20,19 @@ local get_colors = function()
             white = "#cfcfcf"
         }
         return colors
+    elseif Vapour.settings.colorscheme == 'tokyonight' then
+        local colors = {
+            lightbg = "#414868",
+            black = "#24283b",
+            red = "#f7768e",
+            green = "#9ece6a",
+            yellow = "#e0af68",
+            blue = "#7aa2f7",
+            purple = "#bb9af7",
+            cyan = "#2ac3de",
+            white = '#d5d6db'
+        }
+        return colors
     elseif Vapour.settings.colorscheme == 'nord' then
         local colors = {
             lightbg = '#4C566A',

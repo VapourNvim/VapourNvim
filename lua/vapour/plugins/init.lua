@@ -53,6 +53,7 @@ return packer.startup(function(use)
     use 'joshdick/onedark.vim'
     use 'gruvbox-community/gruvbox'
     use 'shaunsingh/nord.nvim'
+    use 'folke/tokyonight.nvim'
 
     -- LSP and Autocomplete
     use {'neovim/nvim-lspconfig', event = "BufRead"}
