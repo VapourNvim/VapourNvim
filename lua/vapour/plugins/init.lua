@@ -27,12 +27,13 @@ end
 return packer.startup(function(use)
     use 'wbthomason/packer.nvim'
     -- Syntax Highlighting and Visual Plugins
-    use {'norcalli/nvim-colorizer.lua', disable = not is_enabled('colorizer'), config = "require'colorizer-config'"}
+    use {'norcalli/nvim-colorizer.lua', disable = not is_enabled('colorizer'), config = "require'colorizer-config'", event = 'BufRead'}
     use {
         'akinsho/nvim-bufferline.lua',
         requires = 'kyazdani42/nvim-web-devicons',
         config = 'require"bufferline-config"',
-        disable = not is_enabled('bufferline')
+        disable = not is_enabled('bufferline'),
+        event = 'VimEnter'
     }
     use {'glepnir/galaxyline.nvim', branch = 'main', disable = not is_enabled('galaxyline'), config = "require'galaxyline-config'"}
     use {'glepnir/dashboard-nvim', disable = not is_enabled('dashboard'), config = "require'dashboard-config'"}

@@ -12,7 +12,7 @@ Vapour = {
         html = {
             enabled = false,
             vapour_init = function()
-                local lspconfig = Vapour.utils.plugins.require('lspconfig')
+                Vapour.utils.plugins.require('lspconfig')
 
                 Vapour.language_servers.html.setup.capabilities = vim.lsp.protocol.make_client_capabilities()
                 Vapour.language_servers.html.setup.capabilities.textDocument.completion.completionItem.snippetSupport = true
