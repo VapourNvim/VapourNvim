@@ -55,6 +55,7 @@ return packer.startup(function(use)
     use 'gruvbox-community/gruvbox'
     use 'shaunsingh/nord.nvim'
     use 'folke/tokyonight.nvim'
+    use {'dracula/vim', as = 'dracula'}
 
     -- LSP and Autocomplete
     use {'neovim/nvim-lspconfig', event = "BufRead"}

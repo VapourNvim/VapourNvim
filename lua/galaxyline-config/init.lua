@@ -59,6 +59,19 @@ local get_colors = function()
             white = "#ebdbb2"
         }
         return colors
+      elseif Vapour.settings.colorscheme == 'dracula' then
+        local colors = {
+          lightbg = "#44475a",
+          black = '#282a36',
+          red = "#ff5555",
+          green = "#50fa7b",
+          yellow = "#f1fa8c",
+          blue = "#6272a4",
+          purple = "#bd93f9",
+          cyan = "#8be9fd",
+          white = "#f8f8f2"
+        }
+        return colors
     end
 end
 
