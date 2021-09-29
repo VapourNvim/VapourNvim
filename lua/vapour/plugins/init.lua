@@ -75,7 +75,7 @@ return packer.startup(function(use)
     use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
 
     -- Language Specific
-    use {'davidgranstrom/nvim-markdown-preview', disable = not is_enabled('markdown_preview')}
+    use {'davidgranstrom/nvim-markdown-preview', disable = not is_enabled('markdown_preview'), ft = {"markdown"}, cmd = "MarkdownPreview"}
 
     -- Terminal Integration
     use {'akinsho/nvim-toggleterm.lua', disable = not is_enabled('toggleterm'), config = 'require"toggleterm-config"'}

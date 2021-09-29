@@ -48,13 +48,13 @@ Vapour = {
         gopls = {enabled = false, setup = {cmd = {"gopls", "serve"}, settings = {gopls = {analyses = {unusedparams = true}, staticcheck = true}}}}
     },
     plugins = {
-        indent_blankline = {enabled = false, enable_rainbow_colors = false},
-        colorizer = {enabled = false},
-        bufferline = {enabled = false},
-        galaxyline = {enabled = false},
-        dashboard = {enabled = false},
+        indent_blankline = {enabled = true, enable_rainbow_colors = false},
+        colorizer = {enabled = true},
+        bufferline = {enabled = true},
+        galaxyline = {enabled = true},
+        dashboard = {enabled = true},
         toggleterm = {
-            enabled = false,
+            enabled = true,
             toggle_float = function()
                 local Terminal = require('toggleterm.terminal').Terminal
                 local float = Terminal:new({direction = "float"})
@@ -76,18 +76,18 @@ Vapour = {
                 }
             }
         },
-        treesitter = {enabled = false},
-        rainbow_parentheses = {enabled = false},
-        closetag = {enabled = false},
-        vsnip = {enabled = false},
-        markdown_preview = {eanbled = false},
-        telescope = {enabled = false},
-        nvim_tree = {enabled = false},
-        dial = {enabled = false},
-        format = {enabled = false},
-        nvim_comment = {enabled = false},
-        neogit = {enabled = false},
-        compe = {enabled = false, sources = {}},
+        treesitter = {enabled = true},
+        rainbow_parentheses = {enabled = true},
+        closetag = {enabled = true},
+        vsnip = {enabled = true},
+        markdown_preview = {eanbled = true},
+        telescope = {enabled = true},
+        nvim_tree = {enabled = true},
+        dial = {enabled = true},
+        format = {enabled = true},
+        nvim_comment = {enabled = true},
+        neogit = {enabled = true},
+        compe = {enabled = true, sources = {}},
         which_key = {user_defined = {}},
 
         -- Packer-specific needs
