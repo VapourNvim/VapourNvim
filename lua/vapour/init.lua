@@ -8,7 +8,16 @@ Vapour = {
     language_servers = {
         sumneko_lua = {enabled = false},
         bashls = {enabled = false},
-        cssls = {enabled = false},
+        cssls = {
+            enabled = false,
+            vapour_init = function()
+                Vapour.utils.plugins.require('lspconfig')
+
+                Vapour.language_servers.cssls.setup.capabilities = vim.lsp.protocol.make_client_capabilities()
+                Vapour.language_servers.cssls.setup.capabilities.textDocument.completion.completionItem.snippetSupport = true
+            end,
+            setup = {}
+        },
         html = {
             enabled = false,
             vapour_init = function()
