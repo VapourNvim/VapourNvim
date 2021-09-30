@@ -85,7 +85,7 @@ Vapour = {
                 }
             }
         },
-        treesitter = {enabled = true},
+        treesitter = {enabled = true, indent = {enabled = false}},
         rainbow_parentheses = {enabled = true},
         closetag = {enabled = true},
         vsnip = {enabled = true},
