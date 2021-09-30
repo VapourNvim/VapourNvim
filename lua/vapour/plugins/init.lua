@@ -25,7 +25,7 @@ local function get_compe()
 end
 
 return packer.startup(function(use)
-    use {'wbthomason/packer.nvim', event = 'VimEnter'}
+    use 'wbthomason/packer.nvim'
     -- Syntax Highlighting and Visual Plugins
     use {'norcalli/nvim-colorizer.lua', disable = not is_enabled('colorizer'), config = "require'colorizer-config'", event = 'BufRead'}
     use {
