@@ -25,7 +25,7 @@ local function get_compe()
 end
 
 return packer.startup(function(use)
-    use 'wbthomason/packer.nvim'
+    use {'wbthomason/packer.nvim', event = 'VimEnter'}
     -- Syntax Highlighting and Visual Plugins
     use {'norcalli/nvim-colorizer.lua', disable = not is_enabled('colorizer'), config = "require'colorizer-config'", event = 'BufRead'}
     use {
@@ -33,10 +33,16 @@ return packer.startup(function(use)
         requires = 'kyazdani42/nvim-web-devicons',
         config = 'require"bufferline-config"',
         disable = not is_enabled('bufferline'),
-        event = 'VimEnter'
+        event = 'BufWinEnter'
     }
-    use {'glepnir/galaxyline.nvim', branch = 'main', disable = not is_enabled('galaxyline'), config = "require'galaxyline-config'"}
-    use {'glepnir/dashboard-nvim', disable = not is_enabled('dashboard'), config = "require'dashboard-config'"}
+    use {
+        'glepnir/galaxyline.nvim',
+        branch = 'main',
+        disable = not is_enabled('galaxyline'),
+        config = "require'galaxyline-config'",
+        event = 'BufWinEnter'
+    }
+    use {'glepnir/dashboard-nvim', disable = not is_enabled('dashboard'), config = "require'dashboard-config'", event = 'BufWinEnter'}
     use {'lukas-reineke/indent-blankline.nvim', disable = not is_enabled('indent_blankline'), config = "require'blankline-config'", event = "BufRead"}
 
     -- Tree-Sitter
@@ -59,7 +65,7 @@ return packer.startup(function(use)
 
     -- LSP and Autocomplete
     use {'neovim/nvim-lspconfig', event = "BufRead"}
-    use 'glepnir/lspsaga.nvim'
+    use {'glepnir/lspsaga.nvim'}
     use {
         'hrsh7th/nvim-compe',
         event = "InsertEnter *",
