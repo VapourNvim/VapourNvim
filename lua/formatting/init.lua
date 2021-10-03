@@ -1,13 +1,13 @@
 require"format".setup {
     ["*"] = {{cmd = {"sed -i 's/[ \t]*$//'"}}},
-    html = {{cmd = {"prettier -w"}, tempfile_postfix = ".tmp"}},
-    css = {{cmd = {"prettier -w"}, tempfile_postfix = ".tmp"}},
-    json = {{cmd = {"prettier -w"}, tempfile_postfix = ".tmp"}},
-    yaml = {{cmd = {"prettier -w"}, tempfile_postfix = ".tmp"}},
-    javascript = {{cmd = {"prettier -w", "./node_modules/.bin/eslint --fix"}, tempfile_postfix = ".tmp"}},
-    javascriptreact = {{cmd = {"prettier -w", "./node_modules/.bin/eslint --fix"}, tempfile_postfix = ".tmp"}},
-    typescript = {{cmd = {"prettier -w", "./node_modules/.bin/eslint --fix"}, tempfile_postfix = ".tmp"}},
-    typescriptreact = {{cmd = {"prettier -w", "./node_modules/.bin/eslint --fix"}, tempfile_postfix = ".tmp"}},
+    html = {{cmd = {"prettier -w"}}},
+    css = {{cmd = {"prettier -w"}}},
+    json = {{cmd = {"prettier -w"}}},
+    yaml = {{cmd = {"prettier -w"}}},
+    javascript = {{cmd = {"prettier -w", "./node_modules/.bin/eslint --fix"}}},
+    javascriptreact = {{cmd = {"prettier -w", "./node_modules/.bin/eslint --fix"}}},
+    typescript = {{cmd = {"prettier -w", "./node_modules/.bin/eslint --fix"}}},
+    typescriptreact = {{cmd = {"prettier -w", "./node_modules/.bin/eslint --fix"}}},
     lua = {
         {
             cmd = {
