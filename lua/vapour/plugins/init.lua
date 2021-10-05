@@ -102,7 +102,6 @@ return packer.startup(function(use)
     use {'monaqa/dial.nvim', disable = not is_enabled('dial'), config = "require'dial-config'"}
     use {'lukas-reineke/format.nvim', disable = not is_enabled('format'), config = "require'formatting'"}
     use {'folke/which-key.nvim', event = "BufWinEnter"}
-    use {'nvim-lua/plenary.nvim'}
 
     for _, plugin in pairs(Vapour.plugins.user) do use(plugin) end
 end)
