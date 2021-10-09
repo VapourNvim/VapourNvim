@@ -96,7 +96,7 @@ Vapour = {
         format = {enabled = true},
         nvim_comment = {enabled = true},
         neogit = {enabled = true},
-        compe = {enabled = true, sources = {}},
+        cmp = {enabled = true, sources = {}},
         which_key = {user_defined = {}},
 
         -- Packer-specific needs

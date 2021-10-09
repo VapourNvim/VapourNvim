@@ -2,7 +2,7 @@ Vapour.utils.plugins.packadd('nvim-lspconfig')
 
 local lspconfig = Vapour.utils.plugins.require('lspconfig')
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- Language servers
@@ -10,7 +10,7 @@ for ls_type, props in pairs(Vapour.language_servers) do
     if props.enabled == true then
         if props.vapour_init then props.vapour_init() end
 
-        lspconfig[ls_type].setup(props.setup or {})
+        lspconfig[ls_type].setup(props.setup or {capabilities = capabilities})
     end
 end
 

@@ -16,9 +16,9 @@ local function is_enabled(plugin)
     return Vapour.plugins[plugin].enabled
 end
 
-local function get_compe()
-    if Vapour.plugins.compe.enabled == true then
-        return 'nvim-compe'
+local function get_cmp()
+    if Vapour.plugins.cmp.enabled == true then
+        return 'nvim-cmp'
     else
         return
     end
@@ -65,20 +65,29 @@ return packer.startup(function(use)
 
     -- LSP and Autocomplete
     use {'neovim/nvim-lspconfig', event = "BufRead"}
-    use {'glepnir/lspsaga.nvim'}
+    use {'hrsh7th/cmp-nvim-lsp'}
+    use {'hrsh7th/cmp-buffer', after = "nvim-cmp"}
     use {
-        'hrsh7th/nvim-compe',
+        'hrsh7th/nvim-cmp',
         event = "InsertEnter *",
         config = function()
-            require 'compe-config'
+            require 'cmp-config'
         end,
-        disable = not is_enabled('compe')
+        disable = not is_enabled('cmp')
     }
-    use {'hrsh7th/vim-vsnip', disable = not is_enabled('vsnip')}
-    use {'windwp/nvim-autopairs', after = get_compe(), config = "require'autopairs-config'"}
+    use {'onsails/lspkind-nvim'}
+    use {'hrsh7th/cmp-vsnip', disable = not is_enabled('vsnip'), after = "nvim-cmp"}
+    use {'hrsh7th/vim-vsnip', disable = not is_enabled('vsnip'), after = "nvim-cmp"}
+    use {'windwp/nvim-autopairs', after = get_cmp(), config = "require'autopairs-config'"}
 
     -- Version Control
-    use {'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim', config = "require('neogit').setup {}", disable = not is_enabled('neogit')}
+    use {
+        'TimUntersberger/neogit',
+        requires = 'nvim-lua/plenary.nvim',
+        cmd = "Neogit",
+        config = "require('neogit').setup {}",
+        disable = not is_enabled('neogit')
+    }
     use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
 
     -- Language Specific
