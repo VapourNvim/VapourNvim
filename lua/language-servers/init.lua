@@ -10,7 +10,13 @@ for ls_type, props in pairs(Vapour.language_servers) do
     if props.enabled == true then
         if props.vapour_init then props.vapour_init() end
 
-        lspconfig[ls_type].setup(props.setup or {capabilities = capabilities})
+        lspconfig[ls_type].setup(props.setup or {
+            capabilities = capabilities,
+            root_dir = function(fname)
+                return vim.loop.cwd()
+            end
+
+        })
     end
 end
 
@@ -92,3 +98,21 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagn
     virtual_text = {spacing = 5, severity_limit = 'Warning'},
     update_in_insert = true
 })
+
+if Vapour.language_servers.html.enabled then
+    local configs = require 'lspconfig/configs'
+
+    if not lspconfig.emmet_ls then
+        configs.emmet_ls = {
+            default_config = {
+                cmd = {'ls_emmet', '--stdio'},
+                filetypes = {'html', 'css'},
+                root_dir = function(fname)
+                    return vim.loop.cwd()
+                end,
+                settings = {}
+            }
+        }
+    end
+    lspconfig.emmet_ls.setup {capabilities = capabilities}
+end

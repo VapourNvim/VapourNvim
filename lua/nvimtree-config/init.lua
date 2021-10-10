@@ -9,7 +9,6 @@ require'nvim-tree'.setup {
     open_on_tab = false,
     hijack_cursor = true,
     update_cwd = true,
-    lsp_diagnostics = false,
     update_focused_file = {enable = true, update_cwd = true, ignore_list = {}},
     system_open = {
         -- the command to run this, leaving nil should work in most cases
