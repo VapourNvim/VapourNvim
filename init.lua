@@ -27,7 +27,7 @@ require('vapour.keybindings')
 -- If a custom theme is wanted, require() that in user-config.init
 -- Otherwise if the default theme is not wanted change Vapour.settings.colorscheme
 -- This will return nil if it's not found
-Vapour.utils.plugins.require('colorscheme.' .. Vapour.settings.colorscheme)
+if not Vapour.settings.colorscheme == "custom" then Vapour.utils.plugins.require('colorscheme.' .. Vapour.settings.colorscheme) end
 
 -- LSP and Autocomplete
 require('language-servers')

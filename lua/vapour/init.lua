@@ -126,4 +126,6 @@ Vapour = {
     }
 }
 
+Vapour.settings.galaxyline_theme = Vapour.settings.colorscheme
+
 require('vapour.utils')
