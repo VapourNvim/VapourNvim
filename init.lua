@@ -31,6 +31,8 @@ if Vapour.settings.colorscheme ~= "custom" then Vapour.utils.plugins.require('co
 
 -- LSP and Autocomplete
 require('language-servers')
+
+-- Git
 require('gitsigns-config')
 
 -- Other
