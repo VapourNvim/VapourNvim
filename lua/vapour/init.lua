@@ -85,7 +85,7 @@ Vapour = {
                 }
             }
         },
-        treesitter = {enabled = true, indent = {enabled = false}},
+        treesitter = {enabled = true, indent = {enabled = false}, ignore_install = {"haskell"}},
         rainbow_parentheses = {enabled = true},
         closetag = {enabled = true},
         vsnip = {enabled = true},
@@ -125,7 +125,5 @@ Vapour = {
         colorscheme = 'onedark'
     }
 }
-
-Vapour.settings.galaxyline_theme = Vapour.settings.colorscheme
 
 require('vapour.utils')

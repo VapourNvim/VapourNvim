@@ -7,7 +7,7 @@ gl.short_line_list = {'NvimTree', 'packer', 'dashboard', 'toggleterm'}
 -- Tables
 
 local get_colors = function()
-    if Vapour.settings.galaxyline_theme == 'onedark' then
+    if Vapour.settings.colorscheme == 'onedark' then
         local colors = {
             lightbg = '#38393f',
             black = "#2a2e36",
@@ -20,7 +20,7 @@ local get_colors = function()
             white = "#cfcfcf"
         }
         return colors
-    elseif Vapour.settings.galaxyline_theme == 'tokyonight' then
+    elseif Vapour.settings.colorscheme == 'tokyonight' then
         local colors = {
             lightbg = "#414868",
             black = "#24283b",
@@ -33,7 +33,7 @@ local get_colors = function()
             white = '#d5d6db'
         }
         return colors
-    elseif Vapour.settings.galaxyline_theme == 'nord' then
+    elseif Vapour.settings.colorscheme == 'nord' then
         local colors = {
             lightbg = '#4C566A',
             black = "#3B4252",
@@ -46,7 +46,7 @@ local get_colors = function()
             white = "#E5E9F0"
         }
         return colors
-    elseif Vapour.settings.galaxyline_theme == 'gruvbox' then
+    elseif Vapour.settings.colorscheme == 'gruvbox' then
         local colors = {
             lightbg = "#504945",
             black = '#272727',
@@ -59,7 +59,7 @@ local get_colors = function()
             white = "#ebdbb2"
         }
         return colors
-    elseif Vapour.settings.galaxyline_theme == 'dracula' then
+    elseif Vapour.settings.colorscheme == 'dracula' then
         local colors = {
             lightbg = "#44475a",
             black = '#282a36',
