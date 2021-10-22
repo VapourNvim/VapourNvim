@@ -37,3 +37,4 @@ require('gitsigns-config')
 
 -- Other
 require('which-key-config')
+if Vapour.settings.transparent_bg then vim.cmd('hi Normal guibg=NONE ctermbg=NONE') end

@@ -5,7 +5,7 @@ local npairs = Vapour.utils.plugins.packadd('nvim-autopairs', true)
 npairs.setup({break_line_filetype = nil, check_ts = true})
 
 local remap = vim.api.nvim_set_keymap
--- _G.MUtils = {}
+_G.MUtils = {}
 
 if Vapour.plugins.cmp.enabled == true then
     require("nvim-autopairs.completion.cmp").setup({
