@@ -77,7 +77,7 @@ end
 
 local colors = get_colors()
 
-local separators = {bLeft = '  ', bRight = ' ', uLeft = ' ', uTop = ' '}
+local separators = {bLeft = '  ', bRight = '', uLeft = ' ', uTop = ' '}
 
 -- Functions
 local buffer_not_empty = function()
