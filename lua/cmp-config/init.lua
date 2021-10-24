@@ -19,7 +19,10 @@ cmp.setup({
             vim.fn["vsnip#anonymous"](args.body)
         end
     },
-    formatting = {format = lspkind.cmp_format({with_text = true, maxwidth = 50})},
+    formatting = {
+        format = lspkind.cmp_format(
+            {with_text = true, maxwidth = 50, menu = {buffer = "[Buf]", nvim_lsp = "[LSP]", dictionary = "[Dict]", vsnip = "[Vsnip]"}})
+    },
     mapping = {
         ['<C-d>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
@@ -46,7 +49,7 @@ cmp.setup({
             end
         end, {"i", "s"})
     },
-    sources = {{name = 'nvim_lsp'}, {name = 'vsnip'}, {name = 'buffer'}, {name = 'omni'}}
+    sources = {{name = 'nvim_lsp'}, {name = 'vsnip'}, {name = 'buffer'}, {name = 'omni'}, {name = "dictionary", keyword_length = 2}}
 })
 
 vim.cmd("autocmd FileType TelescopePrompt lua require('cmp').setup.buffer { enabled = false }")
