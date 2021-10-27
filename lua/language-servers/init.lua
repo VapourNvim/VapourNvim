@@ -12,7 +12,7 @@ for ls_type, props in pairs(Vapour.language_servers) do
 
         lspconfig[ls_type].setup(props.setup or {
             capabilities = capabilities,
-            root_dir = function(fname)
+            root_dir = function(_)
                 return vim.loop.cwd()
             end
 
@@ -107,7 +107,7 @@ if Vapour.language_servers.html.enabled then
             default_config = {
                 cmd = {'ls_emmet', '--stdio'},
                 filetypes = {'html', 'css'},
-                root_dir = function(fname)
+                root_dir = function(_)
                     return vim.loop.cwd()
                 end,
                 settings = {}
