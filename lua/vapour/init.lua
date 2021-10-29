@@ -96,6 +96,7 @@ Vapour = {
         format = {enabled = true},
         nvim_comment = {enabled = true},
         neogit = {enabled = true},
+        copilot = {enabled = false},
         cmp = {enabled = true, sources = {}},
         which_key = {user_defined = {}},
 

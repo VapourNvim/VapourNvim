@@ -69,6 +69,7 @@ return packer.startup(function(use)
     use {'hrsh7th/cmp-buffer', after = "nvim-cmp"}
     use {'uga-rosa/cmp-dictionary', after = "nvim-cmp"}
     use {'tzachar/cmp-tabnine', run = './install.sh', after = 'nvim-cmp'}
+    use {'github/copilot.vim', disable = is_enabled('copilot')}
     use {
         'hrsh7th/nvim-cmp',
         event = "InsertEnter *",
