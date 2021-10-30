@@ -52,9 +52,7 @@ cmp.setup({
             end
         end, {"i", "s"})
     },
-    sources = {
-        {name = 'cmp_tabnine'}, {name = 'nvim_lsp'}, {name = 'vsnip'}, {name = 'buffer'}, {name = 'omni'}, {name = "dictionary", keyword_length = 2}
-    }
+    sources = Vapour.plugins.cmp.sources
 })
 
 vim.cmd('packadd cmp-tabnine')

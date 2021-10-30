@@ -59,6 +59,9 @@ Vapour = {
     plugins = {
         indent_blankline = {enabled = true, enable_rainbow_colors = false},
         colorizer = {enabled = true},
+        autopairs = {enabled = true},
+        hop = {enabled = true},
+        gitsigns = {enabled = true},
         bufferline = {enabled = true},
         galaxyline = {enabled = true},
         dashboard = {enabled = true},
@@ -85,9 +88,15 @@ Vapour = {
                 }
             }
         },
-        treesitter = {enabled = true, indent = {enabled = false}, ignore_install = {"haskell"}},
-        rainbow_parentheses = {enabled = true},
-        closetag = {enabled = true},
+        treesitter = {
+            enabled = true,
+            ensure_installed = "all",
+            ignore_install = {"haskell"},
+            indent = {enable = false},
+            highlight = {enable = true},
+            autotag = {enable = true},
+            rainbow = {enable = true, extended_mode = false, disable = {"html"}}
+        },
         vsnip = {enabled = true},
         markdown_preview = {eanbled = true},
         telescope = {enabled = true},
@@ -97,7 +106,13 @@ Vapour = {
         nvim_comment = {enabled = true},
         neogit = {enabled = true},
         copilot = {enabled = false},
-        cmp = {enabled = true, sources = {}},
+        cmp = {
+            enabled = true,
+            sources = {
+                {name = 'cmp_tabnine'}, {name = 'nvim_lsp'}, {name = 'vsnip'}, {name = 'buffer'}, {name = 'omni'},
+                {name = "dictionary", keyword_length = 2}
+            }
+        },
         which_key = {user_defined = {}},
 
         -- Packer-specific needs

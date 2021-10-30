@@ -53,8 +53,8 @@ return packer.startup(function(use)
         disable = not is_enabled('treesitter'),
         config = "require'treesitter-config'"
     }
-    use {'p00f/nvim-ts-rainbow', disable = not is_enabled('rainbow_parentheses'), after = 'nvim-treesitter'}
-    use {'windwp/nvim-ts-autotag', disable = not is_enabled('closetag'), after = 'nvim-treesitter'}
+    use {'p00f/nvim-ts-rainbow', disable = not is_enabled('treesitter'), after = 'nvim-treesitter'}
+    use {'windwp/nvim-ts-autotag', disable = not is_enabled('treesitter'), after = 'nvim-treesitter'}
 
     -- Colorschemes
     use 'joshdick/onedark.vim'
@@ -65,11 +65,7 @@ return packer.startup(function(use)
 
     -- LSP and Autocomplete
     use {'neovim/nvim-lspconfig', event = "BufRead"}
-    use {'hrsh7th/cmp-nvim-lsp'}
-    use {'hrsh7th/cmp-buffer', after = "nvim-cmp"}
-    use {'uga-rosa/cmp-dictionary', after = "nvim-cmp"}
-    use {'tzachar/cmp-tabnine', run = './install.sh', after = 'nvim-cmp'}
-    use {'github/copilot.vim', disable = not is_enabled('copilot')}
+    use {'onsails/lspkind-nvim'}
     use {
         'hrsh7th/nvim-cmp',
         event = "InsertEnter *",
@@ -78,10 +74,14 @@ return packer.startup(function(use)
         end,
         disable = not is_enabled('cmp')
     }
-    use {'onsails/lspkind-nvim'}
-    use {'hrsh7th/cmp-vsnip', disable = not is_enabled('vsnip'), after = "nvim-cmp"}
-    use {'hrsh7th/vim-vsnip', disable = not is_enabled('vsnip'), after = "nvim-cmp"}
-    use {'windwp/nvim-autopairs', after = get_cmp(), config = "require'autopairs-config'"}
+    use {'hrsh7th/cmp-nvim-lsp', disable = not is_enabled('cmp')}
+    use {'hrsh7th/cmp-buffer', after = "nvim-cmp", disable = not is_enabled('cmp')}
+    use {'uga-rosa/cmp-dictionary', after = "nvim-cmp", disable = not is_enabled('cmp')}
+    use {'tzachar/cmp-tabnine', run = './install.sh', after = 'nvim-cmp', disable = not is_enabled('cmp')}
+    use {'github/copilot.vim', disable = not is_enabled('copilot')}
+    use {'hrsh7th/cmp-vsnip', disable = not is_enabled('cmp'), after = "nvim-cmp"}
+    use {'hrsh7th/vim-vsnip', disable = not is_enabled('cmp'), after = "nvim-cmp"}
+    use {'windwp/nvim-autopairs', after = get_cmp(), config = "require'autopairs-config'", disable = not is_enabled('autopairs')}
 
     -- Version Control
     use {
@@ -91,7 +91,7 @@ return packer.startup(function(use)
         config = "require('neogit').setup {}",
         disable = not is_enabled('neogit')
     }
-    use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
+    use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}, disable = not is_enabled('gitsigns')}
 
     -- Language Specific
     use {'davidgranstrom/nvim-markdown-preview', disable = not is_enabled('markdown_preview'), ft = {"markdown"}, cmd = "MarkdownPreview"}
@@ -103,11 +103,12 @@ return packer.startup(function(use)
     use {
         'nvim-telescope/telescope.nvim',
         requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
+        cmd = "Telescope",
         disable = not is_enabled('telescope'),
         config = "require'telescope-config'"
     }
     use {'kyazdani42/nvim-tree.lua', cmd = "NvimTreeToggle", disable = not is_enabled('nvim_tree'), config = "require'nvimtree-config'"}
-    use 'phaazon/hop.nvim'
+    use {'phaazon/hop.nvim', disable = not is_enabled('hop')}
 
     -- Other
     use {'terrortylor/nvim-comment', cmd = "CommentToggle", config = "require('nvim_comment').setup()", disable = not is_enabled('nvim_comment')}
