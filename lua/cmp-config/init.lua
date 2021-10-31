@@ -1,5 +1,3 @@
-Vapour.utils.plugins.packadd('nvim-compe')
-
 vim.o.completeopt = "menu,menuone,noselect"
 
 local has_words_before = function()
