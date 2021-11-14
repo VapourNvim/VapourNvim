@@ -65,7 +65,6 @@ Vapour = {
                     t = {":ToggleTerm<cr>", "Split Below"},
                     f = {"<cmd>lua Vapour.plugins.toggleterm.toggle_float()<cr>", "Floating Terminal"},
                     l = {"<cmd>lua Vapour.plugins.toggleterm.toggle_lazygit()<cr>", "LazyGit"}
-                    -- l = {"<cmd>lua require('lspsaga.floaterm').open_float_terminal('lazygit')<cr>", "LazyGit"}
                 }
             }
         },
@@ -86,10 +85,7 @@ Vapour = {
         nvim_comment = {enabled = true},
         cmp = {
             enabled = true,
-            sources = {
-                {name = 'cmp_tabnine'}, {name = 'nvim_lsp'}, {name = 'vsnip'}, {name = 'buffer'}, {name = 'omni'},
-                {name = "dictionary", keyword_length = 2}
-            }
+            sources = {{name = 'nvim_lsp'}, {name = 'vsnip'}, {name = 'buffer'}, {name = 'omni'}, {name = "dictionary", keyword_length = 2}}
         },
         which_key = {user_defined = {}},
 

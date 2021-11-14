@@ -18,11 +18,8 @@ cmp.setup({
         end
     },
     formatting = {
-        format = lspkind.cmp_format({
-            with_text = true,
-            maxwidth = 50,
-            menu = {buffer = "[Buf]", cmp_tabnine = "[Tabnine]", nvim_lsp = "[LSP]", dictionary = "[Dict]", vsnip = "[Vsnip]"}
-        })
+        format = lspkind.cmp_format(
+            {with_text = true, maxwidth = 50, menu = {buffer = "[Buf]", nvim_lsp = "[LSP]", dictionary = "[Dict]", vsnip = "[Vsnip]"}})
     },
     mapping = {
         ['<C-d>'] = cmp.mapping.scroll_docs(-4),
@@ -52,9 +49,5 @@ cmp.setup({
     },
     sources = Vapour.plugins.cmp.sources
 })
-
-Vapour.utils.plugins.packadd('cmp-tabnine', false)
-local tabnine = require('cmp_tabnine.config')
-tabnine:setup({max_lines = 1000, max_num_results = 20, sort = true, run_on_every_keystroke = true, snippet_placeholder = '..'})
 
 vim.cmd("autocmd FileType TelescopePrompt lua require('cmp').setup.buffer { enabled = false }")
