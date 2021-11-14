@@ -6,26 +6,26 @@ Vapour = {}
 Vapour = {
     options = {tabwidth = 2},
     language_servers = {
-        sumneko_lua = {enabled = false},
-        bashls = {enabled = false},
-        cssls = {enabled = false},
-        html = {enabled = false},
-        tsserver = {enabled = false},
-        pyright = {enabled = false},
-        jedi_language_server = {enabled = false},
-        pylsp = {enabled = false},
-        vimls = {enabled = false},
-        yamlls = {enabled = false},
-        solargraph = {enabled = false},
-        vuels = {enabled = false},
+        sumneko_lua = {enabled = true},
+        bashls = {enabled = true},
+        cssls = {enabled = true},
+        html = {enabled = true},
+        tsserver = {enabled = true},
+        pyright = {enabled = true},
+        jedi_language_server = {enabled = true},
+        pylsp = {enabled = true},
+        vimls = {enabled = true},
+        yamlls = {enabled = true},
+        solargraph = {enabled = true},
+        vuels = {enabled = true},
         phpactor = {
-            enabled = false,
+            enabled = true,
             vapour_init = function()
                 require 'language-servers.phpactor'
             end
         },
         jsonls = {
-            enabled = false,
+            enabled = true,
             setup = {
                 commands = {
                     Format = {
@@ -36,7 +36,7 @@ Vapour = {
                 }
             }
         },
-        gopls = {enabled = false, setup = {cmd = {"gopls", "serve"}, settings = {gopls = {analyses = {unusedparams = true}, staticcheck = true}}}}
+        gopls = {enabled = true, setup = {cmd = {"gopls", "serve"}, settings = {gopls = {analyses = {unusedparams = true}, staticcheck = true}}}}
     },
     plugins = {
         indent_blankline = {enabled = true, enable_rainbow_colors = false},
