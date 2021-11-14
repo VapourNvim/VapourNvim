@@ -78,7 +78,6 @@ return packer.startup(function(use)
     use {'hrsh7th/cmp-buffer', after = "nvim-cmp", disable = not is_enabled('cmp')}
     use {'uga-rosa/cmp-dictionary', after = "nvim-cmp", disable = not is_enabled('cmp')}
     use {'tzachar/cmp-tabnine', run = './install.sh', after = 'nvim-cmp', disable = not is_enabled('cmp')}
-    use {'github/copilot.vim', disable = not is_enabled('copilot')}
     use {'hrsh7th/cmp-vsnip', disable = not is_enabled('cmp'), after = "nvim-cmp"}
     use {'hrsh7th/vim-vsnip', disable = not is_enabled('cmp'), after = "nvim-cmp"}
     use {'windwp/nvim-autopairs', after = get_cmp(), config = "require'autopairs-config'", disable = not is_enabled('autopairs')}

@@ -48,7 +48,8 @@ if Vapour.plugins.telescope.enabled then
         name = "Telescope",
         f = {"<cmd>Telescope find_files<cr>", "Find Files"},
         r = {"<cmd>Telescope live_grep<cr>", "Live Grep"},
-        b = {"<cmd>Telescope buffers<cr>", "Buffers"}
+        b = {"<cmd>Telescope buffers<cr>", "Buffers"},
+        o = {"<cmd>Telescope oldfiles<cr>", "Recent Files"}
     }
 end
 
