@@ -35,13 +35,7 @@ return packer.startup(function(use)
         disable = not is_enabled('bufferline'),
         event = 'BufWinEnter'
     }
-    use {
-        'glepnir/galaxyline.nvim',
-        branch = 'main',
-        disable = not is_enabled('galaxyline'),
-        config = "require'galaxyline-config'",
-        event = 'BufWinEnter'
-    }
+    use {'hoob3rt/lualine.nvim', disable = not is_enabled('lualine'), config = "require'lualine-config'", event = 'BufWinEnter'}
     use {'glepnir/dashboard-nvim', disable = not is_enabled('dashboard'), config = "require'dashboard-config'", event = 'BufWinEnter'}
     use {'lukas-reineke/indent-blankline.nvim', disable = not is_enabled('indent_blankline'), config = "require'blankline-config'", event = "BufRead"}
 

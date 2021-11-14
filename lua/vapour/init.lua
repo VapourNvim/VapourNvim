@@ -44,7 +44,7 @@ Vapour = {
         autopairs = {enabled = true},
         gitsigns = {enabled = true},
         bufferline = {enabled = true},
-        galaxyline = {enabled = true},
+        lualine = {enabled = true},
         dashboard = {enabled = true},
         toggleterm = {
             enabled = true,
@@ -113,6 +113,7 @@ Vapour = {
         -- If true, :w -> :w!
         always_force_write = false,
         colorscheme = 'onedark',
+        lualine_colorscheme = 'onedark',
         transparent_bg = false
     }
 }
