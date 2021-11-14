@@ -34,7 +34,7 @@ This project is built to be:
 * Code completion
 * Language support(LSP)
 * Autoformatting
-* Faster navigation with telescope and hop.nvim
+* Faster navigation with telescope
 * Better syntax highlighting with treesitter
 * Terminal integration
 
@@ -44,7 +44,6 @@ This project is built to be:
 * [Neovim 0.5](https://github.com/neovim/neovim/releases/tag/v0.5.0) - Required - For lua configuration
 * [NodeJS](https://nodejs.org) - Required - For LSP
 * [Lazygit](https://github.com/jesseduffield/lazygit) - Optional - For git integration
-* [Pandoc](https://github.com/jgm/pandoc) - Optional - For markdown preview
 * [RipGrep](https://github.com/BurntSushi/ripgrep) - Optional - For telescope live grep
 
 ## Installation

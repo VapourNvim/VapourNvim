@@ -23,9 +23,6 @@ vim.api.nvim_set_keymap('v', '>', '>gv', {noremap = true, silent = false})
 vim.api.nvim_set_keymap('x', 'K', ':move \'<-2<CR>gv-gv', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('x', 'J', ':move \'>+1<CR>gv-gv', {noremap = true, silent = true})
 
-vim.api.nvim_set_keymap('n', 's', ":HopChar2<CR>", {silent = true})
-vim.api.nvim_set_keymap('n', 'S', ":HopWord<CR>", {silent = true})
-
 if Vapour.plugins.nvim_comment.enabled then vim.api.nvim_set_keymap('v', '<leader>/', ':CommentToggle<cr>', {noremap = true, silent = true}) end
 
 vim.cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')

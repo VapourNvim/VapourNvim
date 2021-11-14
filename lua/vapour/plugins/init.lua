@@ -83,17 +83,7 @@ return packer.startup(function(use)
     use {'windwp/nvim-autopairs', after = get_cmp(), config = "require'autopairs-config'", disable = not is_enabled('autopairs')}
 
     -- Version Control
-    use {
-        'TimUntersberger/neogit',
-        requires = 'nvim-lua/plenary.nvim',
-        cmd = "Neogit",
-        config = "require('neogit').setup {}",
-        disable = not is_enabled('neogit')
-    }
     use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}, disable = not is_enabled('gitsigns')}
-
-    -- Language Specific
-    use {'davidgranstrom/nvim-markdown-preview', disable = not is_enabled('markdown_preview'), ft = {"markdown"}, cmd = "MarkdownPreview"}
 
     -- Terminal Integration
     use {'akinsho/nvim-toggleterm.lua', disable = not is_enabled('toggleterm'), config = 'require"toggleterm-config"'}
@@ -107,11 +97,9 @@ return packer.startup(function(use)
         config = "require'telescope-config'"
     }
     use {'kyazdani42/nvim-tree.lua', cmd = "NvimTreeToggle", disable = not is_enabled('nvim_tree'), config = "require'nvimtree-config'"}
-    use {'phaazon/hop.nvim', disable = not is_enabled('hop')}
 
     -- Other
     use {'terrortylor/nvim-comment', cmd = "CommentToggle", config = "require('nvim_comment').setup()", disable = not is_enabled('nvim_comment')}
-    use {'monaqa/dial.nvim', disable = not is_enabled('dial'), config = "require'dial-config'"}
     use {'lukas-reineke/format.nvim', disable = not is_enabled('format'), config = "require'formatting'"}
     use {'folke/which-key.nvim', event = "BufWinEnter"}
 

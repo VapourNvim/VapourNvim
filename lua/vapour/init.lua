@@ -42,7 +42,6 @@ Vapour = {
         indent_blankline = {enabled = true, enable_rainbow_colors = false},
         colorizer = {enabled = true},
         autopairs = {enabled = true},
-        hop = {enabled = true},
         gitsigns = {enabled = true},
         bufferline = {enabled = true},
         galaxyline = {enabled = true},
@@ -80,13 +79,11 @@ Vapour = {
             rainbow = {enable = true, extended_mode = false, disable = {"html"}}
         },
         vsnip = {enabled = true},
-        markdown_preview = {eanbled = true},
         telescope = {enabled = true},
         nvim_tree = {enabled = true},
         dial = {enabled = true},
         format = {enabled = true},
         nvim_comment = {enabled = true},
-        neogit = {enabled = true},
         cmp = {
             enabled = true,
             sources = {
