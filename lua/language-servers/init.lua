@@ -46,8 +46,8 @@ elseif vim.fn.has("unix") == 1 then
     sumneko_root_path = "/home/" .. USER .. "/.config/nvim/ls/lua-language-server"
     sumneko_binary = "/home/" .. USER .. "/.config/nvim/ls/lua-language-server/bin/Linux/lua-language-server"
 elseif vim.fn.has("win32") == 1 then
-    sumneko_root_path = "C:\\Users" .. USER .. "\\.config\\nvim\\ls\\lua-language-server"
-    sumneko_binary = "C:\\Users" .. USER .. "\\.config\\nvim\\ls\\lua-language-server\\bin\\Windows\\lua-language-server"
+    sumneko_root_path = "C:\\Users\\" .. USER .. "\\AppData\\Local\\nvim\\ls\\lua-language-server"
+    sumneko_binary = "C:\\Users" .. USER .. "\\AppData\\Local\\nvim\\ls\\lua-language-server\\bin\\Windows\\lua-language-server"
 elseif Vapour.language_servers.sumneko_lua['root_path'] ~= nil then
     sumneko_root_path = Vapour.language_servers.sumneko_lua.root_path
     sumneko_binary = Vapour.language_servers.sumneko_lua.binary_path
