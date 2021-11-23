@@ -112,8 +112,8 @@ Vapour = {
     settings = {
         -- If true, :w -> :w!
         always_force_write = false,
-        colorscheme = 'onedark',
-        lualine_colorscheme = 'onedark',
+        colorscheme = 'rose-pine',
+        lualine_colorscheme = 'rose-pine',
         transparent_bg = false
     }
 }

@@ -51,11 +51,13 @@ return packer.startup(function(use)
     use {'windwp/nvim-ts-autotag', disable = not is_enabled('treesitter'), after = 'nvim-treesitter'}
 
     -- Colorschemes
-    use 'joshdick/onedark.vim'
-    use 'gruvbox-community/gruvbox'
-    use 'shaunsingh/nord.nvim'
-    use 'folke/tokyonight.nvim'
-    use {'dracula/vim', as = 'dracula'}
+    use {'rose-pine/neovim', as = 'rose-pine', opt = true}
+    use {'joshdick/onedark.vim', opt = true}
+    use {'gruvbox-community/gruvbox', opt = true}
+    use {'shaunsingh/nord.nvim', opt = true}
+    use {'folke/tokyonight.nvim', opt = true}
+    use {'dracula/vim', as = 'dracula', opt = true}
+    use {'tiagovla/tokyodark.nvim', opt = true}
 
     -- LSP and Autocomplete
     use {'neovim/nvim-lspconfig', event = "BufRead"}
