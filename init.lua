@@ -5,7 +5,7 @@
 --    \_/ \__,_| .__/ \___/ \__,_|_|  |_| \_| \_/ |_|_| |_| |_|
 --             |_|
 -- Author: https://github.com/hackorum
--- Github: https://github.com/hackorum/VapourNvim
+-- Github: https://github.com/VapourNvim/VapourNvim
 --
 -- Sane defaults and global helpers
 -- Load all Vapour packages first
