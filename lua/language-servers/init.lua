@@ -7,27 +7,27 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- Language servers
 for ls_type, props in pairs(Vapour.language_servers) do
-    if props.enabled == true then
-        if props.vapour_init then props.vapour_init() end
+  if props.enabled == true then
+    if props.vapour_init then props.vapour_init() end
 
-        lspconfig[ls_type].setup(props.setup or {
-            capabilities = capabilities,
-            root_dir = function(_)
-                return vim.loop.cwd()
-            end
+    lspconfig[ls_type].setup(props.setup or {
+      capabilities = capabilities,
+      root_dir = function(_)
+        return vim.loop.cwd()
+      end
 
-        })
-    end
+    })
+  end
 end
 
 require'lspconfig'.jsonls.setup {
-    commands = {
-        Format = {
-            function()
-                vim.lsp.buf.range_formatting({}, {0, 0}, {vim.fn.line("$"), 0})
-            end
-        }
+  commands = {
+    Format = {
+      function()
+        vim.lsp.buf.range_formatting({}, {0, 0}, {vim.fn.line("$"), 0})
+      end
     }
+  }
 }
 
 require'lspconfig'.gopls.setup {cmd = {"gopls", "serve"}, settings = {gopls = {analyses = {unusedparams = true}, staticcheck = true}}}
@@ -40,42 +40,39 @@ local sumneko_root_path = ""
 local sumneko_binary = ""
 
 if vim.fn.has("mac") == 1 then
-    sumneko_root_path = "/Users/" .. USER .. "/.config/nvim/ls/lua-language-server"
-    sumneko_binary = "/Users/" .. USER .. "/.config/nvim/ls/lua-language-server/bin/macOS/lua-language-server"
+  sumneko_root_path = "/Users/" .. USER .. "/.config/nvim/ls/lua-language-server"
+  sumneko_binary = "/Users/" .. USER .. "/.config/nvim/ls/lua-language-server/bin/macOS/lua-language-server"
 elseif vim.fn.has("unix") == 1 then
-    sumneko_root_path = "/home/" .. USER .. "/.config/nvim/ls/lua-language-server"
-    sumneko_binary = "/home/" .. USER .. "/.config/nvim/ls/lua-language-server/bin/Linux/lua-language-server"
+  sumneko_root_path = "/home/" .. USER .. "/.config/nvim/ls/lua-language-server"
+  sumneko_binary = "/home/" .. USER .. "/.config/nvim/ls/lua-language-server/bin/Linux/lua-language-server"
 elseif vim.fn.has("win32") == 1 then
-    sumneko_root_path = "C:\\Users\\" .. USER .. "\\AppData\\Local\\nvim\\ls\\lua-language-server"
-    sumneko_binary = "C:\\Users" .. USER .. "\\AppData\\Local\\nvim\\ls\\lua-language-server\\bin\\Windows\\lua-language-server"
+  sumneko_root_path = "C:\\Users\\" .. USER .. "\\AppData\\Local\\nvim\\ls\\lua-language-server"
+  sumneko_binary = "C:\\Users" .. USER .. "\\AppData\\Local\\nvim\\ls\\lua-language-server\\bin\\Windows\\lua-language-server"
 elseif Vapour.language_servers.sumneko_lua['root_path'] ~= nil then
-    sumneko_root_path = Vapour.language_servers.sumneko_lua.root_path
-    sumneko_binary = Vapour.language_servers.sumneko_lua.binary_path
+  sumneko_root_path = Vapour.language_servers.sumneko_lua.root_path
+  sumneko_binary = Vapour.language_servers.sumneko_lua.binary_path
 else
-    print("Unsupported system for sumneko")
+  print("Unsupported system for sumneko")
 end
 
 if Vapour.language_servers.sumneko_lua.enabled and sumneko_binary ~= "" and not Vapour.utils.file.exists(sumneko_binary) then
-    print('Unable to load Sumneko language server.  Make sure it is installed in ' .. sumneko_root_path)
+  print('Unable to load Sumneko language server.  Make sure it is installed in ' .. sumneko_root_path)
 else
-    local luadev = Vapour.utils.plugins.require('lua-dev')
-    local lua_lsp_config = {
-        cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
-        settings = {
-            Lua = {
-                runtime = {version = 'LuaJIT', path = vim.split(package.path, ';')},
-                diagnostics = {globals = {'vim'}},
-                workspace = {
-                    library = {[vim.fn.expand('$VIMRUNTIME/lua')] = true, [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true},
-                    preloadFileSize = 450
-                }
-            }
-        }
+  local luadev = Vapour.utils.plugins.require('lua-dev')
+  local lua_lsp_config = {
+    cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
+    settings = {
+      Lua = {
+        runtime = {version = 'LuaJIT', path = vim.split(package.path, ';')},
+        diagnostics = {globals = {'vim'}},
+        workspace = {library = {[vim.fn.expand('$VIMRUNTIME/lua')] = true, [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true}, preloadFileSize = 450}
+      }
     }
+  }
 
-    if luadev ~= nil then lua_lsp_config = luadev.setup {lspconfig = lua_lsp_config} end
+  if luadev ~= nil then lua_lsp_config = luadev.setup {lspconfig = lua_lsp_config} end
 
-    require'lspconfig'.sumneko_lua.setup(lua_lsp_config)
+  require'lspconfig'.sumneko_lua.setup(lua_lsp_config)
 end
 
 -- Diagnostics
@@ -83,36 +80,18 @@ end
 local signs = {Error = " ", Warn = " ", Hint = " ", Info = " "}
 
 for type, icon in pairs(signs) do
-    local hl = "DiagnosticSign" .. type
-    vim.fn.sign_define(hl, {text = icon, texthl = hl, numhl = ""})
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, {text = icon, texthl = hl, numhl = ""})
 end
 
 -- Show icons in autocomplete
 require('vim.lsp.protocol').CompletionItemKind = {
-    '', '', 'ƒ', ' ', '', '', '', 'ﰮ', '', '', '', '', '了', ' ', '﬌ ', ' ', ' ', '', ' ', ' ',
-    ' ', ' ', '', '', '<>'
+  '', '', 'ƒ', ' ', '', '', '', 'ﰮ', '', '', '', '', '了', ' ', '﬌ ', ' ', ' ', '', ' ', ' ',
+  ' ', ' ', '', '', '<>'
 }
 
 vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-    underline = true,
-    virtual_text = {spacing = 5, severity_limit = 'Warning'},
-    update_in_insert = true
+  underline = true,
+  virtual_text = {spacing = 5, severity_limit = 'Warning'},
+  update_in_insert = true
 })
-
-if Vapour.language_servers.html.enabled then
-    local configs = require 'lspconfig/configs'
-
-    if not lspconfig.ls_emmet then
-        configs.ls_emmet = {
-            default_config = {
-                cmd = {'ls_emmet', '--stdio'},
-                filetypes = {'html', 'css'},
-                root_dir = function(_)
-                    return vim.loop.cwd()
-                end,
-                settings = {}
-            }
-        }
-    end
-    lspconfig.ls_emmet.setup {capabilities = capabilities}
-end
