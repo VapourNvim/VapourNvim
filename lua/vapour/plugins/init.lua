@@ -76,7 +76,7 @@ return packer.startup(function(use)
   use {'windwp/nvim-autopairs', after = get_cmp(), config = "require'autopairs-config'", disable = not is_enabled('autopairs')}
 
   -- Version Control
-  use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}, disable = not is_enabled('gitsigns')}
+  use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}, disable = not is_enabled('gitsigns'), event = 'BufRead', config = "require('gitsigns-config')"}
 
   -- Terminal Integration
   use {'akinsho/nvim-toggleterm.lua', disable = not is_enabled('toggleterm'), config = 'require"toggleterm-config"'}

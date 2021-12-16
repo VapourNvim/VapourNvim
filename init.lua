@@ -32,9 +32,6 @@ if Vapour.settings.colorscheme ~= "custom" then Vapour.utils.plugins.require('co
 -- LSP and Autocomplete
 require('language-servers')
 
--- Git
-require('gitsigns-config')
-
--- Other
+-- Whichkey
 require('which-key-config')
 if Vapour.settings.transparent_bg then vim.cmd('hi Normal guibg=NONE ctermbg=NONE') end
