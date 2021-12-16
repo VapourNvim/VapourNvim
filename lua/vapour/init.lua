@@ -119,3 +119,28 @@ Vapour = {
 }
 
 require('vapour.utils')
+
+local user_config = CONFIG_PATH .. '/lua/vapour/user-config/init.lua'
+
+if not Vapour.utils.file.exists(user_config) then Vapour.utils.file.create(user_config) end
+
+-- User config that overrides the above
+vim.cmd('luafile ' .. user_config)
+
+-- General
+require('vapour.options')
+require('vapour.plugins')
+require('vapour.keybindings')
+
+-- Syntax and Visual
+-- If a custom theme is wanted, require() that in user-config.init
+-- Otherwise if the default theme is not wanted change Vapour.settings.colorscheme
+-- This will return nil if it's not found
+if Vapour.settings.colorscheme ~= "custom" then Vapour.utils.plugins.require('colorscheme.' .. Vapour.settings.colorscheme) end
+
+-- LSP and Autocomplete
+require('language-servers')
+
+-- Whichkey
+require('which-key-config')
+if Vapour.settings.transparent_bg then vim.cmd('hi Normal guibg=NONE ctermbg=NONE') end
