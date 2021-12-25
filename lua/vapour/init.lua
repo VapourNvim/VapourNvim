@@ -6,37 +6,22 @@ Vapour = {}
 Vapour = {
   options = {tabwidth = 2},
   language_servers = {
-    sumneko_lua = {enabled = true},
-    bashls = {enabled = true},
-    cssls = {enabled = true},
-    html = {enabled = true},
-    tsserver = {enabled = true},
-    pyright = {enabled = true},
-    jedi_language_server = {enabled = true},
-    pylsp = {enabled = true},
-    vimls = {enabled = true},
-    yamlls = {enabled = true},
-    solargraph = {enabled = true},
-    vuels = {enabled = true},
-    phpactor = {
-      enabled = true,
-      vapour_init = function()
-        require 'language-servers.phpactor'
-      end
-    },
-    jsonls = {
-      enabled = true,
-      setup = {
-        commands = {
-          Format = {
-            function()
-              vim.lsp.buf.range_formatting({}, {0, 0}, {vim.fn.line("$"), 0})
-            end
+    sumneko_lua = {
+      config = function(opts)
+        opts = vim.tbl_deep_extend("force", {
+          settings = {
+            Lua = {
+              runtime = {version = 'LuaJIT', path = vim.split(package.path, ';')},
+              diagnostics = {globals = {'vim'}},
+              workspace = {library = vim.api.nvim_get_runtime_file("", true), checkThirdParty = false},
+              telemetry = {enable = false}
+            }
           }
-        }
-      }
-    },
-    gopls = {enabled = true, setup = {cmd = {"gopls", "serve"}, settings = {gopls = {analyses = {unusedparams = true}, staticcheck = true}}}}
+
+        }, opts)
+        return opts
+      end
+    }
   },
   plugins = {
     indent_blankline = {enabled = true, enable_rainbow_colors = false},

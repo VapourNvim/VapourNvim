@@ -61,6 +61,7 @@ return packer.startup(function(use)
 
   -- LSP and Autocomplete
   use {'neovim/nvim-lspconfig', event = "BufRead"}
+  use {'williamboman/nvim-lsp-installer'}
   use {'onsails/lspkind-nvim'}
   use {
     'hrsh7th/nvim-cmp',
