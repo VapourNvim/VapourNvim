@@ -8,8 +8,8 @@ end
 local feedkey = function(key, mode)
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
 end
-local cmp = require 'cmp'
-local lspkind = require('lspkind')
+local cmp = Vapour.utils.plugins.require('cmp')
+local lspkind = Vapour.utils.plugins.require('lspkind')
 
 cmp.setup({
   snippet = {
@@ -50,10 +50,6 @@ cmp.setup({
   sources = Vapour.plugins.cmp.sources
 })
 
-require("cmp_dictionary").setup({
-    dic = {
-        ["*"] = "/usr/share/dict/words",
-    },
-})
+Vapour.utils.plugins.require("cmp_dictionary").setup({dic = {["*"] = "/usr/share/dict/words"}})
 
-vim.cmd("autocmd FileType TelescopePrompt lua require('cmp').setup.buffer { enabled = false }")
+vim.cmd("autocmd FileType TelescopePrompt lua Vapour.utils.plugins.require('cmp').setup.buffer { enabled = false }")

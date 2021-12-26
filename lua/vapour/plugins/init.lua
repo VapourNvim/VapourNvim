@@ -76,6 +76,7 @@ return packer.startup(function(use)
   use {'uga-rosa/cmp-dictionary', disable = not is_enabled('cmp')}
   use {'hrsh7th/vim-vsnip', disable = not is_enabled('cmp'), after = "nvim-cmp"}
   use {'windwp/nvim-autopairs', after = get_cmp(), config = "require'autopairs-config'", disable = not is_enabled('autopairs')}
+  use {"b0o/schemastore.nvim", after = 'nvim-lsp-installer'}
 
   -- Version Control
   use {

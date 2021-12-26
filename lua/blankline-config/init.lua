@@ -1,3 +1,5 @@
+local indent_blankline = Vapour.utils.plugins.require('indent_blankline')
+
 local function get_char_highlights()
   if Vapour.plugins.indent_blankline.enable_rainbow_colors then
     vim.cmd [[highlight IndentBlanklineIndent1 guifg=#E06C75 blend=nocombine]]
@@ -14,7 +16,8 @@ local function get_char_highlights()
     return {}
   end
 end
-require("indent_blankline").setup {
+
+indent_blankline.setup {
   filetype_exclude = {"dashboard", "packer", "NvimTree"},
   buftype_exclude = {"terminal"},
   show_current_context = not Vapour.plugins.indent_blankline.enable_rainbow_colors,

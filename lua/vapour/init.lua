@@ -21,6 +21,12 @@ Vapour = {
         }, opts)
         return opts
       end
+    },
+    jsonls = {
+      config = function(opts)
+        opts = vim.tbl_deep_extend("force", {settings = {json = {schemas = Vapour.utils.plugins.require('schemastore').json.schemas()}}}, opts)
+        return opts
+      end
     }
   },
   plugins = {
@@ -70,7 +76,9 @@ Vapour = {
     nvim_comment = {enabled = true},
     cmp = {
       enabled = true,
-      sources = {{name = 'nvim_lsp'}, {name = 'vsnip'}, {name = 'buffer'}, {name = 'omni'}, {name = "dictionary", keyword_length = 2}}
+      sources = {
+        {name = 'nvim_lsp'}, {name = 'vsnip'}, {name = 'buffer'}, {name = 'omni'}, {name = "dictionary", keyword_length = 2}, {name = 'path'}
+      }
     },
     which_key = {user_defined = {}},
 
