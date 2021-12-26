@@ -1,4 +1,5 @@
-require"format".setup {
+local format = Vapour.utils.plugins.require('format')
+format.setup {
   ["*"] = {{cmd = {"sed -i 's/[ \t]*$//'"}}},
   html = {{cmd = {"prettier -w"}}},
   css = {{cmd = {"prettier -w"}}},

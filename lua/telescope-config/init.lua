@@ -1,5 +1,6 @@
-local actions = require('telescope.actions')
-require('telescope').setup {
+local actions = Vapour.utils.plugins.require('telescope.actions')
+local telescope = Vapour.utils.plugins.require('telescope')
+telescope.setup {
   defaults = {
     layout_config = {width = 0.75, prompt_position = "top", preview_cutoff = 120, horizontal = {mirror = false}, vertical = {mirror = false}},
     find_command = {'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'},

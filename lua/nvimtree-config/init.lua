@@ -1,6 +1,7 @@
 vim.g.nvim_tree_ignore = {'*.tmp', '.git'}
 vim.g.nvim_tree_indent_markers = 1
-require'nvim-tree'.setup {
+local nvimtree = Vapour.utils.plugins.require 'nvim-tree'
+nvimtree.setup {
   disable_netrw = true,
   hijack_netrw = true,
   open_on_setup = true,

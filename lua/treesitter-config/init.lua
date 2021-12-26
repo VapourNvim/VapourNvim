@@ -1,8 +1,8 @@
 Vapour.utils.plugins.packadd('nvim-treesitter')
 
-require'nvim-treesitter.install'.compilers = {"gcc-11"}
+Vapour.utils.plugins.require'nvim-treesitter.install'.compilers = {"gcc-11"}
 
-require'nvim-treesitter.configs'.setup {
+Vapour.utils.plugins.require'nvim-treesitter.configs'.setup {
   ensure_installed = Vapour.plugins.treesitter.ensure_installed, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   ignore_install = Vapour.plugins.treesitter.ignore_install,
   indent = Vapour.plugins.treesitter.indent,

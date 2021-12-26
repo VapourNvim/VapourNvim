@@ -1,7 +1,3 @@
-require('vapour.globals')
-
-Vapour = {}
-
 -- Vapour object to use for namespacing
 Vapour = {
   options = {tabwidth = 2},
@@ -113,7 +109,7 @@ Vapour = {
 
 require('vapour.utils')
 
-local user_config = CONFIG_PATH .. '/lua/vapour/user-config/init.lua'
+local user_config = vim.fn.stdpath "config" .. '/lua/vapour/user-config/init.lua'
 
 if not Vapour.utils.file.exists(user_config) then Vapour.utils.file.create(user_config) end
 

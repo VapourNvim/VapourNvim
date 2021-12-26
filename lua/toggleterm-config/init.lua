@@ -1,4 +1,5 @@
-require"toggleterm".setup {
+local toggleterm = Vapour.utils.plugins.require "toggleterm"
+toggleterm.setup {
   size = 13,
   open_mapping = [[<c-\>]],
   shade_filetypes = {},
