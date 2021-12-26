@@ -58,6 +58,7 @@ return packer.startup(function(use)
   use {'folke/tokyonight.nvim', opt = true}
   use {'dracula/vim', as = 'dracula', opt = true}
   use {'tiagovla/tokyodark.nvim', opt = true}
+  use {'catppuccin/nvim', as = 'catppuccin', opt = true}
 
   -- LSP and Autocomplete
   use {'neovim/nvim-lspconfig', event = "BufRead"}
@@ -77,7 +78,13 @@ return packer.startup(function(use)
   use {'windwp/nvim-autopairs', after = get_cmp(), config = "require'autopairs-config'", disable = not is_enabled('autopairs')}
 
   -- Version Control
-  use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}, disable = not is_enabled('gitsigns'), event = 'BufRead', config = "require('gitsigns-config')"}
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {'nvim-lua/plenary.nvim'},
+    disable = not is_enabled('gitsigns'),
+    event = 'BufRead',
+    config = "require('gitsigns-config')"
+  }
 
   -- Terminal Integration
   use {'akinsho/nvim-toggleterm.lua', disable = not is_enabled('toggleterm'), config = 'require"toggleterm-config"'}
