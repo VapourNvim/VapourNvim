@@ -36,7 +36,7 @@ Vapour = {
     toggleterm = {
       enabled = true,
       toggle_float = function()
-        local Terminal = require('toggleterm.terminal').Terminal
+        local Terminal = Vapour.utils.plugins.require('toggleterm.terminal').Terminal
         local float = Terminal:new({direction = "float"})
         return float:toggle()
       end,
@@ -46,7 +46,7 @@ Vapour = {
         return lazygit:toggle()
       end,
       which_key = {
-        root = "T",
+        root = "t",
         name = "Terminal",
         definitions = {
           t = {":ToggleTerm<cr>", "Split Below"},

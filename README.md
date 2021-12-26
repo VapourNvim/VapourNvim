@@ -26,22 +26,21 @@ This project is built to be:
 ## Features
 
 * Easy to install and use
-* Awesome user configuration system
-* Very elegant and clean look to the editor
-* Extensible package management system
 * Written in an efficient programming language
+* Extensible package management system
+* Very elegant and clean look
+* Beautiful syntax highlighting with treesitter
+* Language support and Code Autocompletion
 * Great support for version control
-* Code completion
-* Language support(LSP)
-* Autoformatting
-* Faster navigation with telescope
-* Better syntax highlighting with treesitter
 * Terminal integration
+* Efficient file navigation
+* Autoformatting
+* Awesome user configuration system
 
 
 ## Requirements
 
-* [Neovim 0.5](https://github.com/neovim/neovim/releases/tag/v0.5.0) - Required - For lua configuration
+* [Neovim Version > 0.5](https://github.com/neovim/neovim/releases/tag/v0.5.0) - Required - For lua configuration
 * [NodeJS](https://nodejs.org) - Required - For LSP
 * [Lazygit](https://github.com/jesseduffield/lazygit) - Optional - For git integration
 * [RipGrep](https://github.com/BurntSushi/ripgrep) - Optional - For telescope live grep
@@ -51,18 +50,18 @@ This project is built to be:
 Make sure you have curl and bash installed before you run this script.
 
 ```bash
-curl -s https://raw.githubusercontent.com/hackorum/VapourNvim/main/install.sh | bash -s
+curl -s https://raw.githubusercontent.com/VapourNvim/VapourNvim/main/install.sh | bash -s
 ```
 
 ## Manual Installation
 ```
-git clone https://github.com/hackorum/VapourNvim ~/.config/nvim
+git clone https://github.com/VapourNvim/VapourNvim ~/.config/nvim
 nvim +PackerSync
 ```
 
 ## After Installation
 You almost certainly want to add some plugins of your own. You can do it by making your own [config file](https://github.com/hackorum/VapourNvim/wiki/User-Configuration)
-Please read the [wiki](https://github.com/hackorum/VapourNvim/wiki) for [Keybindings](https://github.com/hackorum/VapourNvim/wiki/Keybindings), [Language Servers](https://github.com/hackorum/VapourNvim/wiki/Language-Servers), [Plugins](https://github.com/hackorum/VapourNvim/wiki/Plugins) and [Screenshots](https://github.com/hackorum/VapourNvim/wiki/Screenshots).
+Please read the [wiki](https://github.com/VapourNvim/VapourNvim/wiki) for [Keybindings](https://github.com/hackorum/VapourNvim/wiki/Keybindings), [Language Servers](https://github.com/hackorum/VapourNvim/wiki/Language-Servers), [Plugins](https://github.com/hackorum/VapourNvim/wiki/Plugins) and [Screenshots](https://github.com/hackorum/VapourNvim/wiki/Screenshots).
 After making VapourNvim your own, consider posting some screenshots [here](https://github.com/hackorum/VapourNvim/issues/20).
 
 ## Contributing
