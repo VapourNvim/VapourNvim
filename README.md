@@ -11,7 +11,7 @@
 </div>
 
 
-![VapourNvim Image](assets/screenshot.png)
+![VapourNvim Image](https://raw.githubusercontent.com/VapourNvim/VapourNvim/main/assets/screenshot.png)
 
 ## Introduction
 
