@@ -18,7 +18,7 @@ local function get_char_highlights()
 end
 
 indent_blankline.setup {
-  filetype_exclude = {"dashboard", "packer", "NvimTree"},
+  filetype_exclude = {"dashboard", "packer", "NvimTree", "lsp-installer"},
   buftype_exclude = {"terminal"},
   show_current_context = not Vapour.plugins.indent_blankline.enable_rainbow_colors,
   char_highlight_list = get_char_highlights(),
