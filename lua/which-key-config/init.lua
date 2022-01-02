@@ -10,7 +10,10 @@ local mappings = {
     K = {'<cmd>lua vim.lsp.buf.hover()<CR>', "Hover"},
     w = {'<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', "Add workspace folder"},
     W = {'<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', "Remove workspace folder"},
-    l = {'<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', "List workspace folder"},
+    l = {
+      '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>',
+      "List workspace folder"
+    },
     t = {'<cmd>lua vim.lsp.buf.type_definition()<CR>', "Type definition"},
     d = {'<cmd>lua vim.lsp.buf.definition()<CR>', "Go to definition"},
     D = {'<cmd>lua vim.lsp.buf.delaration()<CR>', "Go to declaration"},
@@ -36,6 +39,11 @@ local mappings = {
     s = {":PackerSync<cr>", "Sync Plugins"},
     S = {":PackerStatus<cr>", "Packer Status"},
     u = {":PackerUpdate<cr>", "Update Plugins"}
+  },
+  z = {
+    name = "Focus",
+    z = {":ZenMode<cr>", "Toggle Zen Mode"},
+    t = {":Twilight<cr>", "Toggle Twilight"}
   }
 }
 
@@ -70,7 +78,9 @@ for plugin, plugin_options in pairs(Vapour.plugins) do
     if mappings[whichkey_opts.root] ~= nil then
       whichkey_mappings = mappings[whichkey_opts.root]
 
-      for key, actions in pairs(mappings[whichkey_opts.root]) do whichkey_mappings[key] = actions end
+      for key, actions in pairs(mappings[whichkey_opts.root]) do
+        whichkey_mappings[key] = actions
+      end
     else
       whichkey_mappings = {
         -- Give a special name if provided otherwise just use the plugin name

@@ -27,7 +27,12 @@ end
 return packer.startup(function(use)
   use 'wbthomason/packer.nvim'
   -- Syntax Highlighting and Visual Plugins
-  use {'norcalli/nvim-colorizer.lua', disable = not is_enabled('colorizer'), config = "require'colorizer-config'", event = 'BufRead'}
+  use {
+    'norcalli/nvim-colorizer.lua',
+    disable = not is_enabled('colorizer'),
+    config = "require'colorizer-config'",
+    event = 'BufRead'
+  }
   use {
     'akinsho/nvim-bufferline.lua',
     requires = 'kyazdani42/nvim-web-devicons',
@@ -35,9 +40,36 @@ return packer.startup(function(use)
     disable = not is_enabled('bufferline'),
     event = 'BufWinEnter'
   }
-  use {'hoob3rt/lualine.nvim', disable = not is_enabled('lualine'), config = "require'lualine-config'", event = 'BufWinEnter'}
-  use {'glepnir/dashboard-nvim', disable = not is_enabled('dashboard'), config = "require'dashboard-config'", event = 'BufWinEnter'}
-  use {'lukas-reineke/indent-blankline.nvim', disable = not is_enabled('indent_blankline'), config = "require'blankline-config'", event = "BufRead"}
+  use {
+    'hoob3rt/lualine.nvim',
+    disable = not is_enabled('lualine'),
+    config = "require'lualine-config'",
+    event = 'BufWinEnter'
+  }
+  use {
+    'glepnir/dashboard-nvim',
+    disable = not is_enabled('dashboard'),
+    config = "require'dashboard-config'",
+    event = 'BufWinEnter'
+  }
+  use {
+    'lukas-reineke/indent-blankline.nvim',
+    disable = not is_enabled('indent_blankline'),
+    config = "require'blankline-config'",
+    event = "BufRead"
+  }
+  use {
+    "folke/zen-mode.nvim",
+    config = 'require("zen-mode-config")',
+    disable = not is_enabled('zen_mode'),
+    cmd = "ZenMode"
+  }
+  use {
+    "folke/twilight.nvim",
+    config = "require('twilight-config')",
+    disable = not is_enabled('twilight'),
+    cmd = "ZenMode"
+  }
 
   -- Tree-Sitter
   use {
@@ -75,7 +107,12 @@ return packer.startup(function(use)
   use {'hrsh7th/cmp-buffer', after = "nvim-cmp", disable = not is_enabled('cmp')}
   use {'uga-rosa/cmp-dictionary', disable = not is_enabled('cmp')}
   use {'hrsh7th/vim-vsnip', disable = not is_enabled('cmp'), after = "nvim-cmp"}
-  use {'windwp/nvim-autopairs', after = get_cmp(), config = "require'autopairs-config'", disable = not is_enabled('autopairs')}
+  use {
+    'windwp/nvim-autopairs',
+    after = get_cmp(),
+    config = "require'autopairs-config'",
+    disable = not is_enabled('autopairs')
+  }
   use {"b0o/schemastore.nvim", after = 'nvim-lsp-installer'}
 
   -- Version Control
@@ -88,7 +125,11 @@ return packer.startup(function(use)
   }
 
   -- Terminal Integration
-  use {'akinsho/nvim-toggleterm.lua', disable = not is_enabled('toggleterm'), config = 'require"toggleterm-config"'}
+  use {
+    'akinsho/nvim-toggleterm.lua',
+    disable = not is_enabled('toggleterm'),
+    config = 'require"toggleterm-config"'
+  }
 
   -- Navigation
   use {
@@ -98,11 +139,26 @@ return packer.startup(function(use)
     disable = not is_enabled('telescope'),
     config = "require'telescope-config'"
   }
-  use {'kyazdani42/nvim-tree.lua', cmd = "NvimTreeToggle", disable = not is_enabled('nvim_tree'), config = "require'nvimtree-config'"}
+  use {
+    'kyazdani42/nvim-tree.lua',
+    cmd = "NvimTreeToggle",
+    disable = not is_enabled('nvim_tree'),
+    config = "require'nvimtree-config'"
+  }
 
   -- Other
-  use {'terrortylor/nvim-comment', cmd = "CommentToggle", config = "require('nvim_comment').setup()", disable = not is_enabled('nvim_comment')}
-  use {'lukas-reineke/format.nvim', disable = not is_enabled('format'), config = "require'formatting'"}
+  use {
+    'terrortylor/nvim-comment',
+    cmd = "CommentToggle",
+    config = "require('nvim_comment').setup()",
+    disable = not is_enabled('nvim_comment')
+  }
+  use {
+    'jose-elias-alvarez/null-ls.nvim',
+    disable = not is_enabled('null_ls'),
+    config = "require'null-ls-config'",
+    event = "InsertEnter"
+  }
   use {'folke/which-key.nvim', event = "BufWinEnter"}
 
   for _, plugin in pairs(Vapour.plugins.user) do use(plugin) end
