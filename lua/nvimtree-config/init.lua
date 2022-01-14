@@ -18,5 +18,10 @@ nvimtree.setup {
     args = {}
   },
 
-  view = {width = 25, side = 'left', auto_resize = true, mappings = {custom_only = false, list = {}}}
+  view = {
+    width = Vapour.plugins.nvim_tree.view_width,
+    side = 'left',
+    auto_resize = true,
+    mappings = {custom_only = false, list = {}}
+  }
 }

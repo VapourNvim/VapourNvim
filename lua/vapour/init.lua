@@ -9,7 +9,10 @@ Vapour = {
             Lua = {
               runtime = {version = 'LuaJIT', path = vim.split(package.path, ';')},
               diagnostics = {globals = {'vim'}},
-              workspace = {library = vim.api.nvim_get_runtime_file("", true), checkThirdParty = false},
+              workspace = {
+                library = vim.api.nvim_get_runtime_file("", true),
+                checkThirdParty = false
+              },
               telemetry = {enable = false}
             }
           }
@@ -20,7 +23,9 @@ Vapour = {
     },
     jsonls = {
       config = function(opts)
-        opts = vim.tbl_deep_extend("force", {settings = {json = {schemas = Vapour.utils.plugins.require('schemastore').json.schemas()}}}, opts)
+        opts = vim.tbl_deep_extend("force", {
+          settings = {json = {schemas = Vapour.utils.plugins.require('schemastore').json.schemas()}}
+        }, opts)
         return opts
       end
     }
@@ -68,14 +73,15 @@ Vapour = {
     },
     vsnip = {enabled = true},
     telescope = {enabled = true},
-    nvim_tree = {enabled = true},
+    nvim_tree = {enabled = true, view_width = 25},
     dial = {enabled = true},
     null_ls = {enabled = true},
     nvim_comment = {enabled = true},
     cmp = {
       enabled = true,
       sources = {
-        {name = 'nvim_lsp'}, {name = 'vsnip'}, {name = 'buffer'}, {name = 'omni'}, {name = "dictionary", keyword_length = 2}, {name = 'path'}
+        {name = 'nvim_lsp'}, {name = 'vsnip'}, {name = 'buffer'}, {name = 'omni'},
+        {name = "dictionary", keyword_length = 2}, {name = 'path'}
       }
     },
     which_key = {user_defined = {}},
@@ -127,7 +133,9 @@ require('vapour.keybindings')
 -- If a custom theme is wanted, require() that in user-config.init
 -- Otherwise if the default theme is not wanted change Vapour.settings.colorscheme
 -- This will return nil if it's not found
-if Vapour.settings.colorscheme ~= "custom" then Vapour.utils.plugins.require('colorscheme.' .. Vapour.settings.colorscheme) end
+if Vapour.settings.colorscheme ~= "custom" then
+  Vapour.utils.plugins.require('colorscheme.' .. Vapour.settings.colorscheme)
+end
 
 -- LSP and Autocomplete
 require('language-servers')
