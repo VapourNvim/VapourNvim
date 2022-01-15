@@ -156,8 +156,7 @@ return packer.startup(function(use)
   use {
     'jose-elias-alvarez/null-ls.nvim',
     disable = not is_enabled('null_ls'),
-    config = "require'null-ls-config'",
-    event = "InsertEnter"
+    config = "require'null-ls-config'"
   }
   use {'folke/which-key.nvim', event = "BufWinEnter"}
 
