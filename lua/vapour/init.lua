@@ -52,13 +52,19 @@ Vapour = {
         local lazygit = Terminal:new({cmd = "lazygit", direction = "float"})
         return lazygit:toggle()
       end,
+      toggle_ranger = function()
+        local Terminal = require('toggleterm.terminal').Terminal
+        local ranger = Terminal:new({cmd = "ranger", direction = "float"})
+        return ranger:toggle()
+      end,
       which_key = {
         root = "t",
         name = "Terminal",
         definitions = {
           t = {":ToggleTerm<cr>", "Split Below"},
           f = {"<cmd>lua Vapour.plugins.toggleterm.toggle_float()<cr>", "Floating Terminal"},
-          l = {"<cmd>lua Vapour.plugins.toggleterm.toggle_lazygit()<cr>", "LazyGit"}
+          l = {"<cmd>lua Vapour.plugins.toggleterm.toggle_lazygit()<cr>", "LazyGit"},
+          r = {"<cmd>lua Vapour.plugins.toggleterm.toggle_ranger()<cr>", "LazyGit"}
         }
       }
     },
