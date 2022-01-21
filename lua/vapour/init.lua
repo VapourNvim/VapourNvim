@@ -84,6 +84,7 @@ Vapour = {
     dial = {enabled = true},
     null_ls = {enabled = true},
     nvim_comment = {enabled = true},
+    presence = {enabled = true},
     lsp = {
       enabled = true,
       cmp_sources = {

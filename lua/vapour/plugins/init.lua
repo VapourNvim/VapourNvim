@@ -159,6 +159,12 @@ return packer.startup(function(use)
     config = "require'null-ls-config'"
   }
   use {'folke/which-key.nvim', event = "BufWinEnter"}
+  use {
+    'andweeb/presence.nvim',
+    event = "BufRead",
+    config = 'require("presence-config")',
+    disable = not is_enabled('presence')
+  }
 
   for _, plugin in pairs(Vapour.plugins.user) do use(plugin) end
 end)
