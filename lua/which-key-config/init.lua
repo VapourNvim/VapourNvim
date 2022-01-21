@@ -22,7 +22,8 @@ local mappings = {
     a = {'<cmd>lua vim.lsp.buf.code_action()<CR>', "Code actions"},
     e = {'<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', "Show line diagnostics"},
     n = {'<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', "Go to next diagnostic"},
-    N = {'<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', "Go to previous diagnostic"}
+    N = {'<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', "Go to previous diagnostic"},
+    I = {'<cmd>LspInstallInfo<cr>', 'Install language server'}
   },
   x = {":bdelete<cr>", "Close Buffer"},
   X = {":bdelete!<cr>", "Force Close Buffer"},
