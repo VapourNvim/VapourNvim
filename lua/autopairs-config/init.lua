@@ -7,7 +7,7 @@ npairs.setup({break_line_filetype = nil, check_ts = true})
 local remap = vim.api.nvim_set_keymap
 _G.MUtils = {}
 
-if Vapour.plugins.cmp.enabled == true then
+if Vapour.plugins.lsp.enabled == true then
   local cmp_autopairs = require('nvim-autopairs.completion.cmp')
   local cmp = require('cmp')
   cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())

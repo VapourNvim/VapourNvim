@@ -2,7 +2,9 @@ vim.o.completeopt = "menu,menuone,noselect"
 
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+  return col ~= 0
+             and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s")
+             == nil
 end
 
 local feedkey = function(key, mode)
@@ -18,8 +20,11 @@ cmp.setup({
     end
   },
   formatting = {
-    format = lspkind.cmp_format(
-        {with_text = true, maxwidth = 50, menu = {buffer = "[Buf]", nvim_lsp = "[LSP]", dictionary = "[Dict]", vsnip = "[Vsnip]"}})
+    format = lspkind.cmp_format({
+      with_text = true,
+      maxwidth = 50,
+      menu = {buffer = "[Buf]", nvim_lsp = "[LSP]", dictionary = "[Dict]", vsnip = "[Vsnip]"}
+    })
   },
   mapping = {
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
@@ -47,9 +52,10 @@ cmp.setup({
       end
     end, {"i", "s"})
   },
-  sources = Vapour.plugins.cmp.sources
+  sources = Vapour.plugins.lsp.cmp_sources
 })
 
 Vapour.utils.plugins.require("cmp_dictionary").setup({dic = {["*"] = "/usr/share/dict/words"}})
 
-vim.cmd("autocmd FileType TelescopePrompt lua Vapour.utils.plugins.require('cmp').setup.buffer { enabled = false }")
+vim.cmd(
+    "autocmd FileType TelescopePrompt lua Vapour.utils.plugins.require('cmp').setup.buffer { enabled = false }")

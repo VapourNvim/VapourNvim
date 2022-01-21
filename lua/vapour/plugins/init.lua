@@ -17,7 +17,7 @@ local function is_enabled(plugin)
 end
 
 local function get_cmp()
-  if Vapour.plugins.cmp.enabled == true then
+  if Vapour.plugins.lsp.enabled == true then
     return 'nvim-cmp'
   else
     return
@@ -93,20 +93,20 @@ return packer.startup(function(use)
   use {'catppuccin/nvim', as = 'catppuccin', opt = true}
 
   -- LSP and Autocomplete
-  use {'neovim/nvim-lspconfig', event = "BufRead"}
-  use {'williamboman/nvim-lsp-installer'}
-  use {'onsails/lspkind-nvim'}
+  use {'neovim/nvim-lspconfig', event = "BufRead", disable = not is_enabled('lsp')}
+  use {'williamboman/nvim-lsp-installer', disable = not is_enabled('lsp')}
+  use {'onsails/lspkind-nvim', disable = not is_enabled('lsp')}
   use {
     'hrsh7th/nvim-cmp',
     config = function()
       require 'cmp-config'
     end,
-    disable = not is_enabled('cmp')
+    disable = not is_enabled('lsp')
   }
-  use {'hrsh7th/cmp-nvim-lsp', disable = not is_enabled('cmp')}
-  use {'hrsh7th/cmp-buffer', after = "nvim-cmp", disable = not is_enabled('cmp')}
-  use {'uga-rosa/cmp-dictionary', disable = not is_enabled('cmp')}
-  use {'hrsh7th/vim-vsnip', disable = not is_enabled('cmp'), after = "nvim-cmp"}
+  use {'hrsh7th/cmp-nvim-lsp', disable = not is_enabled('lsp')}
+  use {'hrsh7th/cmp-buffer', after = "nvim-cmp", disable = not is_enabled('lsp')}
+  use {'uga-rosa/cmp-dictionary', disable = not is_enabled('lsp')}
+  use {'hrsh7th/vim-vsnip', disable = not is_enabled('lsp'), after = "nvim-cmp"}
   use {
     'windwp/nvim-autopairs',
     after = get_cmp(),

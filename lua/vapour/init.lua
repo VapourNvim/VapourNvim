@@ -83,9 +83,9 @@ Vapour = {
     dial = {enabled = true},
     null_ls = {enabled = true},
     nvim_comment = {enabled = true},
-    cmp = {
+    lsp = {
       enabled = true,
-      sources = {
+      cmp_sources = {
         {name = 'nvim_lsp'}, {name = 'vsnip'}, {name = 'buffer'}, {name = 'omni'},
         {name = "dictionary", keyword_length = 2}, {name = 'path'}
       }
