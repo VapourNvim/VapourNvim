@@ -34,17 +34,10 @@ return packer.startup(function(use)
     event = 'BufRead'
   }
   use {
-    'akinsho/nvim-bufferline.lua',
-    requires = 'kyazdani42/nvim-web-devicons',
-    config = 'require"bufferline-config"',
-    disable = not is_enabled('bufferline'),
-    event = 'BufWinEnter'
-  }
-  use {
-    'hoob3rt/lualine.nvim',
-    disable = not is_enabled('lualine'),
-    config = "require'lualine-config'",
-    event = 'BufWinEnter'
+    'tamton-aquib/staline.nvim',
+    disable = not is_enabled('staline'),
+    config = "require'staline-config'",
+    event = 'BufRead'
   }
   use {
     'glepnir/dashboard-nvim',
@@ -70,6 +63,14 @@ return packer.startup(function(use)
     disable = not is_enabled('twilight'),
     cmd = "ZenMode"
   }
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {'nvim-lua/plenary.nvim'},
+    disable = not is_enabled('gitsigns'),
+    event = 'BufRead',
+    config = "require('gitsigns-config')"
+  }
+  use {'kyazdani42/nvim-web-devicons', event = 'BufRead'}
 
   -- Tree-Sitter
   use {
@@ -106,23 +107,14 @@ return packer.startup(function(use)
   use {'hrsh7th/cmp-nvim-lsp', disable = not is_enabled('lsp')}
   use {'hrsh7th/cmp-buffer', after = "nvim-cmp", disable = not is_enabled('lsp')}
   use {'uga-rosa/cmp-dictionary', disable = not is_enabled('lsp')}
-  use {'hrsh7th/vim-vsnip', disable = not is_enabled('lsp'), after = "nvim-cmp"}
+  -- use {'hrsh7th/vim-vsnip', disable = not is_enabled('lsp'), after = "nvim-cmp"}
   use {
     'windwp/nvim-autopairs',
     after = get_cmp(),
     config = "require'autopairs-config'",
     disable = not is_enabled('autopairs')
   }
-  use {"b0o/schemastore.nvim", after = 'nvim-lsp-installer'}
-
-  -- Version Control
-  use {
-    'lewis6991/gitsigns.nvim',
-    requires = {'nvim-lua/plenary.nvim'},
-    disable = not is_enabled('gitsigns'),
-    event = 'BufRead',
-    config = "require('gitsigns-config')"
-  }
+  use {"b0o/schemastore.nvim", after = 'nvim-lsp-installer', disable = not is_enabled('lsp')}
 
   -- Terminal Integration
   use {

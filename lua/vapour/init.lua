@@ -39,7 +39,7 @@ Vapour = {
     autopairs = {enabled = true},
     gitsigns = {enabled = true},
     bufferline = {enabled = true},
-    lualine = {enabled = true},
+    staline = {enabled = true},
     dashboard = {enabled = true},
     toggleterm = {
       enabled = true,
