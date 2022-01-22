@@ -1,2 +1,2 @@
-require('staline-config.simple')
+require('staline-config.' .. Vapour.plugins.staline.theme)
 require('staline-config.stabline')
