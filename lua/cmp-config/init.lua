@@ -55,7 +55,9 @@ cmp.setup({
   sources = Vapour.plugins.lsp.cmp_sources
 })
 
-Vapour.utils.plugins.require("cmp_dictionary").setup({dic = {["*"] = "/usr/share/dict/words"}})
+Vapour.utils.plugins.require("cmp_dictionary").setup({
+  dic = {["markdown,text"] = "/usr/share/dict/words"}
+})
 
 vim.cmd(
     "autocmd FileType TelescopePrompt lua Vapour.utils.plugins.require('cmp').setup.buffer { enabled = false }")

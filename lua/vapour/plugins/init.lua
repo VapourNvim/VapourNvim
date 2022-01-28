@@ -107,7 +107,7 @@ return packer.startup(function(use)
   use {'hrsh7th/cmp-nvim-lsp', disable = not is_enabled('lsp')}
   use {'hrsh7th/cmp-buffer', after = "nvim-cmp", disable = not is_enabled('lsp')}
   use {'uga-rosa/cmp-dictionary', disable = not is_enabled('lsp')}
-  -- use {'hrsh7th/vim-vsnip', disable = not is_enabled('lsp'), after = "nvim-cmp"}
+  use {'hrsh7th/vim-vsnip', disable = not is_enabled('lsp'), after = "nvim-cmp"}
   use {
     'windwp/nvim-autopairs',
     after = get_cmp(),

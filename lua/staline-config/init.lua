@@ -1,2 +1,2 @@
 require('staline-config.' .. Vapour.plugins.staline.theme)
-require('staline-config.stabline')
+if Vapour.plugins.stabline.enabled then require('staline-config.stabline') end

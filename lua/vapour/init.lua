@@ -40,6 +40,7 @@ Vapour = {
     gitsigns = {enabled = true},
     bufferline = {enabled = true},
     staline = {enabled = true, theme = 'normal'},
+    stabline = {enabled = true},
     dashboard = {enabled = true},
     toggleterm = {
       enabled = true,
