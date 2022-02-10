@@ -66,7 +66,7 @@ Vapour = {
           t = {":ToggleTerm<cr>", "Split Below"},
           f = {"<cmd>lua Vapour.plugins.toggleterm.toggle_float()<cr>", "Floating Terminal"},
           l = {"<cmd>lua Vapour.plugins.toggleterm.toggle_lazygit()<cr>", "LazyGit"},
-          r = {"<cmd>lua Vapour.plugins.toggleterm.toggle_ranger()<cr>", "LazyGit"}
+          r = {"<cmd>lua Vapour.plugins.toggleterm.toggle_ranger()<cr>", "Ranger"}
         }
       }
     },
