@@ -48,7 +48,7 @@ local mappings = {
   }
 }
 
-if Vapour.plugins.nvim_tree.enabled then mappings.e = {":NvimTreeToggle<cr>", "File Explorerer"} end
+if Vapour.plugins.nvim_tree.enabled then mappings.e = {":NvimTreeToggle<cr>", "File Explorer"} end
 
 if Vapour.plugins.dashboard.enabled then mappings.d = {":Dashboard<cr>", "Dashboard"} end
 
