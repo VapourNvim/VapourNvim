@@ -77,6 +77,7 @@ Vapour = {
       indent = {enable = false},
       highlight = {enable = true},
       autotag = {enable = true},
+      endwise = {enable = true},
       rainbow = {enable = true, extended_mode = false, disable = {"html"}}
     },
     vsnip = {enabled = true},
