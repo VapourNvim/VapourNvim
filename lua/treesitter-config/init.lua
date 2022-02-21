@@ -9,5 +9,6 @@ Vapour.utils.plugins.require'nvim-treesitter.configs'.setup {
   highlight = Vapour.plugins.treesitter.highlight,
   autotag = Vapour.plugins.treesitter.autotag,
   endwise = Vapour.plugins.treesitter.endwise,
-  rainbow = Vapour.plugins.treesitter.rainbow
+  rainbow = Vapour.plugins.treesitter.rainbow,
+  textsubjects = Vapour.plugins.treesitter.textsubjects
 }
