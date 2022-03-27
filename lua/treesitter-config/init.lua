@@ -8,5 +8,7 @@ Vapour.utils.plugins.require'nvim-treesitter.configs'.setup {
   indent = Vapour.plugins.treesitter.indent,
   highlight = Vapour.plugins.treesitter.highlight,
   autotag = Vapour.plugins.treesitter.autotag,
-  rainbow = Vapour.plugins.treesitter.rainbow
+  endwise = Vapour.plugins.treesitter.endwise,
+  rainbow = Vapour.plugins.treesitter.rainbow,
+  textsubjects = Vapour.plugins.treesitter.textsubjects
 }

@@ -77,7 +77,17 @@ Vapour = {
       indent = {enable = false},
       highlight = {enable = true},
       autotag = {enable = true},
-      rainbow = {enable = true, extended_mode = false, disable = {"html"}}
+      endwise = {enable = true},
+      rainbow = {enable = true, extended_mode = false, disable = {"html"}},
+      textsubjects = {
+        enable = true,
+        prev_selection = ',', -- (Optional) keymap to select the previous selection
+        keymaps = {
+          ['.'] = 'textsubjects-smart',
+          [';'] = 'textsubjects-container-outer',
+          ['i;'] = 'textsubjects-container-inner',
+        },
+      },
     },
     vsnip = {enabled = true},
     telescope = {enabled = true},
