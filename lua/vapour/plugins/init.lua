@@ -34,6 +34,13 @@ return packer.startup(function(use)
     event = 'BufRead'
   }
   use {
+    'akinsho/nvim-bufferline.lua',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = 'require"bufferline-config"',
+    disable = not is_enabled('bufferline'),
+    event = 'BufRead'
+  }
+  use {
     'tamton-aquib/staline.nvim',
     disable = not is_enabled('staline'),
     config = "require'staline-config'",
@@ -82,8 +89,16 @@ return packer.startup(function(use)
   }
   use {'p00f/nvim-ts-rainbow', disable = not is_enabled('treesitter'), after = 'nvim-treesitter'}
   use {'windwp/nvim-ts-autotag', disable = not is_enabled('treesitter'), after = 'nvim-treesitter'}
-  use {'RRethy/nvim-treesitter-endwise', disable = not is_enabled('treesitter'), after = 'nvim-treesitter'}
-  use {'RRethy/nvim-treesitter-textsubjects', disable = not is_enabled('treesitter'), after = 'nvim-treesitter'}
+  use {
+    'RRethy/nvim-treesitter-endwise',
+    disable = not is_enabled('treesitter'),
+    after = 'nvim-treesitter'
+  }
+  use {
+    'RRethy/nvim-treesitter-textsubjects',
+    disable = not is_enabled('treesitter'),
+    after = 'nvim-treesitter'
+  }
 
   -- Colorschemes
   use {'rose-pine/neovim', as = 'rose-pine', opt = true}
@@ -127,7 +142,7 @@ return packer.startup(function(use)
   }
 
   -- Navigation
-  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make', disable = not is_enabled('lsp') }
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make', disable = not is_enabled('lsp')}
   use {
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},

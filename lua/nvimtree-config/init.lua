@@ -1,14 +1,11 @@
 vim.g.nvim_tree_indent_markers = 1
 local nvimtree = Vapour.utils.plugins.require 'nvim-tree'
 nvimtree.setup {
-  filters = {
-    custom = {'*.tmp', '.git'}
-  },
+  filters = {custom = {'*.tmp', '.git'}},
   disable_netrw = true,
   hijack_netrw = true,
   open_on_setup = true,
   ignore_ft_on_setup = {'dashboard'},
-  auto_close = true,
   open_on_tab = false,
   hijack_cursor = true,
   update_cwd = true,
@@ -27,3 +24,6 @@ nvimtree.setup {
     mappings = {custom_only = false, list = {}}
   }
 }
+vim.cmd [[
+autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
+]]
