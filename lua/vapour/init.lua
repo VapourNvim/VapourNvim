@@ -71,7 +71,7 @@ Vapour = {
     },
     treesitter = {
       enabled = true,
-      ensure_installed = "all",
+      ensure_installed = "lua",
       ignore_install = {},
       indent = {enable = false},
       highlight = {enable = true},
