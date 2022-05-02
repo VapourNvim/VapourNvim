@@ -2,7 +2,6 @@ local nvimtree = Vapour.utils.plugins.require 'nvim-tree'
 nvimtree.setup {
   filters = {custom = {'*.tmp', '.git'}},
   disable_netrw = true,
-  indent_markers = 1,
   hijack_netrw = true,
   open_on_setup = true,
   ignore_ft_on_setup = {'dashboard'},
