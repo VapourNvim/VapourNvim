@@ -138,7 +138,8 @@ return packer.startup(function(use)
   use {
     'akinsho/nvim-toggleterm.lua',
     disable = not is_enabled('toggleterm'),
-    config = 'require"toggleterm-config"'
+    config = 'require"toggleterm-config"',
+    branch = 'main'
   }
 
   -- Navigation
