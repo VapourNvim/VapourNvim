@@ -2,8 +2,16 @@ local actions = Vapour.utils.plugins.require('telescope.actions')
 local telescope = Vapour.utils.plugins.require('telescope')
 telescope.setup {
   defaults = {
-    layout_config = {width = 0.75, prompt_position = "top", preview_cutoff = 120, horizontal = {mirror = false}, vertical = {mirror = false}},
-    find_command = {'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'},
+    layout_config = {
+      width = 0.75,
+      prompt_position = "top",
+      preview_cutoff = 120,
+      horizontal = {mirror = false},
+      vertical = {mirror = false}
+    },
+    find_command = {
+      'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'
+    },
     prompt_prefix = " ",
     selection_caret = " ",
     entry_prefix = "  ",
@@ -41,12 +49,11 @@ telescope.setup {
     },
     extensions = {
       fzf = {
-        fuzzy = true,                    -- false will only do exact matching
-        override_generic_sorter = true,  -- override the generic sorter
-        override_file_sorter = true,     -- override the file sorter
-        case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
-	                                -- the default case_mode is "smart_case"
-      } 
+        fuzzy = true, -- false will only do exact matching
+        override_generic_sorter = true, -- override the generic sorter
+        override_file_sorter = true, -- override the file sorter
+        case_mode = "smart_case" -- or "ignore_case" or "respect_case"
+      }
     }
   }
 }
