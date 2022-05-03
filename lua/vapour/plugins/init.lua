@@ -4,7 +4,7 @@ local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
-  fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
+  fn.system({ 'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path })
   execute 'packadd packer.nvim'
 end
 
@@ -61,23 +61,21 @@ return packer.startup(function(use)
   use {
     "folke/zen-mode.nvim",
     config = 'require("zen-mode-config")',
-    disable = not is_enabled('zen_mode'),
-    cmd = "ZenMode"
+    disable = not is_enabled('zen_mode')
   }
   use {
     "folke/twilight.nvim",
     config = "require('twilight-config')",
-    disable = not is_enabled('twilight'),
-    cmd = "ZenMode"
+    disable = not is_enabled('twilight')
   }
   use {
     'lewis6991/gitsigns.nvim',
-    requires = {'nvim-lua/plenary.nvim'},
+    requires = { 'nvim-lua/plenary.nvim' },
     disable = not is_enabled('gitsigns'),
     event = 'BufRead',
     config = "require('gitsigns-config')"
   }
-  use {'kyazdani42/nvim-web-devicons', event = 'BufRead'}
+  use { 'kyazdani42/nvim-web-devicons', event = 'BufRead' }
 
   -- Tree-Sitter
   use {
@@ -87,8 +85,8 @@ return packer.startup(function(use)
     disable = not is_enabled('treesitter'),
     config = "require'treesitter-config'"
   }
-  use {'p00f/nvim-ts-rainbow', disable = not is_enabled('treesitter'), after = 'nvim-treesitter'}
-  use {'windwp/nvim-ts-autotag', disable = not is_enabled('treesitter'), after = 'nvim-treesitter'}
+  use { 'p00f/nvim-ts-rainbow', disable = not is_enabled('treesitter'), after = 'nvim-treesitter' }
+  use { 'windwp/nvim-ts-autotag', disable = not is_enabled('treesitter'), after = 'nvim-treesitter' }
   use {
     'RRethy/nvim-treesitter-endwise',
     disable = not is_enabled('treesitter'),
@@ -101,19 +99,19 @@ return packer.startup(function(use)
   }
 
   -- Colorschemes
-  use {'rose-pine/neovim', as = 'rose-pine', opt = true}
-  use {'joshdick/onedark.vim', opt = true}
-  use {'gruvbox-community/gruvbox', opt = true}
-  use {'shaunsingh/nord.nvim', opt = true}
-  use {'folke/tokyonight.nvim', opt = true}
-  use {'dracula/vim', as = 'dracula', opt = true}
-  use {'tiagovla/tokyodark.nvim', opt = true}
-  use {'catppuccin/nvim', as = 'catppuccin', opt = true}
+  use { 'rose-pine/neovim', as = 'rose-pine', opt = true }
+  use { 'joshdick/onedark.vim', opt = true }
+  use { 'gruvbox-community/gruvbox', opt = true }
+  use { 'shaunsingh/nord.nvim', opt = true }
+  use { 'folke/tokyonight.nvim', opt = true }
+  use { 'dracula/vim', as = 'dracula', opt = true }
+  use { 'tiagovla/tokyodark.nvim', opt = true }
+  use { 'catppuccin/nvim', as = 'catppuccin', opt = true }
 
   -- LSP and Autocomplete
-  use {'neovim/nvim-lspconfig', event = "BufRead", disable = not is_enabled('lsp')}
-  use {'williamboman/nvim-lsp-installer', disable = not is_enabled('lsp')}
-  use {'onsails/lspkind-nvim', disable = not is_enabled('lsp')}
+  use { 'neovim/nvim-lspconfig', event = "BufRead", disable = not is_enabled('lsp') }
+  use { 'williamboman/nvim-lsp-installer', disable = not is_enabled('lsp') }
+  use { 'onsails/lspkind-nvim', disable = not is_enabled('lsp') }
   use {
     'hrsh7th/nvim-cmp',
     config = function()
@@ -121,18 +119,18 @@ return packer.startup(function(use)
     end,
     disable = not is_enabled('lsp')
   }
-  use {'hrsh7th/cmp-nvim-lsp', disable = not is_enabled('lsp')}
-  use {'hrsh7th/cmp-buffer', after = "nvim-cmp", disable = not is_enabled('lsp')}
-  use {'uga-rosa/cmp-dictionary', disable = not is_enabled('lsp')}
-  use {'hrsh7th/cmp-vsnip', after = "nvim-cmp", disable = not is_enabled('lsp')}
-  use {'hrsh7th/vim-vsnip', disable = not is_enabled('lsp'), after = "nvim-cmp"}
+  use { 'hrsh7th/cmp-nvim-lsp', disable = not is_enabled('lsp') }
+  use { 'hrsh7th/cmp-buffer', after = "nvim-cmp", disable = not is_enabled('lsp') }
+  use { 'hrsh7th/cmp-path', after = "nvim-cmp", disable = not is_enabled('lsp') }
+  use { 'hrsh7th/cmp-vsnip', after = "nvim-cmp", disable = not is_enabled('lsp') }
+  use { 'hrsh7th/vim-vsnip', disable = not is_enabled('lsp'), after = "nvim-cmp" }
   use {
     'windwp/nvim-autopairs',
     after = get_cmp(),
     config = "require'autopairs-config'",
     disable = not is_enabled('autopairs')
   }
-  use {"b0o/schemastore.nvim", after = 'nvim-lsp-installer', disable = not is_enabled('lsp')}
+  use { "b0o/schemastore.nvim", after = 'nvim-lsp-installer', disable = not is_enabled('lsp') }
 
   -- Terminal Integration
   use {
@@ -142,10 +140,10 @@ return packer.startup(function(use)
   }
 
   -- Navigation
-  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make', disable = not is_enabled('lsp')}
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', disable = not is_enabled('lsp') }
   use {
     'nvim-telescope/telescope.nvim',
-    requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
+    requires = { { 'nvim-lua/popup.nvim' }, { 'nvim-lua/plenary.nvim' } },
     cmd = "Telescope",
     disable = not is_enabled('telescope'),
     config = "require'telescope-config'"
@@ -169,7 +167,7 @@ return packer.startup(function(use)
     disable = not is_enabled('null_ls'),
     config = "require'null-ls-config'"
   }
-  use {'folke/which-key.nvim', event = "BufWinEnter"}
+  use { 'folke/which-key.nvim', event = "BufWinEnter" }
   use {
     'andweeb/presence.nvim',
     event = "BufRead",

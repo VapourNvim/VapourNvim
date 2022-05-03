@@ -32,9 +32,9 @@ local get_colors = function()
       red = "#f7768e",
       green = "#9ece6a",
       yellow = "#e0af68",
-      blue = "#7aa2f7",
-      purple = "#bb9af7",
-      cyan = "#2ac3de",
+      blue = "#bb9af7",
+      purple = "#7dcfff",
+      cyan = "#7aa2f7",
       white = '#d5d6db'
     }
     return colors
@@ -127,13 +127,13 @@ require('staline').setup {
     V = " VISUAL"
   },
   sections = {
-    left = {'-mode', 'left_sep_double', ' ', 'branch'},
-    mid = {'file_name'},
-    right = {'right_sep_double', '-line_column'}
+    left = { '-mode', 'left_sep_double', ' ', 'branch' },
+    mid = { 'file_name' },
+    right = { 'right_sep_double', '-line_column' }
   },
   special_table = {
-    NvimTree = {'NvimTree', ' '},
-    packer = {'Packer', ' '} -- etc
+    NvimTree = { 'NvimTree', ' ' },
+    packer = { 'Packer', ' ' } -- etc
   },
-  lsp_symbols = {Error = " ", Info = " ", Warn = " ", Hint = ""}
+  lsp_symbols = { Error = " ", Info = " ", Warn = " ", Hint = "" }
 }

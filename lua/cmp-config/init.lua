@@ -14,6 +14,20 @@ local cmp = Vapour.utils.plugins.require('cmp')
 local lspkind = Vapour.utils.plugins.require('lspkind')
 
 cmp.setup({
+  enabled = function()
+    -- disable completion in comments
+    local context = require 'cmp.config.context'
+    -- keep command mode completion enabled when cursor is in a comment
+    if vim.api.nvim_get_mode().mode == 'c' then
+      return true
+    else
+      return not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment")
+    end
+  end,
+  window = {
+    -- completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered()
+  },
   snippet = {
     expand = function(args)
       vim.fn["vsnip#anonymous"](args.body)
@@ -23,7 +37,7 @@ cmp.setup({
     format = lspkind.cmp_format({
       with_text = true,
       maxwidth = 50,
-      menu = {buffer = "[Buf]", nvim_lsp = "[LSP]", dictionary = "[Dict]", vsnip = "[Vsnip]"}
+      menu = {buffer = "[Buf]", nvim_lsp = "[LSP]", vsnip = "[Vsnip]"}
     })
   },
   mapping = {
@@ -53,10 +67,6 @@ cmp.setup({
     end, {"i", "s"})
   },
   sources = Vapour.plugins.lsp.cmp_sources
-})
-
-Vapour.utils.plugins.require("cmp_dictionary").setup({
-  dic = {["markdown,text"] = "/usr/share/dict/words"}
 })
 
 vim.cmd(

@@ -1,20 +1,20 @@
 -- Vapour object to use for namespacing
 Vapour = {
-  options = {tabwidth = 2},
+  options = { tabwidth = 2 },
   language_servers = {
     sumneko_lua = {
       config = function(opts)
         opts = vim.tbl_deep_extend("force", {
           settings = {
             Lua = {
-              runtime = {version = 'LuaJIT', path = vim.split(package.path, ';')},
-              diagnostics = {globals = {'vim'}},
+              runtime = { version = 'LuaJIT', path = vim.split(package.path, ';') },
+              diagnostics = { globals = { 'vim' } },
               workspace = {
                 library = vim.api.nvim_get_runtime_file("", true),
                 checkThirdParty = false,
                 preloadFileSize = 10000
               },
-              telemetry = {enable = false}
+              telemetry = { enable = false }
             }
           }
 
@@ -25,47 +25,47 @@ Vapour = {
     jsonls = {
       config = function(opts)
         opts = vim.tbl_deep_extend("force", {
-          settings = {json = {schemas = Vapour.utils.plugins.require('schemastore').json.schemas()}}
+          settings = { json = { schemas = Vapour.utils.plugins.require('schemastore').json.schemas() } }
         }, opts)
         return opts
       end
     }
   },
   plugins = {
-    zen_mode = {enabled = true, enable_rainbow_colors = false},
-    twilight = {enabled = true, enable_rainbow_colors = false},
-    indent_blankline = {enabled = true, enable_rainbow_colors = false},
-    colorizer = {enabled = true},
-    autopairs = {enabled = true},
-    gitsigns = {enabled = true},
-    bufferline = {enabled = true},
-    staline = {enabled = true, theme = 'normal'},
-    dashboard = {enabled = true},
+    zen_mode = { enabled = true, enable_rainbow_colors = false },
+    twilight = { enabled = true, enable_rainbow_colors = false },
+    indent_blankline = { enabled = true, enable_rainbow_colors = false },
+    colorizer = { enabled = true },
+    autopairs = { enabled = true },
+    gitsigns = { enabled = true },
+    bufferline = { enabled = true },
+    staline = { enabled = true, theme = 'normal' },
+    dashboard = { enabled = true },
     toggleterm = {
       enabled = true,
       toggle_float = function()
         local Terminal = Vapour.utils.plugins.require('toggleterm.terminal').Terminal
-        local float = Terminal:new({direction = "float"})
+        local float = Terminal:new({ direction = "float" })
         return float:toggle()
       end,
       toggle_lazygit = function()
         local Terminal = require('toggleterm.terminal').Terminal
-        local lazygit = Terminal:new({cmd = "lazygit", direction = "float"})
+        local lazygit = Terminal:new({ cmd = "lazygit", direction = "float" })
         return lazygit:toggle()
       end,
       toggle_ranger = function()
         local Terminal = require('toggleterm.terminal').Terminal
-        local ranger = Terminal:new({cmd = "ranger", direction = "float"})
+        local ranger = Terminal:new({ cmd = "ranger", direction = "float" })
         return ranger:toggle()
       end,
       which_key = {
         root = "t",
         name = "Terminal",
         definitions = {
-          t = {":ToggleTerm<cr>", "Split Below"},
-          f = {"<cmd>lua Vapour.plugins.toggleterm.toggle_float()<cr>", "Floating Terminal"},
-          l = {"<cmd>lua Vapour.plugins.toggleterm.toggle_lazygit()<cr>", "LazyGit"},
-          r = {"<cmd>lua Vapour.plugins.toggleterm.toggle_ranger()<cr>", "Ranger"}
+          t = { ":ToggleTerm<cr>", "Split Below" },
+          f = { "<cmd>lua Vapour.plugins.toggleterm.toggle_float()<cr>", "Floating Terminal" },
+          l = { "<cmd>lua Vapour.plugins.toggleterm.toggle_lazygit()<cr>", "LazyGit" },
+          r = { "<cmd>lua Vapour.plugins.toggleterm.toggle_ranger()<cr>", "Ranger" }
         }
       }
     },
@@ -73,11 +73,11 @@ Vapour = {
       enabled = true,
       ensure_installed = "all",
       ignore_install = {},
-      indent = {enable = false},
-      highlight = {enable = true},
-      autotag = {enable = true},
-      endwise = {enable = true},
-      rainbow = {enable = true, extended_mode = false, disable = {"html"}},
+      indent = { enable = false },
+      highlight = { enable = true },
+      autotag = { enable = true },
+      endwise = { enable = true },
+      rainbow = { enable = true, extended_mode = false, disable = { "html" } },
       textsubjects = {
         enable = true,
         prev_selection = ',', -- (Optional) keymap to select the previous selection
@@ -88,21 +88,18 @@ Vapour = {
         }
       }
     },
-    vsnip = {enabled = true},
-    telescope = {enabled = true},
-    nvim_tree = {enabled = true, view_width = 25},
-    dial = {enabled = true},
-    null_ls = {enabled = true},
-    nvim_comment = {enabled = true},
-    presence = {enabled = true},
+    vsnip = { enabled = true },
+    telescope = { enabled = true },
+    nvim_tree = { enabled = true, view_width = 25 },
+    dial = { enabled = true },
+    null_ls = { enabled = true },
+    nvim_comment = { enabled = true },
+    presence = { enabled = true },
     lsp = {
       enabled = true,
-      cmp_sources = {
-        {name = 'nvim_lsp'}, {name = 'vsnip'}, {name = 'buffer'}, {name = 'omni'},
-        {name = "dictionary", keyword_length = 2}, {name = 'path'}
-      }
+      cmp_sources = { { name = 'nvim_lsp' }, { name = 'vsnip' }, { name = 'buffer' }, { name = 'path' } }
     },
-    which_key = {user_defined = {}},
+    which_key = { user_defined = {} },
 
     -- Packer-specific needs
     packer = {
@@ -111,7 +108,7 @@ Vapour = {
       init = {
         display = {
           open_fn = function()
-            return Vapour.utils.plugins.require('packer.util').float {border = "single"}
+            return Vapour.utils.plugins.require('packer.util').float { border = "single" }
           end
         }
       }
