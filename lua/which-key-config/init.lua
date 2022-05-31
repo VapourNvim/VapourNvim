@@ -20,10 +20,12 @@ local mappings = {
     r = {'<cmd>lua vim.lsp.buf.references()<CR>', "References"},
     R = {'<cmd>lua vim.lsp.buf.rename()<CR>', "Rename"},
     a = {'<cmd>lua vim.lsp.buf.code_action()<CR>', "Code actions"},
-    e = {'<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', "Show line diagnostics"},
-    n = {'<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', "Go to next diagnostic"},
-    N = {'<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', "Go to previous diagnostic"},
-    I = {'<cmd>LspInstallInfo<cr>', 'Install language server'}
+    e = {'<cmd>lua vim.diagnostic.show_line_diagnostics()<CR>', "Show line diagnostics"},
+    n = {'<cmd>lua vim.diagnostic.goto_next()<CR>', "Go to next diagnostic"},
+    N = {'<cmd>lua vim.diagnostic.goto_prev()<CR>', "Go to previous diagnostic"},
+    I = {'<cmd>LspInstallInfo<cr>', 'Install language server'},
+    f = {'<cmd>lua vim.lsp.buf.formatting()<CR>', "Format File"},
+    T = {'<cmd> Telescope diagnostics bufnr=0<CR>', "Get Diagnostics"}
   },
   x = {":bdelete<cr>", "Close Buffer"},
   X = {":bdelete!<cr>", "Force Close Buffer"},
