@@ -1,5 +1,5 @@
 <div align="center">
-  <h1 align="center">VapourNvim</h1> 
+  <h1 align="center">VapourNvim</h1>
 	<a href="https://github.com/hackorum/VapourNvim/#features">✨ Features</a>
   <span> • </span>
 	<a href="https://github.com/hackorum/VapourNvim/#installation">📦 Installation</a>
@@ -21,7 +21,7 @@ This project is built to be:
 * **Functional**. The core of an ideal IDE is functionality. If there is anything you want to add, please consider contributing
 * **Minimal**. VapourNvim gives you what you need. Not too much, not too less.
 * **Fast**. VapourNvim loads as smooth as butter with an optimum amount of plugins and lazy loading.
-* **Easy to Configure**. If there's anything extra that you want to add or something you'd like to tweak, VapourNvim has an awesome [configuration system](https://github.com/hackorum/VapourNvim/wiki/User-Configuration) built in. 
+* **Easy to Configure**. If there's anything extra that you want to add or something you'd like to tweak, VapourNvim has an awesome [configuration system](https://github.com/hackorum/VapourNvim/wiki/User-Configuration) built in.
 
 ## Features
 
@@ -56,7 +56,7 @@ curl -s https://raw.githubusercontent.com/VapourNvim/VapourNvim/main/install.sh 
 ## Manual Installation
 ```
 git clone https://github.com/VapourNvim/VapourNvim ~/.config/nvim
-nvim +PackerSync
+nvim
 ```
 
 ## After Installation
