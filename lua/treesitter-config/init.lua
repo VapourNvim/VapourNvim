@@ -1,3 +1,6 @@
+-- Bootstrap: Bail during initialization.
+if vim.g.nvim_bootsrapped == 1 then return nil end
+
 Vapour.utils.plugins.packadd('nvim-treesitter')
 
 Vapour.utils.plugins.require'nvim-treesitter.install'.compilers = {"gcc"}

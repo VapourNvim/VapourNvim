@@ -1,3 +1,6 @@
+-- Bootstrap: Bail during initialization.
+if vim.g.nvim_bootsrapped == 1 then return nil end
+
 local actions = Vapour.utils.plugins.require('telescope.actions')
 local telescope = Vapour.utils.plugins.require('telescope')
 telescope.setup {

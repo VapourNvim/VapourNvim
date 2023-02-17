@@ -1,3 +1,6 @@
+-- Bootstrap: Bail during initialization.
+if vim.g.nvim_bootsrapped == 1 then return nil end
+
 local npairs = Vapour.utils.plugins.packadd('nvim-autopairs', true)
 
 -- if remap == nil then return end

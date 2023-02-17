@@ -1,3 +1,6 @@
+-- Bootstrap: Bail during initialization.
+if vim.g.nvim_bootsrapped == 1 then return nil end
+
 local nvimtree = Vapour.utils.plugins.require 'nvim-tree'
 nvimtree.setup {
   filters = {custom = {'*.tmp', '.git'}},

@@ -1,6 +1,12 @@
+-- Bootstrap: Bail during initialization.
+if vim.g.nvim_bootsrapped == 1 then return nil end
+
 Vapour.utils.plugins.packadd('which-key.nvim')
 
 local wk = Vapour.utils.plugins.require('which-key')
+
+-- Boostrap:  Bail during initialization.
+if not wk then return end
 
 local mappings = {
   l = {

@@ -1,3 +1,6 @@
+-- Bootstrap: Bail during initialization.
+if vim.g.nvim_bootsrapped == 1 then return nil end
+
 local indent_blankline = Vapour.utils.plugins.require('indent_blankline')
 
 local function get_char_highlights()
