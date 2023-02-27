@@ -6,9 +6,12 @@ nvimtree.setup {
   filters = {custom = {'*.tmp', '.git'}},
   disable_netrw = true,
   hijack_netrw = true,
-  open_on_setup = true,
-  ignore_ft_on_setup = {'dashboard'},
-  open_on_tab = false,
+
+-- Youtube: Deprecated
+--  open_on_setup = true,
+--  ignore_ft_on_setup = {'dashboard'},
+--  open_on_tab = false,
+
   hijack_cursor = true,
   update_cwd = true,
   update_focused_file = {enable = true, update_cwd = true, ignore_list = {}},
