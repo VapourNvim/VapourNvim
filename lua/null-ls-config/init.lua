@@ -1,3 +1,6 @@
+-- Bootstrap: Bail during initialization.
+if vim.g.nvim_bootsrapped == 1 then return nil end
+
 local null_ls = Vapour.utils.plugins.require('null-ls')
 
 local formatting = null_ls.builtins.formatting

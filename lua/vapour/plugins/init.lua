@@ -1,14 +1,28 @@
+-- Bootstrap: Shutup undefined global 'vim'
+local vim = vim
+
 local execute = vim.api.nvim_command
 local fn = vim.fn
-
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
+  -- Bootstrap: We need to boot strap.
+  vim.g.nvim_bootsrapped = 1
+  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#1e222a" })
+  print('Installing packer')
+
   fn.system({ 'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path })
-  execute 'packadd packer.nvim'
+
+  -- Bootstrap: I prefer vim.cmd over execute.
+  vim.cmd [[packadd packer.nvim]]
+else
+  -- Bootstrap: We do not need to boot strap.
+  vim.g.nvim_bootsrapped = 0
 end
 
 local packer = Vapour.utils.plugins.require('packer')
+-- Bootstrap: Shutup nil check needed.
+if not packer then return end
 
 packer.init(Vapour.plugins.packer.init)
 
@@ -23,6 +37,15 @@ local function get_cmp()
     return
   end
 end
+
+packer.init {
+  display = {
+    open_fn = function()
+      return require('packer.util').float { border = 'rounded' }
+    end,
+  },
+  max_jobs = 50,
+}
 
 return packer.startup(function(use)
   use 'wbthomason/packer.nvim'
@@ -176,4 +199,10 @@ return packer.startup(function(use)
   }
 
   for _, plugin in pairs(Vapour.plugins.user) do use(plugin) end
+
+  -- Bootstrap: Sync plugins.
+  if vim.g.nvim_bootsrapped == 1 then
+    packer.sync()
+  end
+
 end)

@@ -1,3 +1,6 @@
+-- Bootstrap: Bail during initialization.
+if vim.g.nvim_bootsrapped == 1 then return nil end
+
 local gitsigns = Vapour.utils.plugins.require('gitsigns')
 gitsigns.setup {
   signs = {

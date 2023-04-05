@@ -1,3 +1,6 @@
+-- Bootstrap: Bail during initialization.
+if vim.g.nvim_bootsrapped == 1 then return nil end
+
 local toggleterm = Vapour.utils.plugins.require "toggleterm"
 toggleterm.setup {
   size = 13,
